@@ -1,0 +1,17 @@
+{
+    "name": "Unity.com.mkmarek.uielements.react.Editor",
+    "references": [
+        "GUID:65dccbb1adbf67f48a7d54f097917e48"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

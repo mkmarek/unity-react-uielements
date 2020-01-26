@@ -1,0 +1,15 @@
+{
+    "name": "Unity.com.mkmarek.uielements.react",
+    "references": [
+        "GUID:fd7f2ed1f052e3d45afdb78e9c72d55e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

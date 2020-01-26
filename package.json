@@ -1,0 +1,16 @@
+{
+  "name": "unity-react-uielements",
+  "version": "1.0.0",
+  "main": "generate-lib-files.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "generate:lib": "npm run build && node ./scripts/generate-lib-files.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

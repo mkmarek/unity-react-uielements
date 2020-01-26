@@ -1,0 +1,9 @@
+namespace UnityReactUIElements
+{
+    public static class JSLibraries
+    {
+        public readonly static string BabelTransform = "##babel_transform##";
+        public readonly static string React = "##react##";
+        public readonly static string UnityRenderer = "##unity_renderer##";
+    }
+}
