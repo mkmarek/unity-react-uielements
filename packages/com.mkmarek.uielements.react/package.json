@@ -1,20 +1,28 @@
 {
-    "name": "com.mkmarek.uielements.react",
-    "version": "0.0.1",
-    "displayName": "React UIElements",
-    "description": "React support for UIElements",
-    "unity": "2019.3",
-    "unityRelease": "0b5",
-    "dependencies": {
-        "com.unity.ui.runtime": "0.0.3-preview"
-   },
-   "keywords": [
-      "UIElements",
-      "React"
-    ],
-    "author": {
-      "name": "Marek Magdziak",
-      "email": "marek.magdziak@hotmail.cz",
-      "url": "https://github.com/mkmarek/unity-react-uielements"
-    } 
+  "name": "com.mkmarek.uielements.react",
+  "version": "0.0.1",
+  "displayName": "React UIElements",
+  "description": "React support for UIElements",
+  "unity": "2019.3",
+  "unityRelease": "0b5",
+  "dependencies": {
+    "com.unity.ui.runtime": "0.0.3-preview"
+  },
+  "keywords": [
+    "UIElements",
+    "React"
+  ],
+  "author": {
+    "name": "Marek Magdziak",
+    "email": "marek.magdziak@hotmail.cz",
+    "url": "https://github.com/mkmarek/unity-react-uielements"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/mkmarek/unity-react-uielements.git",
+    "directory": "packages/com.mkmarek.uielements.react"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
+}
