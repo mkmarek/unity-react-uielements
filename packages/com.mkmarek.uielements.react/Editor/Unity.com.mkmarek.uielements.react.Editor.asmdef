@@ -1,7 +1,8 @@
 {
     "name": "Unity.com.mkmarek.uielements.react.Editor",
     "references": [
-        "GUID:65dccbb1adbf67f48a7d54f097917e48"
+        "GUID:65dccbb1adbf67f48a7d54f097917e48",
+        "GUID:fd7f2ed1f052e3d45afdb78e9c72d55e"
     ],
     "includePlatforms": [
         "Editor"

@@ -14,17 +14,21 @@ const renderer = reconciler({
     ...persistence
 });
 
+let containerElement = null;
+let container = null;
+
 export function render(element: React.ReactNode, callback: () => void = () => {}) {
 
-    const containerElement = new ContainerElement('element', {});
-    const container = renderer.createContainer(containerElement, false, false);
+    if (!containerElement || !container) {
+        containerElement = new ContainerElement('element', {});
+        container = renderer.createContainer(containerElement, false, false);
+    }
 
     global.natives.invokeCallback = (id, callbackName) => {
         let queue: Element[] = [containerElement];
 
         while (queue.length > 0) {
             const item = queue.pop();
-
             if (item.id === id) {
                 item.props[callbackName] && item.props[callbackName]();
                 return true;

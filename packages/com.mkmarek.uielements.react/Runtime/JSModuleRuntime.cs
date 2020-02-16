@@ -12,16 +12,22 @@ namespace UnityReactUIElements
         private JavaScriptRuntime runtime;
         private JavaScriptContext context;
         private JavaScriptContext.Scope scope;
+        private ModuleLoader loader;
 
         public JsModuleRuntime()
         {
             this.runtime = JavaScriptRuntime.Create();
             this.context = runtime.CreateContext();
             this.scope = new JavaScriptContext.Scope(context);
+
+            this.loader = new ModuleLoader();
+
+            loader.AddPredefinedModule("react", JSLibraries.React);
+            loader.AddPredefinedModule("unity-renderer", JSLibraries.UnityRenderer);
         }
 
         // Start is called before the first frame update
-        public void RunModule(JSFileObject root)
+        public void RunModule(JSFileObject root, string[] modulesToReload = null)
         {
             Assert.IsNotNull(root, "Root can't be null'");
             Assert.IsFalse(string.IsNullOrWhiteSpace(root.Code), "Code inside root js file can't be null or empty'");
@@ -31,11 +37,7 @@ namespace UnityReactUIElements
             {
                 Globals.Set();
 
-                var loader = new ModuleLoader();
-
-                loader.AddPredefinedModule("react", JSLibraries.React);
-                loader.AddPredefinedModule("unity-renderer", JSLibraries.UnityRenderer);
-                loader.LoadModule(root);
+                loader.LoadModule(root, modulesToReload);
             }
             catch (JavaScriptScriptException e)
             {

@@ -8,7 +8,7 @@
     "generate:lib": "npm run build && node ./scripts/generate-lib-files.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "lerna": "^3.20.2"

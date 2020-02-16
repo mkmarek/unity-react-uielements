@@ -51,6 +51,11 @@ namespace UnityReactUIElements
             StartCoroutine(HandleEvents());
         }
 
+        public void RunModule(string[] modulesToReload)
+        {
+            this.runtime.RunModule(_root, modulesToReload);
+        }
+
         private IEnumerator HandleEvents()
         {
             var callback = Globals.GetInvokeCallbackFunction();

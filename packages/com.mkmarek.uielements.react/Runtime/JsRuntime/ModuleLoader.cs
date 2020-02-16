@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using ChakraHost.Hosting;
 using UnityEngine;
@@ -24,8 +25,23 @@ namespace UnityReactUIElements.JsRuntime
             _predefinedModules.Add(moduleName, jsObject);
         }
 
-        public JavaScriptValue LoadModule(JSFileObject file)
+        public JavaScriptValue LoadModule(JSFileObject file, string[] modulesToReload = null)
         {
+            if (modulesToReload != null)
+            {
+                //TODO: For now we just reload all. Later on it would be nice to reaload only the changed ones and the ones
+                // referencing them
+
+                foreach (var m in moduleCache.Keys.ToList())
+                {
+                    if (!_predefinedModules.ContainsKey(m)) moduleCache.Remove(m);
+                }
+                //foreach (var m in modulesToReload)
+                //{
+                //    moduleCache.Remove(m);
+                //}
+            }
+
             var rootModule = CreateModule(null, file);
 
             ParseModuleQueue();
