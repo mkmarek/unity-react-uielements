@@ -22,6 +22,8 @@ function sanitizeVisitor(visitor, findAncestor) {
 				replaceWith(replacement) {
 					const ancestor = findAncestor(node);
 
+					if (!ancestor) return;
+
 					if (ancestor.type === 'CallExpression') {
 						const index = ancestor.arguments.indexOf(node);
 
@@ -44,8 +46,14 @@ function sanitizeVisitor(visitor, findAncestor) {
 						ancestor.init = replacement;
 					} else if (ancestor.type === 'ReturnStatement') {
 						ancestor.argument = replacement;
+					} else if (ancestor.type === 'LogicalExpression') {
+						if (ancestor.left.type === 'JSXElement') {
+							ancestor.left = replacement;
+						} else {
+							ancestor.right = replacement;
+						}
 					} else {
-						console.log(ancestor);
+						console.log(JSON.stringify(ancestor));
 						throw new Error(`Unknown ${ancestor.type} element in replaceWith`)
 					}
 				}

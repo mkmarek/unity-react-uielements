@@ -373,9 +373,7 @@ You can turn on the 'throwIfNamespace' flag to bypass this warning.`,
         // if the prop object isn't an object, use Object.assign or _extends
         // to ensure that the prop will always be an object (as opposed to a variable
         // that could be null at some point)
-        const expressionHelper = useBuiltIns
-          ? t.memberExpression(t.identifier('Object'), t.identifier('assign'))
-          : file.addHelper('extends');
+        const expressionHelper = t.memberExpression(t.identifier('Object'), t.identifier('assign'));
 
         attribs = t.callExpression(expressionHelper, [
           t.objectExpression([]),
@@ -390,9 +388,7 @@ You can turn on the 'throwIfNamespace' flag to bypass this warning.`,
         objs.unshift(t.objectExpression([]));
       }
 
-      const expressionHelper = useBuiltIns
-        ? t.memberExpression(t.identifier('Object'), t.identifier('assign'))
-        : file.addHelper('extends');
+      const expressionHelper = t.memberExpression(t.identifier('Object'), t.identifier('assign'));
 
       // spread it
       attribs = t.callExpression(expressionHelper, objs);
@@ -562,9 +558,7 @@ You can turn on the 'throwIfNamespace' flag to bypass this warning.`,
         objs.unshift(t.objectExpression([]));
       }
 
-      const expressionHelper = useBuiltIns
-        ? t.memberExpression(t.identifier('Object'), t.identifier('assign'))
-        : file.addHelper('extends');
+      const expressionHelper = t.memberExpression(t.identifier('Object'), t.identifier('assign'))
 
       // spread it
       attribs = t.callExpression(expressionHelper, objs);

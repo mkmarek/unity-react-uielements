@@ -33,6 +33,18 @@ namespace UnityReactUIElements.Bridge.Styles
             if (!string.IsNullOrWhiteSpace(style.marginTop))
                 element.style.marginTop = ParseStyleLength(style.marginTop);
 
+            if (!string.IsNullOrWhiteSpace(style.paddingBottom))
+                element.style.paddingBottom = ParseStyleLength(style.paddingBottom);
+
+            if (!string.IsNullOrWhiteSpace(style.paddingLeft))
+                element.style.paddingLeft = ParseStyleLength(style.paddingLeft);
+
+            if (!string.IsNullOrWhiteSpace(style.paddingRight))
+                element.style.paddingRight = ParseStyleLength(style.paddingRight);
+
+            if (!string.IsNullOrWhiteSpace(style.paddingTop))
+                element.style.paddingTop = ParseStyleLength(style.paddingTop);
+
             if (!string.IsNullOrWhiteSpace(style.alignItems))
                 element.style.alignItems = ParseAlignStyleEnum(style.alignItems);
 

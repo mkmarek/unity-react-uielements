@@ -46,6 +46,10 @@ namespace UnityReactUIElements.Bridge
                 public string marginLeft;
                 public string marginRight;
                 public string marginTop;
+                public string paddingBottom;
+                public string paddingLeft;
+                public string paddingRight;
+                public string paddingTop;
                 public string backgroundColor;
                 public string color;
                 public string fontSize;

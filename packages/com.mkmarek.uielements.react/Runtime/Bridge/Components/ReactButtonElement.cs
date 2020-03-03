@@ -21,6 +21,12 @@ namespace UnityReactUIElements.Bridge.Components
             if (evt.eventTypeId == MouseUpEvent.TypeId())
             {
                 renderer.handlesToInvoke.Enqueue((this.name, "onClick"));
+            } else if (evt.eventTypeId == MouseOverEvent.TypeId())
+            {
+                renderer.handlesToInvoke.Enqueue((this.name, "onMouseOver"));
+            } else if (evt.eventTypeId == MouseOutEvent.TypeId())
+            {
+                renderer.handlesToInvoke.Enqueue((this.name, "onMouseOut"));
             }
         }
 

@@ -2,16 +2,16 @@ import cleanJSXElementLiteralChild from './cleanJSXElementLiteralChild';
 
 const types = {
     isJSXIdentifier(node) {
-        return node.type === 'JSXIdentifier';
+        return node && node.type === 'JSXIdentifier';
     },
     isJSXMemberExpression(node) {
-        return node.type === 'JSXMemberExpression';
+        return node && node.type === 'JSXMemberExpression';
     },
     isIdentifier(node) {
-        return node.type === 'Identifier';
+        return node && node.type === 'Identifier';
     },
     isLiteral(node) {
-        return node.type === 'Literal';
+        return node && node.type === 'Literal';
     },
     objectExpression(properties) {
         return {
@@ -63,28 +63,28 @@ const types = {
         };
     },
     isJSXSpreadAttribute(node) {
-        return node.type === 'JSXSpreadAttribute';
+        return node && node.type === 'JSXSpreadAttribute';
     },
     isJSXAttribute(node) {
-        return node.type === 'JSXAttribute';
+        return node && node.type === 'JSXAttribute';
     },
     isJSXExpressionContainer(node) {
-        return node.type === 'JSXExpressionContainer';
+        return node && node.type === 'JSXExpressionContainer';
     },
     isStringLiteral(node) {
-        return node.type === 'Literal';
+        return node && node.type === 'Literal';
     },
     isJSXNamespacedName(node) {
-        return node.type === 'JSXNamespacedName';
+        return node && node.type === 'JSXNamespacedName';
     },
     isObjectExpression(node) {
-        return node.type === 'ObjectExpression';
+        return node && node.type === 'ObjectExpression';
     },
     isJSXText(node) {
-        return node.type === 'JSXText';
+        return node && node.type === 'JSXText';
     },
     isJSXEmptyExpression(node) {
-        return node.type === 'JSXEmptyExpression';
+        return node && node.type === 'JSXEmptyExpression';
     }
 }
 
