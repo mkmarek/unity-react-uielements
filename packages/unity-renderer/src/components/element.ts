@@ -1,6 +1,12 @@
 import guid from '../guid';
 import ContainerElement from './container-element';
 
+const mapProp = (prop) => prop && typeof prop === 'function' ? true : prop;
+
+// TODO: make better mapping to avoid weird props being passed in
+const filterProps = (props) =>
+    Object.keys(props).reduce((p, c) => c !== 'children' ? ({ ...p, [c]: mapProp(props[c]) }) : p, {});
+
 export default class Element {
     public props: any;
     public id: string;
@@ -20,7 +26,7 @@ export default class Element {
                 type,
                 isContainer: rootContainer == null,
                 id: this.id,
-                props: Object.keys(props).reduce((p, c) => c !== 'children' ? ({ ...p, [c]: props[c] }) : p, {})
+                props: filterProps(props)
             });
         }
     }
@@ -74,7 +80,7 @@ export default class Element {
             this.sendUpdate({
                 operation: 'update-props',
                 id: this.id,
-                props
+                props: filterProps(props)
             });
         }
 

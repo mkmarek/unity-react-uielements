@@ -5,6 +5,7 @@ import ContainerElement from './components/container-element';
 import * as base from './host-config/base'
 import * as mutation from './host-config/mutation'
 import * as persistence from './host-config/persistence'
+import Bridge from './native-to-js-bridge';
 
 const renderer = reconciler({
     isPrimaryRenderer: true,
@@ -24,19 +25,11 @@ export function render(element: React.ReactNode, callback: () => void = () => {}
         container = renderer.createContainer(containerElement, false, false);
     }
 
-    global.natives.invokeCallback = (id, callbackName) => {
-        let queue: Element[] = [containerElement];
-
-        while (queue.length > 0) {
-            const item = queue.pop();
-            if (item.id === id) {
-                item.props[callbackName] && item.props[callbackName]();
-                return true;
-            }
-
-            for (let child of item.children) queue.push(child);
-        }
-    };
+    global.bridge = new Bridge(containerElement);
+    global.natives.nativeToJsBridge = global.bridge.onMessage.bind(global.bridge);
 
     renderer.updateContainer(element, container, null, callback);
 }
+
+export * from './hooks';
+export * from './actions';

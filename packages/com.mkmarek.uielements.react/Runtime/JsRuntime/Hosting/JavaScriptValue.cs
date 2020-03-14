@@ -876,11 +876,24 @@ namespace ChakraHost.Hosting
 
         public void PrintJavaScriptError()
         {
-            Native.JsConvertValueToString(this, out var stringValue);
-            Native.JsStringToPointer(stringValue, out var resultPtr, out _);
-            var resultString = Marshal.PtrToStringUni(resultPtr);
+            Native.JsGetProperty(this, JavaScriptPropertyId.FromString("stack"), out var stackTrace);
 
-            Debug.LogError(resultString);
+            if (stackTrace.IsValid)
+            {
+                Native.JsConvertValueToString(stackTrace, out var stackStringValue);
+                Native.JsStringToPointer(stackStringValue, out var stackResultPtr, out _);
+                var resultStackTrace = Marshal.PtrToStringUni(stackResultPtr);
+
+                Debug.LogError(resultStackTrace);
+            }
+            else
+            {
+                Native.JsConvertValueToString(this, out var stringValue);
+                Native.JsStringToPointer(stringValue, out var resultPtr, out _);
+                var resultString = Marshal.PtrToStringUni(resultPtr);
+
+                Debug.LogError(resultString);
+            }
         }
     }
 }

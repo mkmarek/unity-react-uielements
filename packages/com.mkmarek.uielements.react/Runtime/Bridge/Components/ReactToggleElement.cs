@@ -5,7 +5,7 @@ namespace UnityReactUIElements.Bridge.Components
 {
     public class ReactToggleElement : Toggle, IReactElement
     {
-        public ReactToggleElement(BridgePayload.BridgeMessage.ComponentProps props)
+        public ReactToggleElement(JsToNativeBridgePayload.BridgeMessage.ComponentProps props)
         {
             if (props != null)
             {
@@ -13,7 +13,7 @@ namespace UnityReactUIElements.Bridge.Components
             }
         }
 
-        public void UpdateProps(BridgePayload.BridgeMessage.ComponentProps props)
+        public void UpdateProps(JsToNativeBridgePayload.BridgeMessage.ComponentProps props)
         {
             if (props.style != null)
             {

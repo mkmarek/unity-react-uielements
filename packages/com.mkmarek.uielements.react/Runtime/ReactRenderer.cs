@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ChakraHost.Hosting;
+using Unity.Entities;
 using UnityReactUIElements.Bridge;
 using Unity.UIElements.Runtime;
 using UnityEngine;
@@ -11,8 +12,8 @@ namespace UnityReactUIElements
     [RequireComponent(typeof(UIElementsEventSystem))]
     public class ReactRenderer : PanelRenderer
     {
-        public readonly Queue<string> messagesToHandle = new Queue<string>();
-        public readonly Queue<(string, string)> handlesToInvoke = new Queue<(string, string)>();
+        private readonly Queue<string> jsToNativeMessages = new Queue<string>();
+        private readonly Queue<NativeToJsBridgePayload.BridgeMessage> nativeToJsMessages = new Queue<NativeToJsBridgePayload.BridgeMessage>();
 
         private MessageHandler messageHandler;
         private UIElementsEventSystem eventSystem;
@@ -49,6 +50,7 @@ namespace UnityReactUIElements
 
             StartCoroutine(HandleMessages());
             StartCoroutine(HandleEvents());
+            StartCoroutine(CheckforJsErrors());
         }
 
         public void RunModule(string[] modulesToReload)
@@ -56,24 +58,42 @@ namespace UnityReactUIElements
             this.runtime.RunModule(_root, modulesToReload);
         }
 
+        public void AddMessageToBuffer(NativeToJsBridgePayload.BridgeMessage message)
+        {
+            nativeToJsMessages.Enqueue(message);
+        }
+
+        public void AddMessageToBuffer(string message)
+        {
+            jsToNativeMessages.Enqueue(message);
+        }
+
+        private IEnumerator CheckforJsErrors()
+        {
+            while (true)
+            {
+                runtime.CheckForError();
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
         private IEnumerator HandleEvents()
         {
-            var callback = Globals.GetInvokeCallbackFunction();
+            var messageBuffer = new List<NativeToJsBridgePayload.BridgeMessage>();
 
             while (true)
             {
-                if (handlesToInvoke.Count > 0)
+                while (nativeToJsMessages.Count > 0)
                 {
-                    yield return new WaitForFixedUpdate();
+                    var message = nativeToJsMessages.Dequeue();
+                    messageBuffer.Add(message);
+                }
 
-                    var handle = handlesToInvoke.Dequeue();
-
-                    Native.JsCallFunction(callback, new[]
-                    {
-                        JavaScriptValue.Null,
-                        JavaScriptValue.FromString(handle.Item1),
-                        JavaScriptValue.FromString(handle.Item2)
-                    }, 3, out var result);
+                if (messageBuffer.Count > 0)
+                {
+                    messageHandler.SendMessage(NativeToJsBridgePayload.Create(messageBuffer.ToArray()));
+                    messageBuffer.Clear();
                 }
 
                 yield return new WaitForEndOfFrame();
@@ -84,16 +104,17 @@ namespace UnityReactUIElements
         {
             while (true)
             {
-                if (messagesToHandle.Count > 0)
+                if (jsToNativeMessages.Count > 0)
                 {
                     this.enabled = false;
                     this.eventSystem.enabled = false;
 
-                    yield return new WaitForFixedUpdate();
+                    while (jsToNativeMessages.Count > 0)
+                    {
+                        var message = jsToNativeMessages.Dequeue();
 
-                    var message = messagesToHandle.Dequeue();
-
-                    messageHandler.HandleMessage(message);
+                        messageHandler.HandleMessage(message);
+                    }
 
                     this.enabled = true;
                     this.eventSystem.enabled = true;

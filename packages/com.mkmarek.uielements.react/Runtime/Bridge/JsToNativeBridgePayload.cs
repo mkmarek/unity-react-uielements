@@ -3,7 +3,7 @@
 namespace UnityReactUIElements.Bridge
 {
     [Serializable]
-    public class BridgePayload
+    public class JsToNativeBridgePayload
     {
         public BridgeMessage[] messages;
 
@@ -12,17 +12,27 @@ namespace UnityReactUIElements.Bridge
         {
             // Base fields
             public string operation;
+            public string id;
+            public int index;
 
             // Fields for "create" operations
             public string type;
             public bool isContainer;
-            public string id;
-            public int index;
             public ComponentProps props;
 
             // Fields for "add-child" and "remove-child" operations
             public string parent;
             public string child;
+
+            //fields for register-component-query
+            public string queryName;
+
+            //fields for update-component-data-via-hook
+            public int componentIndex;
+            public string data;
+
+            //fields for remove-entity
+            public string[] components;
 
             [Serializable]
             public class ComponentProps
@@ -30,6 +40,7 @@ namespace UnityReactUIElements.Bridge
                 public ComponentStyle style;
                 public string text;
                 public string value;
+                public bool onChange;
             }
 
             [Serializable]
@@ -63,6 +74,10 @@ namespace UnityReactUIElements.Bridge
                 public string borderBottomColor;
                 public string borderRightColor;
                 public string unityTextAlign;
+                public string minWidth;
+                public string minHeight;
+                public string maxWidth;
+                public string maxHeight;
             }
         }
     }

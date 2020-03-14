@@ -7,7 +7,7 @@ namespace UnityReactUIElements.Bridge.Styles
 {
     public static class StyleMapper
     {
-        public static void AssignStyleProps(BridgePayload.BridgeMessage.ComponentStyle style, VisualElement element)
+        public static void AssignStyleProps(JsToNativeBridgePayload.BridgeMessage.ComponentStyle style, VisualElement element)
         {
             if (!string.IsNullOrWhiteSpace(style.backgroundColor))
                 element.style.backgroundColor = ParseStyleColor(style.backgroundColor);
@@ -20,6 +20,18 @@ namespace UnityReactUIElements.Bridge.Styles
 
             if (!string.IsNullOrWhiteSpace(style.height))
                 element.style.height = ParseStyleLength(style.height);
+
+            if (!string.IsNullOrWhiteSpace(style.minWidth))
+                element.style.minWidth = ParseStyleLength(style.minWidth);
+
+            if (!string.IsNullOrWhiteSpace(style.minHeight))
+                element.style.minHeight = ParseStyleLength(style.minHeight);
+
+            if (!string.IsNullOrWhiteSpace(style.maxWidth))
+                element.style.maxWidth = ParseStyleLength(style.maxWidth);
+
+            if (!string.IsNullOrWhiteSpace(style.maxHeight))
+                element.style.maxHeight = ParseStyleLength(style.maxHeight);
 
             if (!string.IsNullOrWhiteSpace(style.marginBottom))
                 element.style.marginBottom = ParseStyleLength(style.marginBottom);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using ChakraHost.Hosting;
 using UnityReactUIElements.Bridge.Components;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -38,12 +39,29 @@ namespace UnityReactUIElements.Bridge
             throw new InvalidOperationException($"Element {name} not found");
         }
 
+        public void SendMessage(NativeToJsBridgePayload payload)
+        {
+            var bridgeFunction = Globals.GetNativeToJsBridgeFunction();
+            var message = JsonUtility.ToJson(payload);
+
+            //Debug.Log(message);
+
+            Native.JsCallFunction(bridgeFunction, new[]
+            {
+                JavaScriptValue.Null,
+                JavaScriptValue.FromString(message), 
+
+            }, 2, out var result);
+        }
+
         public void HandleMessage(string message)
         {
             var sw = new System.Diagnostics.Stopwatch();
             sw.Start();
 
-            var payload = JsonUtility.FromJson<BridgePayload>(message);
+            //Debug.Log(message);
+
+            var payload = JsonUtility.FromJson<JsToNativeBridgePayload>(message);
             var temporaryComponentStorage = new Dictionary<string, VisualElement>();
 
             foreach (var deserialized in payload.messages)
@@ -116,13 +134,29 @@ namespace UnityReactUIElements.Bridge
                         }
 
                         break;
+                    case "register-component-query":
+                        ReactUIElementsQueryRegistry.RegisterComponentQuery(deserialized.id, deserialized.queryName);
+                        break;
+                    case "remove-component-query":
+                        ReactUIElementsQueryRegistry.RemoveComponentQuery(deserialized.id);
+                        break;
+                    case "update-component-data-via-hook":
+                        ReactUIElementsQueryRegistry.UpdateComponentData(
+                            deserialized.id, deserialized.componentIndex, deserialized.index, deserialized.data);
+                        break;
+                    case "create-entity-with-components":
+                        EntityFactory.CreateWithComponents(deserialized.data);
+                        break;
+                    case "remove-entity":
+                        EntityFactory.RemoveEntity(deserialized.index, deserialized.components);
+                        break;
                 }
             }
 
             // Debug.Log($"Elapsed: {sw.ElapsedMilliseconds}");
         }
 
-        private VisualElement CreateElement(BridgePayload.BridgeMessage deserialized)
+        private VisualElement CreateElement(JsToNativeBridgePayload.BridgeMessage deserialized)
         {
             switch (deserialized.type)
             {
@@ -159,7 +193,7 @@ namespace UnityReactUIElements.Bridge
                 case "templatecontainer":
                     return new ReactTemplateContainerElement(deserialized.props);
                 case "textfield":
-                    return new ReactTextFieldElement(deserialized.props);
+                    return new ReactTextFieldElement(renderer, deserialized.props);
                 case "toggle":
                     return new ReactToggleElement(deserialized.props);
                 default:

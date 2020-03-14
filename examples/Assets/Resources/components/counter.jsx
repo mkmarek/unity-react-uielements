@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './button';
+import { useQuery } from 'unity-renderer';
 
 const margin = (margin) => ({
     marginTop: margin,
@@ -26,14 +27,22 @@ const countStyle = Object.assign(margin('5px'), {
 });
 
 export default function Counter() {
-    const [count, setCount] = useState(0);
+    const [initializing, counterComponents, setCounterComponent] = useQuery('Counter');
+
+    if (initializing) return <element />;
+
+    const count = counterComponents[0].count;
 
     return (
         <element style={Object.assign(margin('auto'), { width: "100%", height: "100%", alignItems: "center" })}>
             <element style={countStyle}>{count}</element>
             <element style={{ flexDirection: 'row' }}>
-                <Button style={Object.assign(itemStyle, { fontSize: '18'})} onClick={() => setCount(count + 1)}>Increment</Button>
-                <Button style={Object.assign(itemStyle, { fontSize: '18'})} onClick={() => setCount(count - 1)}>Decrement</Button>
+                <Button
+                    style={Object.assign(itemStyle, { fontSize: '18'})}
+                    onClick={() => setCounterComponent(0, { count: count + 1 })}>Increment</Button>
+                <Button
+                    style={Object.assign(itemStyle, { fontSize: '18'})}
+                    onClick={() => setCounterComponent(0, {count: count - 1 })}>Decrement</Button>
             </element>
         </element>
     )

@@ -26,6 +26,32 @@ namespace UnityReactUIElements
             loader.AddPredefinedModule("unity-renderer", JSLibraries.UnityRenderer);
         }
 
+        public void CheckForError()
+        {
+            Native.JsHasException(out var hasException);
+
+            if (!hasException) return;
+
+            try
+            {
+                Native.ThrowIfError(Native.JsGetAndClearException(out var errorObject));
+
+                errorObject.PrintJavaScriptError();
+            }
+            catch (JavaScriptScriptException e)
+            {
+                e.Error.PrintJavaScriptError();
+            }
+            catch (JavaScriptFatalException e)
+            {
+                Debug.LogError(e);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+
         // Start is called before the first frame update
         public void RunModule(JSFileObject root, string[] modulesToReload = null)
         {

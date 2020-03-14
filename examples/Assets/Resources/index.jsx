@@ -3,6 +3,7 @@ import { render } from 'unity-renderer';
 import TabPanel from './components/tab-panel';
 import Counter from './components/counter';
 import ComponentPreview from './components/component-preview';
+import Todo from './components/Todo';
 
 const margin = (margin) => ({
   marginTop: margin,
@@ -27,16 +28,19 @@ function App() {
   return (
     <element style={rootStyle}>
       <TabPanel style={tabPanelStyle}>
-        <TabPanel.Panel name="Test1">
+        <TabPanel.Panel name="Welcome">
           <element style={Tab1Style}>
             A demo of React used inside Unity
           </element>
         </TabPanel.Panel>
-        <TabPanel.Panel name="Test2">
+        <TabPanel.Panel name="Counter">
           <Counter />
         </TabPanel.Panel>
-        <TabPanel.Panel name="Test3">
+        <TabPanel.Panel name="Component test">
           <ComponentPreview />
+        </TabPanel.Panel>
+        <TabPanel.Panel name="ECS TODO example">
+          <Todo />
         </TabPanel.Panel>
       </TabPanel>
     </element>

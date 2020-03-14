@@ -38,7 +38,9 @@ export default class ContainerElement extends Element {
             noDuplicateUpdates.push(update);
         }
 
-        global.natives.bridge(JSON.stringify({ messages: noDuplicateUpdates }));
+        if (noDuplicateUpdates.length) {
+            global.natives.jsToNativeBridge(JSON.stringify({ messages: noDuplicateUpdates }));
+        }
         this.updates = [];
     }
 }

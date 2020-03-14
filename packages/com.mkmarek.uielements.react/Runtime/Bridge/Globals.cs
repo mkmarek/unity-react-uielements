@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Timers;
 using ChakraHost.Hosting;
 using UnityEngine;
@@ -10,8 +11,6 @@ namespace UnityReactUIElements.Bridge
 {
     public static class Globals
     {
-        private static readonly IDictionary<int, Timer> timers = new Dictionary<int, Timer>();
-
         public static void Set()
         {
             Native.JsGetGlobalObject(out var globalObject);
@@ -23,11 +22,11 @@ namespace UnityReactUIElements.Bridge
             SetBase64Functions(globalObject);
         }
 
-        public static JavaScriptValue GetInvokeCallbackFunction()
+        public static JavaScriptValue GetNativeToJsBridgeFunction()
         {
             Native.JsGetGlobalObject(out var globalObject);
             Native.JsGetProperty(globalObject, JavaScriptPropertyId.FromString("natives"), out var natives);
-            Native.JsGetProperty(natives, JavaScriptPropertyId.FromString("invokeCallback"), out var invokeCallback);
+            Native.JsGetProperty(natives, JavaScriptPropertyId.FromString("nativeToJsBridge"), out var invokeCallback);
 
             return invokeCallback;
         }
@@ -73,48 +72,32 @@ namespace UnityReactUIElements.Bridge
         private static JavaScriptValue ClearTimeout(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             Native.JsGetUndefinedValue(out var undefinedValue);
-            Native.JsNumberToInt(arguments[1], out var handle);
 
-            if (!timers.ContainsKey(handle)) return undefinedValue;
-
-            var timer = timers[handle];
-            timers.Remove(handle);
-
-            timer.Stop();
-            timer.Dispose();
+            //TODO: implement clearing
 
             return undefinedValue;
         }
 
-        private static JavaScriptValue SetTimeout(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        public static JavaScriptValue SetTimeout(JavaScriptValue callee, bool isConstructCall, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] JavaScriptValue[] arguments, ushort argumentCount, IntPtr callbackData)
         {
-            var interval = 0;
+            var callbackValue = arguments[1];
+            var afterValue = arguments[2].ConvertToNumber();
+            var after = Math.Max(afterValue.ToDouble(), 1);
 
-            if (argumentcount > 2)
-                Native.JsNumberToInt(arguments[2], out interval);
+            Native.JsAddRef(callbackValue, out var refCount);
+            Native.JsAddRef(callee, out refCount);
 
-            var id = Guid.NewGuid().GetHashCode();
-            Native.JsIntToNumber(id, out var handleValue);
+            ExecuteAsync((int)after, callbackValue, callee);
 
-            if (interval == 0)
-            {
-                Native.JsCallFunction(arguments[1], new JavaScriptValue[] { }, 0, out var result);
-                return handleValue;
-            };
+            return JavaScriptValue.True;
+        }
 
-            var timer = new Timer {Interval = interval};
-
-            timer.Elapsed += (sender, e) =>
-            {
-                Native.JsCallFunction(arguments[1], new JavaScriptValue[] { }, 0, out var result);
-                timers.Remove(id);
-                timer.Dispose();
-            };
-
-            timers.Add(id, timer);
-
-
-            return handleValue;
+        static async void ExecuteAsync(int delay, JavaScriptValue callbackValue, JavaScriptValue callee)
+        {
+            await Task.Delay(delay);
+            callbackValue.CallFunction(callee);
+            Native.JsRelease(callbackValue, out var refCount);
+            Native.JsRelease(callee, out refCount);
         }
 
         private static void SetNativesObject(JavaScriptValue globalObject)
@@ -122,18 +105,22 @@ namespace UnityReactUIElements.Bridge
             Native.JsCreateObject(out var nativesObject);
             Native.JsCreateFunction(Bridge, IntPtr.Zero, out var functionValue);
 
-            nativesObject.SetProperty(JavaScriptPropertyId.FromString("bridge"), functionValue, true);
+            nativesObject.SetProperty(JavaScriptPropertyId.FromString("jsToNativeBridge"), functionValue, true);
             globalObject.SetProperty(JavaScriptPropertyId.FromString("natives"), nativesObject, true);
         }
 
         private static void SetConsoleLogObject(JavaScriptValue globalObject)
         {
             Native.JsCreateObject(out var consoleObject);
-            Native.JsCreateFunction(ConsoleLog, IntPtr.Zero, out var functionValue);
+            Native.JsCreateFunction(ConsoleLog, IntPtr.Zero, out var logFunctionValue);
+            Native.JsCreateFunction(ConsoleError, IntPtr.Zero, out var errorFunctionValue);
+            Native.JsCreateFunction(ConsoleWarn, IntPtr.Zero, out var warningFunctionValue);
 
-            consoleObject.SetProperty(JavaScriptPropertyId.FromString("log"), functionValue, true);
-            consoleObject.SetProperty(JavaScriptPropertyId.FromString("error"), functionValue, true);
-            consoleObject.SetProperty(JavaScriptPropertyId.FromString("warn"), functionValue, true);
+            consoleObject.SetProperty(JavaScriptPropertyId.FromString("log"), logFunctionValue, true);
+            consoleObject.SetProperty(JavaScriptPropertyId.FromString("error"), errorFunctionValue, true);
+            consoleObject.SetProperty(JavaScriptPropertyId.FromString("warn"), warningFunctionValue, true);
+            consoleObject.SetProperty(JavaScriptPropertyId.FromString("info"), logFunctionValue, true);
+            consoleObject.SetProperty(JavaScriptPropertyId.FromString("trace"), logFunctionValue, true);
             globalObject.SetProperty(JavaScriptPropertyId.FromString("console"), consoleObject, true);
         }
 
@@ -154,6 +141,40 @@ namespace UnityReactUIElements.Bridge
             return undefinedValue;
         }
 
+        private static JavaScriptValue ConsoleError(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        {
+            Native.JsGetUndefinedValue(out var undefinedValue);
+
+            for (var i = 1; i < argumentcount; i++)
+            {
+                Native.JsConvertValueToString(arguments[i], out var stringValue);
+                Native.JsStringToPointer(stringValue, out var resultPtr, out _);
+
+                var resultString = Marshal.PtrToStringUni(resultPtr);
+
+                Debug.LogError(resultString);
+            }
+
+            return undefinedValue;
+        }
+
+        private static JavaScriptValue ConsoleWarn(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        {
+            Native.JsGetUndefinedValue(out var undefinedValue);
+
+            for (var i = 1; i < argumentcount; i++)
+            {
+                Native.JsConvertValueToString(arguments[i], out var stringValue);
+                Native.JsStringToPointer(stringValue, out var resultPtr, out _);
+
+                var resultString = Marshal.PtrToStringUni(resultPtr);
+
+                Debug.LogWarning(resultString);
+            }
+
+            return undefinedValue;
+        }
+
         private static JavaScriptValue Bridge(
             JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
@@ -166,9 +187,7 @@ namespace UnityReactUIElements.Bridge
 
             var resultString = Marshal.PtrToStringUni(resultPtr);
 
-            ReactRenderer.Current.messagesToHandle.Enqueue(resultString);
-
-            //Debug.Log(resultString);
+            ReactRenderer.Current.AddMessageToBuffer(resultString);
 
             return undefinedValue;
         }

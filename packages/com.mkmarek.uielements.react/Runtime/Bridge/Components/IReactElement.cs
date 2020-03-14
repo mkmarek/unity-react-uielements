@@ -2,6 +2,6 @@
 {
     public interface IReactElement
     {
-        void UpdateProps(BridgePayload.BridgeMessage.ComponentProps props);
+        void UpdateProps(JsToNativeBridgePayload.BridgeMessage.ComponentProps props);
     }
 }

@@ -7,7 +7,7 @@ namespace UnityReactUIElements.Bridge.Components
     {
         private ReactRenderer renderer;
 
-        public ReactVisualElement(ReactRenderer renderer, BridgePayload.BridgeMessage.ComponentProps props)
+        public ReactVisualElement(ReactRenderer renderer, JsToNativeBridgePayload.BridgeMessage.ComponentProps props)
         {
             this.renderer = renderer;
 
@@ -20,11 +20,12 @@ namespace UnityReactUIElements.Bridge.Components
 
             if (evt.eventTypeId == MouseUpEvent.TypeId())
             {
-                renderer.handlesToInvoke.Enqueue((this.name, "onClick"));
+                renderer.AddMessageToBuffer(NativeToJsBridgePayload.BridgeMessage.CreateEventCallbackMessage(
+                    this.name, "onClick"));
             }
         }
 
-        public void UpdateProps(BridgePayload.BridgeMessage.ComponentProps props)
+        public void UpdateProps(JsToNativeBridgePayload.BridgeMessage.ComponentProps props)
         {
             if (props.style != null)
             {

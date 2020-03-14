@@ -5,13 +5,10 @@ const buttonStyle = {
   height: "64px",
   backgroundColor: "#ffffff",
 
-  borderTopColor: "#000000",
-  borderLeftColor: "#4175d4",
-  borderRightColor: "#000000",
-  borderBottomColor: "#4175d4",
+  borderLeftColor: "#eeeeee",
 
   borderTopWidth: 0,
-  borderLeftWidth: 1,
+  borderLeftWidth: 5,
   borderRightWidth: 0,
   borderBottomWidth: 0,
 
@@ -19,7 +16,7 @@ const buttonStyle = {
 
   fontSize: 24,
   unityTextAlign: "middle-left",
-  paddingLeft: 50
+  paddingLeft: 46
 };
 
 function MenuButton({ text, onClick }) {
@@ -30,12 +27,8 @@ function MenuButton({ text, onClick }) {
     buttonStyle,
     isHovered
       ? {
-          backgroundColor: "#eeeeee",
-          borderLeftColor: "#4cb825",
-          borderBottomColor: "#4cb825",
-          borderLeftWidth: 5,
-          paddingLeft: 46,
-          borderBottomWidth: 0
+          backgroundColor: "#ffffff",
+          borderLeftColor: "#4175d4"
         }
       : {}
   );
