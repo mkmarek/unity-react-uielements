@@ -87,10 +87,9 @@ namespace UnityReactUIElements.JsRuntime
                         return JavaScriptErrorCode.NoError;
                     }
 
-                    moduleName = moduleName.Replace("./", "");
                     var modulePath = string.IsNullOrWhiteSpace(parentPath)
                         ? moduleName
-                        : $"{Path.Combine(Path.GetDirectoryName(parentPath), moduleName)}";
+                        : Path.GetFullPath($"{Path.Combine(Path.GetDirectoryName(parentPath), moduleName)}");
 
                     modulePath = RemovePathToResources(modulePath);
 
