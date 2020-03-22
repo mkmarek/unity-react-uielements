@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'unity-renderer';
 import TabPanel from './components/tab-panel';
 import Counter from './components/counter';
 import ComponentPreview from './components/component-preview';
 import Todo from './components/Todo';
+import Popup from './components/popup';
 
 const margin = (margin) => ({
   marginTop: margin,
@@ -28,6 +29,8 @@ const Tab1Style = Object.assign(margin('auto'), {
 });
 
 function App() {
+  const [popupOpened, setPopupOpened] = useState(false);
+
   return (
     <element style={rootStyle}>
       <TabPanel style={tabPanelStyle}>
@@ -49,7 +52,11 @@ function App() {
         <TabPanel.Panel name="ECS TODO example">
           <Todo />
         </TabPanel.Panel>
+        <TabPanel.Panel name="Popup example">
+          <button onClick={() => setPopupOpened(true)} text="Open popup" />
+        </TabPanel.Panel>
       </TabPanel>
+      {popupOpened && <Popup onClose={() => setPopupOpened(false)} />}
     </element>
   );
 }

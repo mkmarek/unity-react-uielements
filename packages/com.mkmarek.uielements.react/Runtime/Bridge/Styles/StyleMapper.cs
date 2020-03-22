@@ -110,6 +110,21 @@ namespace UnityReactUIElements.Bridge.Styles
 
             if (!string.IsNullOrWhiteSpace(style.unityTextAlign))
                 element.style.unityTextAlign = ParseTextAlign(style.unityTextAlign);
+
+            if (!string.IsNullOrWhiteSpace(style.position))
+                element.style.position = ParsePositionStyleEnum(style.position);
+
+            if (!string.IsNullOrWhiteSpace(style.top))
+                element.style.top = ParseStyleLength(style.top);
+
+            if (!string.IsNullOrWhiteSpace(style.bottom))
+                element.style.bottom = ParseStyleLength(style.bottom);
+            
+            if (!string.IsNullOrWhiteSpace(style.left))
+                element.style.left = ParseStyleLength(style.left);
+
+            if (!string.IsNullOrWhiteSpace(style.right))
+                element.style.right = ParseStyleLength(style.right);
         }
 
         public static Color ParseColor(string hexColor)
@@ -196,6 +211,21 @@ namespace UnityReactUIElements.Bridge.Styles
                 case "center": return new StyleEnum<Justify>(Justify.Center);
                 case "flex-end": return new StyleEnum<Justify>(Justify.FlexEnd);
                 case "space-around": return new StyleEnum<Justify>(Justify.SpaceAround);
+            }
+
+            return default;
+        }
+
+        private static StyleEnum<Position> ParsePositionStyleEnum(string position)
+        {
+            var keyword = GetStyleKeyword(position);
+
+            if (keyword.HasValue) return new StyleEnum<Position>(keyword.Value);
+
+            switch (position)
+            {
+                case "relative": return new StyleEnum<Position>(Position.Relative);
+                case "absolute": return new StyleEnum<Position>(Position.Absolute);
             }
 
             return default;

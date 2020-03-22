@@ -104,6 +104,11 @@ namespace UnityReactUIElements.Bridge
                 public string minHeight;
                 public string maxWidth;
                 public string maxHeight;
+                public string position;
+                public string top;
+                public string bottom;
+                public string left;
+                public string right;
             }
         }
     }
