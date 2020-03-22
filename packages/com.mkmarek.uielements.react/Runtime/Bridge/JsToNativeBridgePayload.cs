@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace UnityReactUIElements.Bridge
 {
@@ -35,12 +36,36 @@ namespace UnityReactUIElements.Bridge
             public string[] components;
 
             [Serializable]
+            public class RectProp
+            {
+                public float x;
+                public float y;
+                public float width;
+                public float height;
+
+                public bool IsSet()
+                {
+                    return x != 0 || y != 0 || width != 0 || height != 0;
+                } 
+
+                public Rect ToRect()
+                {
+                    return new Rect(x, y, width, height);
+                }
+            }
+
+            [Serializable]
             public class ComponentProps
             {
                 public ComponentStyle style;
                 public string text;
                 public string value;
+                public string image;
                 public bool onChange;
+                public RectProp sourceRect;
+                public RectProp uv;
+                public string scaleMode;
+                public string tintColor;
             }
 
             [Serializable]
@@ -62,6 +87,7 @@ namespace UnityReactUIElements.Bridge
                 public string paddingRight;
                 public string paddingTop;
                 public string backgroundColor;
+                public string backgroundImage;
                 public string color;
                 public string fontSize;
                 public string borderColor;

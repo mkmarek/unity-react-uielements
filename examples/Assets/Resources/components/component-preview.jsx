@@ -15,7 +15,7 @@ export default function ComponentPreview() {
             <foldout />
 
             Image:
-            <image />
+            <image image="images/unity-logo" scaleMode="scale-to-fit" tintColor="#aa00bb" />
 
             Label:
             <label />

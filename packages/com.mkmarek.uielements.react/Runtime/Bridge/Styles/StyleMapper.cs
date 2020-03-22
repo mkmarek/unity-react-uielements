@@ -12,6 +12,9 @@ namespace UnityReactUIElements.Bridge.Styles
             if (!string.IsNullOrWhiteSpace(style.backgroundColor))
                 element.style.backgroundColor = ParseStyleColor(style.backgroundColor);
 
+            if (!string.IsNullOrWhiteSpace(style.backgroundImage))
+                element.style.backgroundImage = ParseStyleBackground(style.backgroundImage);
+
             if (!string.IsNullOrWhiteSpace(style.color))
                 element.style.color = ParseStyleColor(style.color);
 
@@ -107,6 +110,55 @@ namespace UnityReactUIElements.Bridge.Styles
 
             if (!string.IsNullOrWhiteSpace(style.unityTextAlign))
                 element.style.unityTextAlign = ParseTextAlign(style.unityTextAlign);
+        }
+
+        public static Color ParseColor(string hexColor)
+        {
+            var hexInString = hexColor.Substring(1);
+            var color = int.Parse(hexInString, NumberStyles.HexNumber);
+
+            if (hexInString.Length == 6)
+            {
+                return new Color32(
+                    (byte)(color >> 16 & 0xFF),
+                    (byte)((color >> 8) & 0xFF),
+                    (byte)(color & 0xFF),
+                    0xFF);
+            }
+
+            if (hexInString.Length == 8)
+            {
+                return new Color32(
+                    (byte)(color >> 24 & 0xFF),
+                    (byte)(color >> 16 & 0xFF),
+                    (byte)((color >> 8) & 0xFF),
+                    (byte)(color & 0xFF));
+            }
+
+            throw new FormatException($"Color can't have {hexInString.Length} digits");
+        }
+
+        private static StyleBackground ParseStyleBackground(string background)
+        {
+            var keyword = GetStyleKeyword(background);
+
+            if (keyword.HasValue) return new StyleBackground(keyword.Value);
+
+            var texture = Resources.Load<Texture2D>(background);
+
+            if (texture != null)
+            {
+                return new StyleBackground(texture);
+            }
+
+            var vectorImage = Resources.Load<VectorImage>(background);
+
+            if (vectorImage != null)
+            {
+                return new StyleBackground(vectorImage);
+            }
+
+            return new StyleBackground();
         }
 
         private static StyleEnum<TextAnchor> ParseTextAlign(string styleUnityTextAlign)
@@ -219,28 +271,7 @@ namespace UnityReactUIElements.Bridge.Styles
 
             if (styleBackgroundColor.StartsWith("#"))
             {
-                var hexInString = styleBackgroundColor.Substring(1);
-                var color = int.Parse(hexInString, NumberStyles.HexNumber);
-
-                if (hexInString.Length == 6)
-                {
-                    return new StyleColor(new Color32(
-                        (byte)(color >> 16 & 0xFF),
-                        (byte)((color >> 8) & 0xFF),
-                        (byte)(color & 0xFF),
-                        0xFF));
-                }
-
-                if (hexInString.Length == 8)
-                {
-                    return new StyleColor(new Color32(
-                        (byte)(color >> 24 & 0xFF),
-                        (byte)(color >> 16 & 0xFF),
-                        (byte)((color >> 8) & 0xFF),
-                        (byte)(color & 0xFF)));
-                }
-
-                throw new FormatException($"Color can't have {hexInString.Length} digits");
+                return new StyleColor(ParseColor(styleBackgroundColor));
             }
 
             return default;

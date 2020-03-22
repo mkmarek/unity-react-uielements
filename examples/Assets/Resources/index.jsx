@@ -22,7 +22,10 @@ const tabPanelStyle = Object.assign(
   margin('auto'),
   { width: "80%", height: "80%", alignSelf: 'center' });
 
-const Tab1Style = Object.assign(margin('auto'), { alignSelf: 'center' });
+const Tab1Style = Object.assign(margin('auto'), {
+  alignSelf: 'center',
+  unityTextAlign: 'middle-center'
+});
 
 function App() {
   return (
@@ -31,6 +34,10 @@ function App() {
         <TabPanel.Panel name="Welcome">
           <element style={Tab1Style}>
             A demo of React used inside Unity
+            <element style={{ flexDirection: 'row', marginTop: 25 }}>
+              <element style={{ width: 256, height: 86, marginRight: 10, backgroundImage: 'images/react-logo' }} />
+              <element style={{  width: 256, height: 93, backgroundImage: 'images/unity-logo' }} />
+            </element>
           </element>
         </TabPanel.Panel>
         <TabPanel.Panel name="Counter">
