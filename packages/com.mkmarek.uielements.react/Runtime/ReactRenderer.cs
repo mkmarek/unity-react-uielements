@@ -21,9 +21,12 @@ namespace UnityReactUIElements
 
         public static ReactRenderer Current { get; private set; }
 
-        [SerializeField]
 #pragma warning disable 649
+        [SerializeField]
         private JSFileObject _root;
+
+        [SerializeField]
+        internal bool colorsInLinearColorSpace;
 #pragma warning restore 649
 
         private new void Awake()

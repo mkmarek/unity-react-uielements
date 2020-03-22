@@ -134,20 +134,32 @@ namespace UnityReactUIElements.Bridge.Styles
 
             if (hexInString.Length == 6)
             {
-                return new Color32(
+                Color col = new Color32(
                     (byte)(color >> 16 & 0xFF),
                     (byte)((color >> 8) & 0xFF),
                     (byte)(color & 0xFF),
                     0xFF);
+
+                if (ReactRenderer.Current.colorsInLinearColorSpace) {
+                    return col.linear;
+                }
+
+                return col;
             }
 
             if (hexInString.Length == 8)
             {
-                return new Color32(
+                Color col = new Color32(
                     (byte)(color >> 24 & 0xFF),
                     (byte)(color >> 16 & 0xFF),
                     (byte)((color >> 8) & 0xFF),
                     (byte)(color & 0xFF));
+
+                if (ReactRenderer.Current.colorsInLinearColorSpace) {
+                    return col.linear;
+                }
+
+                return col;
             }
 
             throw new FormatException($"Color can't have {hexInString.Length} digits");
