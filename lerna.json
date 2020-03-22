@@ -1,8 +1,0 @@
-{
-  "packages": [
-    "packages/react",
-    "packages/unity-renderer",
-    "packages/babel-transform"
-  ],
-  "version": "0.0.0"
-}
