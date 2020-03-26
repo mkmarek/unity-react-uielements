@@ -81,12 +81,18 @@ namespace UnityReactUIElements
         {
             while (true)
             {
-                var picked = visualTree.panel.Pick(Input.mousePosition);
+                var position =
+                    new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height) *
+                    this.visualTree.layout.size;
+
+                // the position needs to be inverted vertically
+                position.y = this.visualTree.layout.size.y - position.y;
+
+                var picked = panel.Pick(position);
 
                 // Should also ignore panel elements
                 if (picked?.parent != null)
                 {
-                    Debug.Log(picked.name);
                     isMouseOverElement = true;
                 }
                 else
