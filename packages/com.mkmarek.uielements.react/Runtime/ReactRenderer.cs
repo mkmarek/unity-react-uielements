@@ -57,10 +57,9 @@ namespace UnityReactUIElements
             StartCoroutine(HandleMessages());
             StartCoroutine(HandleEvents());
             StartCoroutine(CheckforJsErrors());
+            StartCoroutine(CheckForMouseOverElement());
 
             visualTree.pickingMode = PickingMode.Ignore;
-            visualTree.RegisterCallback<MouseEnterEvent>(x => isMouseOverElement = true);
-            visualTree.RegisterCallback<MouseLeaveEvent>(x => isMouseOverElement = false);
         }
 
         public void RunModule(string[] modulesToReload)
@@ -76,6 +75,27 @@ namespace UnityReactUIElements
         public void AddMessageToBuffer(string message)
         {
             jsToNativeMessages.Enqueue(message);
+        }
+
+        private IEnumerator CheckForMouseOverElement()
+        {
+            while (true)
+            {
+                var picked = visualTree.panel.Pick(Input.mousePosition);
+
+                // Should also ignore panel elements
+                if (picked?.parent != null)
+                {
+                    Debug.Log(picked.name);
+                    isMouseOverElement = true;
+                }
+                else
+                {
+                    isMouseOverElement = false;
+                }
+
+                yield return new WaitForEndOfFrame();
+            }
         }
 
         private IEnumerator CheckforJsErrors()
