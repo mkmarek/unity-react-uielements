@@ -73,6 +73,14 @@ namespace UnityReactUIElements.Bridge.Components
                 StyleMapper.AssignStyleProps(props.style, this);
             }
 
+            switch (props.pickingMode)
+            {
+                case "ignore": pickingMode = PickingMode.Ignore;
+                    break;
+                case "position": pickingMode = PickingMode.Position;
+                    break;
+            }
+
             var expectsTextChange = false;
 
             if (previousProps != null && props.text != previousProps.text && queuedTextChanges.Count > 0)

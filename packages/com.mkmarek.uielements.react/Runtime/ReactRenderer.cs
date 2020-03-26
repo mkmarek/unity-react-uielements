@@ -6,6 +6,7 @@ using Unity.Entities;
 using UnityReactUIElements.Bridge;
 using Unity.UIElements.Runtime;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace UnityReactUIElements
 {
@@ -27,6 +28,8 @@ namespace UnityReactUIElements
 
         [SerializeField]
         internal bool colorsInLinearColorSpace;
+
+        [SerializeField] public bool isMouseOverElement;
 #pragma warning restore 649
 
         private new void Awake()
@@ -54,6 +57,10 @@ namespace UnityReactUIElements
             StartCoroutine(HandleMessages());
             StartCoroutine(HandleEvents());
             StartCoroutine(CheckforJsErrors());
+
+            visualTree.pickingMode = PickingMode.Ignore;
+            visualTree.RegisterCallback<MouseEnterEvent>(x => isMouseOverElement = true);
+            visualTree.RegisterCallback<MouseLeaveEvent>(x => isMouseOverElement = false);
         }
 
         public void RunModule(string[] modulesToReload)

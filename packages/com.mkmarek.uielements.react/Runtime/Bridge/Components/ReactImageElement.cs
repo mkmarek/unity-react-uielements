@@ -21,6 +21,14 @@ namespace UnityReactUIElements.Bridge.Components
                 StyleMapper.AssignStyleProps(props.style, this);
             }
 
+            switch (props.pickingMode)
+            {
+                case "ignore": pickingMode = PickingMode.Ignore;
+                    break;
+                case "position": pickingMode = PickingMode.Position;
+                    break;
+            }
+
             if (!string.IsNullOrWhiteSpace(props.image))
             {
                 var texture = Resources.Load<Texture2D>(props.image);

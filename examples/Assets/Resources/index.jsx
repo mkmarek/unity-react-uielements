@@ -32,7 +32,7 @@ function App() {
   const [popupOpened, setPopupOpened] = useState(false);
 
   return (
-    <element style={rootStyle}>
+    <element pickingMode="ignore" style={rootStyle}>
       <TabPanel style={tabPanelStyle}>
         <TabPanel.Panel name="Welcome">
           <element style={Tab1Style}>

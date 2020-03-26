@@ -58,6 +58,7 @@ namespace UnityReactUIElements.Bridge
             public class ComponentProps
             {
                 public ComponentStyle style;
+                public string pickingMode;
                 public string text;
                 public string value;
                 public string image;
