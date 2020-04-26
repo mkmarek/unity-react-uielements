@@ -15,6 +15,12 @@ namespace UnityReactUIElements.Bridge.Styles
             if (!string.IsNullOrWhiteSpace(style.backgroundImage))
                 element.style.backgroundImage = ParseStyleBackground(style.backgroundImage);
 
+            if (!string.IsNullOrWhiteSpace(style.unityBackgroundImageTintColor))
+                element.style.unityBackgroundImageTintColor = ParseStyleColor(style.unityBackgroundImageTintColor);
+
+            if (!string.IsNullOrWhiteSpace(style.unityBackgroundScaleMode))
+                element.style.unityBackgroundScaleMode = ParseScaleModeStyleEnum(style.unityBackgroundScaleMode);
+
             if (!string.IsNullOrWhiteSpace(style.color))
                 element.style.color = ParseStyleColor(style.color);
 
@@ -273,6 +279,22 @@ namespace UnityReactUIElements.Bridge.Styles
                 case "center": return new StyleEnum<Align>(Align.Center);
                 case "flex-end": return new StyleEnum<Align>(Align.FlexEnd);
                 case "stretch": return new StyleEnum<Align>(Align.Stretch);
+            }
+
+            return default;
+        }
+
+        private static StyleEnum<ScaleMode> ParseScaleModeStyleEnum(string scaleMode)
+        {
+            var keyword = GetStyleKeyword(scaleMode);
+
+            if (keyword.HasValue) return new StyleEnum<ScaleMode>(keyword.Value);
+
+            switch (scaleMode)
+            {
+                case "scale-and-crop": return new StyleEnum<ScaleMode>(ScaleMode.ScaleAndCrop);
+                case "scale-to-fit": return new StyleEnum<ScaleMode>(ScaleMode.ScaleToFit);
+                case "stretch-to-fill": return new StyleEnum<ScaleMode>(ScaleMode.StretchToFill);
             }
 
             return default;

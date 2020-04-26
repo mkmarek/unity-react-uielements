@@ -89,6 +89,8 @@ namespace UnityReactUIElements.Bridge
                 public string paddingTop;
                 public string backgroundColor;
                 public string backgroundImage;
+                public string unityBackgroundImageTintColor;
+                public string unityBackgroundScaleMode;
                 public string color;
                 public string fontSize;
                 public string borderColor;
