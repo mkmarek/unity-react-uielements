@@ -112,6 +112,10 @@ namespace UnityReactUIElements.Bridge
                 public string bottom;
                 public string left;
                 public string right;
+                public string flexBasis;
+                public string flexGrow;
+                public string flexShrink;
+                public string flexWrap;
             }
         }
     }

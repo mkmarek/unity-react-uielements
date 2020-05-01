@@ -12,6 +12,18 @@ namespace UnityReactUIElements.Bridge.Styles
             if (!string.IsNullOrWhiteSpace(style.backgroundColor))
                 element.style.backgroundColor = ParseStyleColor(style.backgroundColor);
 
+            if (!string.IsNullOrWhiteSpace(style.flexBasis))
+                element.style.flexBasis = ParseStyleLength(style.flexBasis);
+
+            if (!string.IsNullOrWhiteSpace(style.flexGrow))
+                element.style.flexGrow = ParseStyleFloat(style.flexGrow);
+
+            if (!string.IsNullOrWhiteSpace(style.flexShrink))
+                element.style.flexShrink = ParseStyleFloat(style.flexShrink);
+
+            if (!string.IsNullOrWhiteSpace(style.flexWrap))
+                element.style.flexWrap = ParseWrapStyleEnum(style.flexWrap);
+
             if (!string.IsNullOrWhiteSpace(style.backgroundImage))
                 element.style.backgroundImage = ParseStyleBackground(style.backgroundImage);
 
@@ -229,6 +241,22 @@ namespace UnityReactUIElements.Bridge.Styles
                 case "center": return new StyleEnum<Justify>(Justify.Center);
                 case "flex-end": return new StyleEnum<Justify>(Justify.FlexEnd);
                 case "space-around": return new StyleEnum<Justify>(Justify.SpaceAround);
+            }
+
+            return default;
+        }
+
+        private static StyleEnum<Wrap> ParseWrapStyleEnum(string wrap)
+        {
+            var keyword = GetStyleKeyword(wrap);
+
+            if (keyword.HasValue) return new StyleEnum<Wrap>(keyword.Value);
+
+            switch (wrap)
+            {
+                case "nowrap": return new StyleEnum<Wrap>(Wrap.NoWrap);
+                case "wrap": return new StyleEnum<Wrap>(Wrap.Wrap);
+                case "wrap-reverse": return new StyleEnum<Wrap>(Wrap.WrapReverse);
             }
 
             return default;
