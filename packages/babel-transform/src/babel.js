@@ -85,6 +85,13 @@ const types = {
     },
     isJSXEmptyExpression(node) {
         return node && node.type === 'JSXEmptyExpression';
+    },
+    nullLiteral() {
+        return {
+            type: 'Literal',
+            value: null,
+            raw: 'null'
+        };
     }
 }
 

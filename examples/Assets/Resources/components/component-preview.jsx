@@ -1,12 +1,18 @@
 import React from 'react';
 
+const ComponentWithHeader = ({ header, component }) => <>
+    {header}
+    {component}
+</>
+
 export default function ComponentPreview() {
     return (
         <scrollview style={{ backgroundColor: '#173e54' }}>
-            Box:
-            <box style={{ color: '#000000' }}>
-                Some content in the box
-            </box>
+            <ComponentWithHeader header="Box" component={
+                <box style={{ color: '#000000' }}>
+                    Some content in the box
+                </box>
+            }/>
 
             Button:
             <button text="Some button text" />

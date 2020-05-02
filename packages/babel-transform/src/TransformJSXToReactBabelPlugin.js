@@ -71,12 +71,12 @@ You can turn on the 'throwIfNamespace' flag to bypass this warning.`,
           'Fragment tags are only supported in React 16 and up.',
         );
       }
-      let callExpr;
-      if (file.opts.useCreateElement) {
-        callExpr = buildCreateElementFragmentCall(path, file);
-      } else {
-        callExpr = buildJSXFragmentCall(path, file);
-      }
+      let callExpr = buildCreateElementFragmentCall(path, file);
+      // if (file.opts.useCreateElement) {
+      //   callExpr = buildCreateElementFragmentCall(path, file);
+      // } else {
+      //   callExpr = buildJSXFragmentCall(path, file);
+      // }
 
       if (callExpr) {
         path.replaceWith(t.inherits(callExpr, path.node));

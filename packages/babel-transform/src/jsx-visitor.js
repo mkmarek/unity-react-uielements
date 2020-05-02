@@ -52,6 +52,16 @@ function sanitizeVisitor(visitor, findAncestor) {
 						} else {
 							ancestor.right = replacement;
 						}
+					} else if (ancestor.type === 'JSXExpressionContainer') {
+						ancestor.expression = replacement;
+					} else if (ancestor.type === 'JSXFragment') {
+						const index = ancestor.children.indexOf(node);
+
+						if (index < 0) {
+							throw new Error(`No argument found to replace in JSXFragment`)
+						}
+
+						ancestor.children[index] = replacement;
 					} else {
 						console.log(JSON.stringify(ancestor));
 						throw new Error(`Unknown ${ancestor.type} element in replaceWith`)
