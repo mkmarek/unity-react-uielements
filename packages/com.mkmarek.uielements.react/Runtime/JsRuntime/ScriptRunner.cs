@@ -10,7 +10,6 @@ namespace Assets.JsRuntime
 
         private JavaScriptRuntime runtime;
         private JavaScriptContext context;
-        private JavaScriptContext.Scope scope;
 
         private static JavaScriptSourceContext currentSourceContext = JavaScriptSourceContext.FromIntPtr(IntPtr.Zero);
 
@@ -18,7 +17,8 @@ namespace Assets.JsRuntime
         {
             this.runtime = JavaScriptRuntime.Create();
             this.context = this.runtime.CreateContext();
-            this.scope = new JavaScriptContext.Scope(context);
+
+            JavaScriptContext.Current = this.context;
 
             Globals.Set();
         }
@@ -32,7 +32,7 @@ namespace Assets.JsRuntime
 
         public void Dispose()
         {
-            scope.Dispose();
+            JavaScriptContext.Current = JavaScriptContext.Invalid;
             runtime.Dispose();
         }
     }

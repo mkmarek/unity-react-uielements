@@ -27,16 +27,19 @@ export default class Bridge {
         this.batchedMessages = [];
     }
 
-    onMessage(message: string) {
-        const payload: IBridgePayload = JSON.parse(message);
+    onMessage(message: any) {
+
+        console.log(JSON.stringify(message.count));
+
+        // const payload: IBridgePayload = JSON.parse(message);
         
-        for (let message of payload.messages) {
-            switch (message.operation) {
-                case "event-callback": this.invokeEventCallback(message.componentId, message.callbackName, message.data); break;
-                case "update-component-data-hook":  this.invokeComponentDataHook(message.hookId, message.data); break;
-                default: console.error(`Unknown operation ${message.operation}`);
-            }
-        }
+        // for (let message of payload.messages) {
+        //     switch (message.operation) {
+        //         case "event-callback": this.invokeEventCallback(message.componentId, message.callbackName, message.data); break;
+        //         case "update-component-data-hook":  this.invokeComponentDataHook(message.hookId, message.data); break;
+        //         default: console.error(`Unknown operation ${message.operation}`);
+        //     }
+        // }
     }
 
     sendBatched(message: any) {

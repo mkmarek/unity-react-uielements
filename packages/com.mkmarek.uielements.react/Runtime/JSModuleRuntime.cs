@@ -11,14 +11,14 @@ namespace UnityReactUIElements
     {
         private JavaScriptRuntime runtime;
         private JavaScriptContext context;
-        private JavaScriptContext.Scope scope;
         private ModuleLoader loader;
 
         public JsModuleRuntime()
         {
             this.runtime = JavaScriptRuntime.Create();
             this.context = runtime.CreateContext();
-            this.scope = new JavaScriptContext.Scope(context);
+
+            JavaScriptContext.Current = this.context;
 
             this.loader = new ModuleLoader();
 
@@ -81,7 +81,7 @@ namespace UnityReactUIElements
 
         public void Dispose()
         {
-            scope.Dispose();
+            JavaScriptContext.Current = JavaScriptContext.Invalid;
             runtime.Dispose();
         }
     }

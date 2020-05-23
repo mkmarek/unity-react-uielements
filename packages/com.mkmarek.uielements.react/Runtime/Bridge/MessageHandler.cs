@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using ChakraHost.Hosting;
+using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityReactUIElements.Bridge.Components;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -41,17 +43,28 @@ namespace UnityReactUIElements.Bridge
 
         public void SendMessage(NativeToJsBridgePayload payload)
         {
-            var bridgeFunction = Globals.GetNativeToJsBridgeFunction();
-            var message = JsonUtility.ToJson(payload);
-
-            //Debug.Log(message);
-
-            Native.JsCallFunction(bridgeFunction, new[]
+            unsafe
             {
-                JavaScriptValue.Null,
-                JavaScriptValue.FromString(message), 
+                var bridgeFunction = Globals.GetNativeToJsBridgeFunction();
 
-            }, 2, out var result);
+                var data = UnsafeUtility.Malloc(
+                    UnsafeUtility.SizeOf<NativeToJsBridgePayload>(),
+                    UnsafeUtility.AlignOf<NativeToJsBridgePayload>(),
+                    Allocator.TempJob);
+
+                UnsafeUtility.CopyStructureToPtr(ref payload, data);
+
+                Native.ThrowIfError(Native.JsCreateExternalObject((IntPtr)data, null, out var value));
+
+                Native.JsCallFunction(bridgeFunction, new[]
+                {
+                    JavaScriptValue.Null,
+                    value
+
+                }, 2, out var result);
+
+                UnsafeUtility.Free(data, Allocator.TempJob);
+            }
         }
 
         public void HandleMessage(string message)

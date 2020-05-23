@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,18 @@ namespace UnityReactUIElements.Bridge
             SetConsoleLogObject(globalObject);
             SetTimeoutFunctions(globalObject);
             SetBase64Functions(globalObject);
+
+            globalObject.SetProperty(JavaScriptPropertyId.FromString("getFactory"), JavaScriptValue.CreateFunction(Function), true);
+        }
+
+        private static JavaScriptValue Function(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        {
+            var name = arguments[1].ToString();
+            var factory = JSTypeFactories.GetFactory(name);
+
+            if (factory == null) return JavaScriptValue.Null;
+
+            return factory.CreateConstructor();
         }
 
         public static JavaScriptValue GetNativeToJsBridgeFunction()

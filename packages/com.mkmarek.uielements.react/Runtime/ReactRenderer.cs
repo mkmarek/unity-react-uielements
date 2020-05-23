@@ -120,7 +120,7 @@ namespace UnityReactUIElements
 
             while (true)
             {
-                while (nativeToJsMessages.Count > 0)
+                while (nativeToJsMessages.Count > 0 && messageBuffer.Count < 32)
                 {
                     var message = nativeToJsMessages.Dequeue();
                     messageBuffer.Add(message);

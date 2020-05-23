@@ -1,0 +1,24 @@
+{
+    "name": "Unity.ReactUIElements.JsStructBinding.CodeGen",
+    "references": [
+        "GUID:65dccbb1adbf67f48a7d54f097917e48",
+        "GUID:fd7f2ed1f052e3d45afdb78e9c72d55e",
+        "GUID:734d92eba21c94caba915361bd5ac177"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Mono.Cecil.dll",
+        "Mono.Cecil.Rocks.dll",
+        "Mono.Cecil.Pdb.dll",
+        "Unity.CompilationPipeline.Common.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -15,6 +15,8 @@ namespace UnityReactUIElements.Examples
         {
             var world = World.DefaultGameObjectInjectionWorld;
 
+            Debug.Log(typeof(CounterComponent).Assembly.Location);
+
             for (var i = 0; i < 1; i++)
             {
                 var counterEntity = world.EntityManager.CreateEntity();
@@ -22,7 +24,7 @@ namespace UnityReactUIElements.Examples
                 world.EntityManager.AddComponent<CounterComponent>(counterEntity);
                 world.EntityManager.SetComponentData(counterEntity, new CounterComponent()
                 {
-                    count = 0
+                    //count = 0
                 });
             }
 

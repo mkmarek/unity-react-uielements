@@ -1,25 +1,29 @@
 using System;
+using System.Linq;
+using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace UnityReactUIElements.Bridge
 {
     [Serializable]
-    public class NativeToJsBridgePayload
+    public struct NativeToJsBridgePayload
     {
-        public BridgeMessage[] messages;
+        public FixedList4096<BridgeMessage> messages;
+        public int count;
 
         [Serializable]
-        public class BridgeMessage
+        public struct BridgeMessage
         {
             // Base fields
-            public string operation;
+            public FixedString128 operation;
 
-            public string componentId;
+            public FixedString128 componentId;
 
-            public string callbackName;
+            public FixedString128 callbackName;
 
-            public string hookId;
+            public FixedString128 hookId;
 
-            public string data;
+            public FixedString128 data;
 
             public static BridgeMessage CreateEventCallbackMessage(string componentId, string callbackName, string data = null)
             {
@@ -45,9 +49,18 @@ namespace UnityReactUIElements.Bridge
 
         public static NativeToJsBridgePayload Create(params BridgeMessage[] messages)
         {
+            var fixedList = new FixedList4096<BridgeMessage>();
+            var size = UnsafeUtility.SizeOf<BridgeMessage>();
+
+            for (var i =0; i < messages.Length; i++)
+            {
+                fixedList.Add(messages[i]);
+            }
+
             return new NativeToJsBridgePayload()
             {
-                messages = messages
+                messages = fixedList,
+                count = messages.Length
             };
         }
     }
