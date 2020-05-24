@@ -13,9 +13,6 @@ namespace UnityReactUIElements
             var handle = GCHandle.Alloc(obj);
             var p = GCHandle.ToIntPtr(handle);
 
-#if REACT_UIELEMENTS_DEBUG
-            Debug.Log($"Pinning {obj}");
-#endif
             return JavaScriptValue.CreateExternalObject(p, Finalizer);
         }
 
@@ -33,9 +30,6 @@ namespace UnityReactUIElements
         private static void Finalizer(IntPtr data)
         {
             var handle = GCHandle.FromIntPtr(data);
-#if REACT_UIELEMENTS_DEBUG
-            Debug.Log($"Finalizing {handle.Target}");
-#endif
             handle.Free();
         }
     }

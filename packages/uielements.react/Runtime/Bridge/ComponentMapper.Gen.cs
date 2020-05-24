@@ -279,7 +279,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -290,7 +289,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -301,7 +299,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -312,7 +309,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -323,7 +319,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -334,7 +329,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -345,7 +339,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -356,7 +349,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -367,7 +359,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -378,7 +369,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -389,7 +379,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -400,7 +389,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -411,7 +399,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -422,7 +409,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -433,7 +419,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -444,7 +429,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -455,7 +439,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -466,7 +449,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -477,7 +459,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -488,7 +469,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -499,7 +479,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -510,7 +489,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -521,7 +499,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -532,7 +509,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -543,7 +519,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -554,7 +529,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -565,7 +539,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -576,7 +549,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -587,7 +559,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -598,7 +569,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -609,7 +579,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -620,7 +589,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -631,7 +599,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -642,7 +609,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -653,7 +619,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -664,7 +629,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -675,7 +639,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -686,7 +649,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -697,7 +659,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -708,7 +669,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -719,7 +679,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -730,7 +689,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -741,7 +699,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -752,7 +709,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -763,7 +719,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1406,7 +1361,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1417,7 +1371,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1428,7 +1381,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1439,7 +1391,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1450,7 +1401,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1461,7 +1411,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1472,7 +1421,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1483,7 +1431,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1494,7 +1441,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1505,7 +1451,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1516,7 +1461,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1527,7 +1471,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1538,7 +1481,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1549,7 +1491,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1560,7 +1501,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1571,7 +1511,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1582,7 +1521,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1593,7 +1531,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1604,7 +1541,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1615,7 +1551,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1626,7 +1561,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1637,7 +1571,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1648,7 +1581,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1659,7 +1591,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1670,7 +1601,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1681,7 +1611,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1692,7 +1621,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1703,7 +1631,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1714,7 +1641,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1725,7 +1651,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1736,7 +1661,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1747,7 +1671,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1758,7 +1681,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1769,7 +1691,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1780,7 +1701,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1791,7 +1711,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1802,7 +1721,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1813,7 +1731,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1824,7 +1741,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1835,7 +1751,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1846,7 +1761,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1857,7 +1771,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1868,7 +1781,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1879,7 +1791,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -1890,7 +1801,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2541,7 +2451,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2552,7 +2461,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2563,7 +2471,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2574,7 +2481,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2585,7 +2491,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2596,7 +2501,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2607,7 +2511,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2618,7 +2521,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2629,7 +2531,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2640,7 +2541,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2651,7 +2551,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2662,7 +2561,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2673,7 +2571,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2684,7 +2581,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2695,7 +2591,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2706,7 +2601,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2717,7 +2611,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2728,7 +2621,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2739,7 +2631,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2750,7 +2641,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2761,7 +2651,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2772,7 +2661,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2783,7 +2671,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2794,7 +2681,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2805,7 +2691,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2816,7 +2701,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2827,7 +2711,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2838,7 +2721,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2849,7 +2731,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2860,7 +2741,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2871,7 +2751,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2882,7 +2761,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2893,7 +2771,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2904,7 +2781,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2915,7 +2791,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2926,7 +2801,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2937,7 +2811,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2948,7 +2821,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2959,7 +2831,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2970,7 +2841,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2981,7 +2851,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -2992,7 +2861,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3003,7 +2871,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3014,7 +2881,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3025,7 +2891,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3708,7 +3573,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3719,7 +3583,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3730,7 +3593,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3741,7 +3603,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3752,7 +3613,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3763,7 +3623,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3774,7 +3633,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3785,7 +3643,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3796,7 +3653,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3807,7 +3663,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3818,7 +3673,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3829,7 +3683,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3840,7 +3693,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3851,7 +3703,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3862,7 +3713,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3873,7 +3723,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3884,7 +3733,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3895,7 +3743,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3906,7 +3753,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3917,7 +3763,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3928,7 +3773,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3939,7 +3783,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3950,7 +3793,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3961,7 +3803,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3972,7 +3813,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3983,7 +3823,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -3994,7 +3833,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4005,7 +3843,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4016,7 +3853,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4027,7 +3863,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4038,7 +3873,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4049,7 +3883,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4060,7 +3893,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4071,7 +3903,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4082,7 +3913,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4093,7 +3923,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4104,7 +3933,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4115,7 +3943,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4126,7 +3953,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4137,7 +3963,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4148,7 +3973,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4159,7 +3983,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4170,7 +3993,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4181,7 +4003,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4192,7 +4013,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4887,7 +4707,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4898,7 +4717,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4909,7 +4727,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4920,7 +4737,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4931,7 +4747,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4942,7 +4757,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4953,7 +4767,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4964,7 +4777,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4975,7 +4787,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4986,7 +4797,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -4997,7 +4807,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5008,7 +4817,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5019,7 +4827,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5030,7 +4837,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5041,7 +4847,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5052,7 +4857,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5063,7 +4867,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5074,7 +4877,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5085,7 +4887,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5096,7 +4897,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5107,7 +4907,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5118,7 +4917,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5129,7 +4927,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5140,7 +4937,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5151,7 +4947,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5162,7 +4957,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5173,7 +4967,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5184,7 +4977,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5195,7 +4987,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5206,7 +4997,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5217,7 +5007,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5228,7 +5017,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5239,7 +5027,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5250,7 +5037,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5261,7 +5047,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5272,7 +5057,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5283,7 +5067,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5294,7 +5077,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5305,7 +5087,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5316,7 +5097,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5327,7 +5107,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5338,7 +5117,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5349,7 +5127,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5360,7 +5137,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -5371,7 +5147,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6058,7 +5833,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6069,7 +5843,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6080,7 +5853,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6091,7 +5863,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6102,7 +5873,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6113,7 +5883,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6124,7 +5893,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6135,7 +5903,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6146,7 +5913,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6157,7 +5923,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6168,7 +5933,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6179,7 +5943,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6190,7 +5953,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6201,7 +5963,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6212,7 +5973,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6223,7 +5983,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6234,7 +5993,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6245,7 +6003,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6256,7 +6013,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6267,7 +6023,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6278,7 +6033,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6289,7 +6043,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6300,7 +6053,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6311,7 +6063,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6322,7 +6073,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6333,7 +6083,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6344,7 +6093,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6355,7 +6103,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6366,7 +6113,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6377,7 +6123,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6388,7 +6133,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6399,7 +6143,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6410,7 +6153,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6421,7 +6163,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6432,7 +6173,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6443,7 +6183,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6454,7 +6193,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6465,7 +6203,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6476,7 +6213,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6487,7 +6223,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6498,7 +6233,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6509,7 +6243,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6520,7 +6253,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6531,7 +6263,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -6542,7 +6273,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7203,7 +6933,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7214,7 +6943,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7225,7 +6953,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7236,7 +6963,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7247,7 +6973,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7258,7 +6983,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7269,7 +6993,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7280,7 +7003,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7291,7 +7013,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7302,7 +7023,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7313,7 +7033,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7324,7 +7043,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7335,7 +7053,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7346,7 +7063,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7357,7 +7073,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7368,7 +7083,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7379,7 +7093,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7390,7 +7103,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7401,7 +7113,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7412,7 +7123,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7423,7 +7133,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7434,7 +7143,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7445,7 +7153,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7456,7 +7163,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7467,7 +7173,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7478,7 +7183,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7489,7 +7193,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7500,7 +7203,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7511,7 +7213,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7522,7 +7223,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7533,7 +7233,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7544,7 +7243,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7555,7 +7253,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7566,7 +7263,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7577,7 +7273,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7588,7 +7283,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7599,7 +7293,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7610,7 +7303,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7621,7 +7313,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7632,7 +7323,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7643,7 +7333,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7654,7 +7343,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7665,7 +7353,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7676,7 +7363,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -7687,7 +7373,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8374,7 +8059,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8385,7 +8069,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8396,7 +8079,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8407,7 +8089,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8418,7 +8099,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8429,7 +8109,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8440,7 +8119,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8451,7 +8129,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8462,7 +8139,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8473,7 +8149,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8484,7 +8159,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8495,7 +8169,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8506,7 +8179,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8517,7 +8189,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8528,7 +8199,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8539,7 +8209,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8550,7 +8219,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8561,7 +8229,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8572,7 +8239,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8583,7 +8249,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8594,7 +8259,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8605,7 +8269,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8616,7 +8279,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8627,7 +8289,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8638,7 +8299,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8649,7 +8309,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8660,7 +8319,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8671,7 +8329,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8682,7 +8339,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8693,7 +8349,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8704,7 +8359,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8715,7 +8369,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8726,7 +8379,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8737,7 +8389,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8748,7 +8399,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8759,7 +8409,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8770,7 +8419,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8781,7 +8429,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8792,7 +8439,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8803,7 +8449,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8814,7 +8459,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8825,7 +8469,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8836,7 +8479,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8847,7 +8489,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -8858,7 +8499,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9581,7 +9221,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9592,7 +9231,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9603,7 +9241,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9614,7 +9251,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9625,7 +9261,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9636,7 +9271,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9647,7 +9281,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9658,7 +9291,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9669,7 +9301,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9680,7 +9311,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9691,7 +9321,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9702,7 +9331,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9713,7 +9341,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9724,7 +9351,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9735,7 +9361,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9746,7 +9371,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9757,7 +9381,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9768,7 +9391,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9779,7 +9401,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9790,7 +9411,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9801,7 +9421,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9812,7 +9431,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9823,7 +9441,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9834,7 +9451,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9845,7 +9461,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9856,7 +9471,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9867,7 +9481,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9878,7 +9491,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9889,7 +9501,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9900,7 +9511,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9911,7 +9521,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9922,7 +9531,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9933,7 +9541,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9944,7 +9551,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9955,7 +9561,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9966,7 +9571,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9977,7 +9581,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9988,7 +9591,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -9999,7 +9601,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10010,7 +9611,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10021,7 +9621,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10032,7 +9631,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10043,7 +9641,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10054,7 +9651,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10065,7 +9661,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10774,7 +10369,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10785,7 +10379,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10796,7 +10389,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10807,7 +10399,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10818,7 +10409,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10829,7 +10419,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10840,7 +10429,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10851,7 +10439,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10862,7 +10449,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10873,7 +10459,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10884,7 +10469,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10895,7 +10479,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10906,7 +10489,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10917,7 +10499,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10928,7 +10509,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10939,7 +10519,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10950,7 +10529,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10961,7 +10539,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10972,7 +10549,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10983,7 +10559,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -10994,7 +10569,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11005,7 +10579,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11016,7 +10589,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11027,7 +10599,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11038,7 +10609,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11049,7 +10619,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11060,7 +10629,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11071,7 +10639,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11082,7 +10649,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11093,7 +10659,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11104,7 +10669,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11115,7 +10679,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11126,7 +10689,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11137,7 +10699,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11148,7 +10709,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11159,7 +10719,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11170,7 +10729,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11181,7 +10739,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11192,7 +10749,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11203,7 +10759,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11214,7 +10769,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11225,7 +10779,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11236,7 +10789,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11247,7 +10799,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11258,7 +10809,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11927,7 +11477,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11938,7 +11487,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11949,7 +11497,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11960,7 +11507,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11971,7 +11517,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11982,7 +11527,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -11993,7 +11537,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12004,7 +11547,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12015,7 +11557,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12026,7 +11567,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12037,7 +11577,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12048,7 +11587,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12059,7 +11597,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12070,7 +11607,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12081,7 +11617,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12092,7 +11627,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12103,7 +11637,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12114,7 +11647,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12125,7 +11657,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12136,7 +11667,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12147,7 +11677,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12158,7 +11687,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12169,7 +11697,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12180,7 +11707,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12191,7 +11717,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12202,7 +11727,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12213,7 +11737,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12224,7 +11747,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12235,7 +11757,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12246,7 +11767,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12257,7 +11777,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12268,7 +11787,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12279,7 +11797,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12290,7 +11807,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12301,7 +11817,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12312,7 +11827,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12323,7 +11837,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12334,7 +11847,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12345,7 +11857,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12356,7 +11867,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12367,7 +11877,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12378,7 +11887,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12389,7 +11897,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12400,7 +11907,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -12411,7 +11917,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13086,7 +12591,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13097,7 +12601,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13108,7 +12611,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13119,7 +12621,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13130,7 +12631,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13141,7 +12641,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13152,7 +12651,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13163,7 +12661,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13174,7 +12671,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13185,7 +12681,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13196,7 +12691,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13207,7 +12701,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13218,7 +12711,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13229,7 +12721,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13240,7 +12731,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13251,7 +12741,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13262,7 +12751,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13273,7 +12761,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13284,7 +12771,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13295,7 +12781,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13306,7 +12791,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13317,7 +12801,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13328,7 +12811,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13339,7 +12821,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13350,7 +12831,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13361,7 +12841,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13372,7 +12851,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13383,7 +12861,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13394,7 +12871,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13405,7 +12881,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13416,7 +12891,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13427,7 +12901,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13438,7 +12911,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13449,7 +12921,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13460,7 +12931,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13471,7 +12941,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13482,7 +12951,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13493,7 +12961,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13504,7 +12971,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13515,7 +12981,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13526,7 +12991,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13537,7 +13001,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13548,7 +13011,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13559,7 +13021,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -13570,7 +13031,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14259,7 +13719,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14270,7 +13729,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14281,7 +13739,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14292,7 +13749,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14303,7 +13759,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14314,7 +13769,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14325,7 +13779,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14336,7 +13789,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14347,7 +13799,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14358,7 +13809,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14369,7 +13819,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14380,7 +13829,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14391,7 +13839,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14402,7 +13849,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14413,7 +13859,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14424,7 +13869,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14435,7 +13879,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14446,7 +13889,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14457,7 +13899,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14468,7 +13909,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14479,7 +13919,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14490,7 +13929,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14501,7 +13939,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14512,7 +13949,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14523,7 +13959,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14534,7 +13969,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14545,7 +13979,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14556,7 +13989,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14567,7 +13999,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14578,7 +14009,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14589,7 +14019,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14600,7 +14029,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14611,7 +14039,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14622,7 +14049,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14633,7 +14059,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14644,7 +14069,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14655,7 +14079,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14666,7 +14089,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14677,7 +14099,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14688,7 +14109,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14699,7 +14119,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14710,7 +14129,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14721,7 +14139,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14732,7 +14149,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -14743,7 +14159,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15458,7 +14873,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15469,7 +14883,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15480,7 +14893,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15491,7 +14903,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15502,7 +14913,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15513,7 +14923,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15524,7 +14933,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15535,7 +14943,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15546,7 +14953,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15557,7 +14963,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15568,7 +14973,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15579,7 +14983,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15590,7 +14993,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15601,7 +15003,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15612,7 +15013,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15623,7 +15023,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15634,7 +15033,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15645,7 +15043,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15656,7 +15053,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15667,7 +15063,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15678,7 +15073,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15689,7 +15083,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15700,7 +15093,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15711,7 +15103,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15722,7 +15113,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15733,7 +15123,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15744,7 +15133,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15755,7 +15143,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15766,7 +15153,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15777,7 +15163,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15788,7 +15173,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15799,7 +15183,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15810,7 +15193,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15821,7 +15203,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15832,7 +15213,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15843,7 +15223,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15854,7 +15233,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15865,7 +15243,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15876,7 +15253,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15887,7 +15263,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15898,7 +15273,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15909,7 +15283,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15920,7 +15293,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15931,7 +15303,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -15942,7 +15313,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16681,7 +16051,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16692,7 +16061,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16703,7 +16071,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16714,7 +16081,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16725,7 +16091,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16736,7 +16101,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16747,7 +16111,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16758,7 +16121,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16769,7 +16131,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16780,7 +16141,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16791,7 +16151,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16802,7 +16161,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16813,7 +16171,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16824,7 +16181,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16835,7 +16191,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16846,7 +16201,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16857,7 +16211,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16868,7 +16221,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16879,7 +16231,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16890,7 +16241,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16901,7 +16251,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16912,7 +16261,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16923,7 +16271,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16934,7 +16281,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16945,7 +16291,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16956,7 +16301,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16967,7 +16311,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16978,7 +16321,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -16989,7 +16331,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17000,7 +16341,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17011,7 +16351,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17022,7 +16361,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17033,7 +16371,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17044,7 +16381,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17055,7 +16391,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17066,7 +16401,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17077,7 +16411,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17088,7 +16421,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17099,7 +16431,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17110,7 +16441,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17121,7 +16451,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17132,7 +16461,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17143,7 +16471,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17154,7 +16481,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17165,7 +16491,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17868,7 +17193,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17879,7 +17203,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17890,7 +17213,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17901,7 +17223,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17912,7 +17233,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17923,7 +17243,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17934,7 +17253,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17945,7 +17263,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17956,7 +17273,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17967,7 +17283,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17978,7 +17293,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -17989,7 +17303,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18000,7 +17313,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18011,7 +17323,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18022,7 +17333,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18033,7 +17343,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18044,7 +17353,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18055,7 +17363,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18066,7 +17373,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18077,7 +17383,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18088,7 +17393,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18099,7 +17403,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18110,7 +17413,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18121,7 +17423,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18132,7 +17433,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18143,7 +17443,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18154,7 +17453,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18165,7 +17463,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18176,7 +17473,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18187,7 +17483,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18198,7 +17493,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18209,7 +17503,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18220,7 +17513,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18231,7 +17523,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18242,7 +17533,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18253,7 +17543,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18264,7 +17553,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18275,7 +17563,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18286,7 +17573,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18297,7 +17583,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18308,7 +17593,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18319,7 +17603,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18330,7 +17613,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18341,7 +17623,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -18352,7 +17633,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19013,7 +18293,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19024,7 +18303,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19035,7 +18313,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19046,7 +18323,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19057,7 +18333,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19068,7 +18343,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19079,7 +18353,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19090,7 +18363,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19101,7 +18373,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19112,7 +18383,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19123,7 +18393,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19134,7 +18403,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19145,7 +18413,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19156,7 +18423,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19167,7 +18433,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19178,7 +18443,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19189,7 +18453,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19200,7 +18463,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19211,7 +18473,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19222,7 +18483,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19233,7 +18493,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19244,7 +18503,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19255,7 +18513,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19266,7 +18523,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19277,7 +18533,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19288,7 +18543,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19299,7 +18553,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19310,7 +18563,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19321,7 +18573,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19332,7 +18583,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19343,7 +18593,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19354,7 +18603,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19365,7 +18613,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19376,7 +18623,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19387,7 +18633,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19398,7 +18643,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19409,7 +18653,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19420,7 +18663,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19431,7 +18673,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19442,7 +18683,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19453,7 +18693,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19464,7 +18703,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19475,7 +18713,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19486,7 +18723,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -19497,7 +18733,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20148,7 +19383,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20159,7 +19393,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20170,7 +19403,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20181,7 +19413,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20192,7 +19423,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20203,7 +19433,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20214,7 +19443,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20225,7 +19453,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20236,7 +19463,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20247,7 +19473,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20258,7 +19483,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20269,7 +19493,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20280,7 +19503,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20291,7 +19513,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20302,7 +19523,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20313,7 +19533,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20324,7 +19543,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20335,7 +19553,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20346,7 +19563,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20357,7 +19573,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20368,7 +19583,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20379,7 +19593,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20390,7 +19603,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20401,7 +19613,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20412,7 +19623,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20423,7 +19633,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20434,7 +19643,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20445,7 +19653,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20456,7 +19663,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20467,7 +19673,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20478,7 +19683,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20489,7 +19693,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20500,7 +19703,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20511,7 +19713,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20522,7 +19723,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20533,7 +19733,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20544,7 +19743,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20555,7 +19753,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20566,7 +19763,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20577,7 +19773,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20588,7 +19783,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20599,7 +19793,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20610,7 +19803,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20621,7 +19813,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -20632,7 +19823,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21331,7 +20521,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21342,7 +20531,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21353,7 +20541,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21364,7 +20551,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21375,7 +20561,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21386,7 +20571,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21397,7 +20581,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21408,7 +20591,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21419,7 +20601,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21430,7 +20611,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21441,7 +20621,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21452,7 +20631,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21463,7 +20641,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21474,7 +20651,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21485,7 +20661,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21496,7 +20671,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21507,7 +20681,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21518,7 +20691,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21529,7 +20701,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21540,7 +20711,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21551,7 +20721,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21562,7 +20731,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21573,7 +20741,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21584,7 +20751,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21595,7 +20761,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21606,7 +20771,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21617,7 +20781,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21628,7 +20791,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21639,7 +20801,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21650,7 +20811,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21661,7 +20821,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21672,7 +20831,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21683,7 +20841,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21694,7 +20851,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21705,7 +20861,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21716,7 +20871,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21727,7 +20881,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21738,7 +20891,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21749,7 +20901,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21760,7 +20911,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21771,7 +20921,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21782,7 +20931,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21793,7 +20941,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21804,7 +20951,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -21815,7 +20961,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22568,7 +21713,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureOutEvent = (PointerCaptureOutEvent evt) => {
-                        Debug.Log("PointerCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22579,7 +21723,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCaptureEvent = (PointerCaptureEvent evt) => {
-                        Debug.Log("PointerCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22590,7 +21733,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureOutEvent = (MouseCaptureOutEvent evt) => {
-                        Debug.Log("MouseCaptureOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22601,7 +21743,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseCaptureEvent = (MouseCaptureEvent evt) => {
-                        Debug.Log("MouseCaptureEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22612,7 +21753,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onValidateCommandEvent = (ValidateCommandEvent evt) => {
-                        Debug.Log("ValidateCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22623,7 +21763,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onExecuteCommandEvent = (ExecuteCommandEvent evt) => {
-                        Debug.Log("ExecuteCommandEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22634,7 +21773,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragExitedEvent = (DragExitedEvent evt) => {
-                        Debug.Log("DragExitedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22645,7 +21783,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragEnterEvent = (DragEnterEvent evt) => {
-                        Debug.Log("DragEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22656,7 +21793,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragLeaveEvent = (DragLeaveEvent evt) => {
-                        Debug.Log("DragLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22667,7 +21803,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragUpdatedEvent = (DragUpdatedEvent evt) => {
-                        Debug.Log("DragUpdatedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22678,7 +21813,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDragPerformEvent = (DragPerformEvent evt) => {
-                        Debug.Log("DragPerformEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22689,7 +21823,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusOutEvent = (FocusOutEvent evt) => {
-                        Debug.Log("FocusOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22700,7 +21833,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onBlurEvent = (BlurEvent evt) => {
-                        Debug.Log("BlurEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22711,7 +21843,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusInEvent = (FocusInEvent evt) => {
-                        Debug.Log("FocusInEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22722,7 +21853,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onFocusEvent = (FocusEvent evt) => {
-                        Debug.Log("FocusEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22733,7 +21863,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onInputEvent = (InputEvent evt) => {
-                        Debug.Log("InputEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22744,7 +21873,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyDownEvent = (KeyDownEvent evt) => {
-                        Debug.Log("KeyDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22755,7 +21883,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onKeyUpEvent = (KeyUpEvent evt) => {
-                        Debug.Log("KeyUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22766,7 +21893,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onGeometryChangedEvent = (GeometryChangedEvent evt) => {
-                        Debug.Log("GeometryChangedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22777,7 +21903,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseDownEvent = (MouseDownEvent evt) => {
-                        Debug.Log("MouseDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22788,7 +21913,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseUpEvent = (MouseUpEvent evt) => {
-                        Debug.Log("MouseUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22799,7 +21923,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseMoveEvent = (MouseMoveEvent evt) => {
-                        Debug.Log("MouseMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22810,7 +21933,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextClickEvent = (ContextClickEvent evt) => {
-                        Debug.Log("ContextClickEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22821,7 +21943,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onWheelEvent = (WheelEvent evt) => {
-                        Debug.Log("WheelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22832,7 +21953,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterEvent = (MouseEnterEvent evt) => {
-                        Debug.Log("MouseEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22843,7 +21963,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveEvent = (MouseLeaveEvent evt) => {
-                        Debug.Log("MouseLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22854,7 +21973,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseEnterWindowEvent = (MouseEnterWindowEvent evt) => {
-                        Debug.Log("MouseEnterWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22865,7 +21983,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseLeaveWindowEvent = (MouseLeaveWindowEvent evt) => {
-                        Debug.Log("MouseLeaveWindowEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22876,7 +21993,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOverEvent = (MouseOverEvent evt) => {
-                        Debug.Log("MouseOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22887,7 +22003,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onMouseOutEvent = (MouseOutEvent evt) => {
-                        Debug.Log("MouseOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22898,7 +22013,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onContextualMenuPopulateEvent = (ContextualMenuPopulateEvent evt) => {
-                        Debug.Log("ContextualMenuPopulateEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22909,7 +22023,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onAttachToPanelEvent = (AttachToPanelEvent evt) => {
-                        Debug.Log("AttachToPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22920,7 +22033,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onDetachFromPanelEvent = (DetachFromPanelEvent evt) => {
-                        Debug.Log("DetachFromPanelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22931,7 +22043,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerDownEvent = (PointerDownEvent evt) => {
-                        Debug.Log("PointerDownEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22942,7 +22053,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerMoveEvent = (PointerMoveEvent evt) => {
-                        Debug.Log("PointerMoveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22953,7 +22063,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerStationaryEvent = (PointerStationaryEvent evt) => {
-                        Debug.Log("PointerStationaryEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22964,7 +22073,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerUpEvent = (PointerUpEvent evt) => {
-                        Debug.Log("PointerUpEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22975,7 +22083,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerCancelEvent = (PointerCancelEvent evt) => {
-                        Debug.Log("PointerCancelEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22986,7 +22093,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerEnterEvent = (PointerEnterEvent evt) => {
-                        Debug.Log("PointerEnterEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -22997,7 +22103,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerLeaveEvent = (PointerLeaveEvent evt) => {
-                        Debug.Log("PointerLeaveEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -23008,7 +22113,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOverEvent = (PointerOverEvent evt) => {
-                        Debug.Log("PointerOverEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -23019,7 +22123,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onPointerOutEvent = (PointerOutEvent evt) => {
-                        Debug.Log("PointerOutEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -23030,7 +22133,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onCustomStyleResolvedEvent = (CustomStyleResolvedEvent evt) => {
-                        Debug.Log("CustomStyleResolvedEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -23041,7 +22143,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onTooltipEvent = (TooltipEvent evt) => {
-                        Debug.Log("TooltipEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
@@ -23052,7 +22153,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.onIMGUIEvent = (IMGUIEvent evt) => {
-                        Debug.Log("IMGUIEvent");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }

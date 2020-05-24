@@ -255,7 +255,6 @@ namespace UnityReactUIElements.Bridge
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
                     result.on<#=eventType.Name#> = (<#=CSharpName(eventType, false)#> evt) => {
-                        Debug.Log("<#=eventType.Name#>");
                         function.CallFunction(JavaScriptValue.Undefined);
                     };
                 }
