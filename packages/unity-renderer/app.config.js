@@ -32,9 +32,8 @@ module.exports = {
         preferBuiltins: false
       }),
       json(),  
-      // minify({
-      //   comments: false,
-
-      // }),
+      minify({
+        comments: false,
+      }),
     ]
   };
