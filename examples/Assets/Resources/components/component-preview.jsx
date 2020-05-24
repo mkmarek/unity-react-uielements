@@ -7,7 +7,7 @@ const ComponentWithHeader = ({ header, component }) => <>
 
 export default function ComponentPreview() {
     return (
-        <scrollview style={{ backgroundColor: '#173e54' }}>
+        <scrollView style={{ backgroundColor: '#173e54' }}>
             <ComponentWithHeader header="Box" component={
                 <box style={{ color: '#000000' }}>
                     Some content in the box
@@ -27,16 +27,16 @@ export default function ComponentPreview() {
             <label />
 
             ListView:
-            <listview />
+            <listView />
 
             MinMaxSlider:
-            <minmaxslider />
+            <minMaxSlider />
 
             PopupWindow:
-            <popupwindow />
+            <popupWindow />
 
             Repeat button:
-            <repeatbutton />
+            <repeatButton />
 
             Scroller:
             <scroller />
@@ -45,16 +45,16 @@ export default function ComponentPreview() {
             <slider />
 
             SliderInt:
-            <sliderint />
+            <sliderInt />
 
             TemplateContainer:
-            <templatecontainer />
+            <templateContainer />
 
             Textfield:
-            <textfield />
+            <textField />
 
             Toggle:
             <toggle />
-        </scrollview>
+        </scrollView>
     )
 }

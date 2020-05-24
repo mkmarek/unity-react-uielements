@@ -8,36 +8,29 @@ namespace UnityReactUIElements.Bridge
     {
         public static VisualElement GetPublicInstance(VisualElement instance)
         {
-            Debug.Log("GetPublicInstance");
             return instance;
         }
 
         public static HostContext GetRootHostContext(VisualElement rootContainer)
         {
-            Debug.Log("GetRootHostContext");
             return new HostContext();
         }
 
         public static HostContext GetChildHostContext(HostContext parentHostContext, string type, VisualElement rootContainer)
         {
-            Debug.Log("GetChildHostContext");
             return parentHostContext;
         }
 
         public static void PrepareForCommit(VisualElement container)
         {
-            Debug.Log($"PrepareForCommit");
         }
 
         public static void ResetAfterCommit(VisualElement container)
         {
-            Debug.Log($"ResetAfterCommit");
         }
 
         public static VisualElement CreateInstance(string type, IComponentProps props, VisualElement rootContainer)
         {
-            Debug.Log($"CreateInstance {type}");
-
             var component = ComponentMapper.CreateComponent(type);
             ComponentMapper.ApplyProps(type, component, props);
 
@@ -46,7 +39,6 @@ namespace UnityReactUIElements.Bridge
 
         public static void AppendInitialChild(VisualElement parent, VisualElement child)
         {
-            Debug.Log($"AppendInitialChild");
             parent.Add(child);
         }
 
@@ -57,7 +49,6 @@ namespace UnityReactUIElements.Bridge
             VisualElement rootContainer,
             HostContext hostContext)
         {
-            Debug.Log($"FinalizeInitialChildren");
             return true;
         }
 
@@ -69,25 +60,21 @@ namespace UnityReactUIElements.Bridge
             VisualElement rootContainer,
             HostContext hostContext)
         {
-            Debug.Log($"PrepareUpdate");
             return ComponentMapper.MakePropsDiff(type, oldProps, newProps);
         }
 
         public static bool ShouldSetTextContent(string type, IComponentProps props)
         {
-            Debug.Log($"ShouldSetTextContent");
             return type == "text";
         }
 
         public static bool ShouldDeprioritizeSubtree(string type, IComponentProps props)
         {
-            Debug.Log($"ShouldDeprioritizeSubtree");
             return false;
         }
 
         public static VisualElement CreateTextInstance(string text, VisualElement rootContainer, HostContext hostContext)
         {
-            Debug.Log($"CreateTextInstance");
             return new TextElement()
             {
                 text = text
@@ -96,13 +83,11 @@ namespace UnityReactUIElements.Bridge
 
         public static void AppendChild(VisualElement parent, VisualElement child)
         {
-            Debug.Log($"AppendChild");
             parent.Add(child);
         }
 
         public static void AppendChildToContainer(VisualElement container, VisualElement child)
         {
-            Debug.Log($"AppendChildToContainer");
             container.Add(child);
         }
     }

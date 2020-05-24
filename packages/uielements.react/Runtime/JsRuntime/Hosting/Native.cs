@@ -118,7 +118,9 @@
             }
         }
 
-#if UNITY_64
+#if UNITY_STANDALONE
+        const string DllName = "ChakraCore.dll";
+#elif UNITY_64
         const string DllName = "Packages/com.mkmarek.uielements.react/Runtime/lib/x64_release/ChakraCore.dll";
 #else
         const string DllName = "Packages/com.mkmarek.uielements.react/Runtime/lib/x86_release/ChakraCore.dll";

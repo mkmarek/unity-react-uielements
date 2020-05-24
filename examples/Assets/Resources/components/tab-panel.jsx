@@ -11,7 +11,7 @@ export default function TabPanel({ style, children }) {
             {children.map((e, i) =>
                 <Button
                     key={i}
-                    onMouseUpEvent={() => { setTabIndex(i); console.log('fdsfdsfsd'); }}
+                    onMouseUpEvent={() => setTabIndex(i)}
                     innerStyle={{ backgroundColor: i === tabIndex ? '#003f6b' : '#133b50' }}
                     style={{ width: '128px', height: '100%' }}>
                     {e.props.name}

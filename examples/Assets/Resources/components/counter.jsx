@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from './button';
-import { useQuery } from 'unity-renderer';
 
 const margin = (margin) => ({
     marginTop: margin,
@@ -27,22 +26,22 @@ const countStyle = Object.assign(margin('5px'), {
 });
 
 export default function Counter() {
-    const [initializing, counterComponents, setCounterComponent] = useQuery('Counter');
-
-    if (initializing) return <visualElement />;
-
-    const count = counterComponents[0].count;
+    const [count, setCount] = useState(0);
 
     return (
-        <visualElement style={Object.assign(margin('auto'), { width: "100%", height: "100%", alignItems: "center" })}>
+        <visualElement style={{
+            width: "100%",
+            height: "100%",
+            alignItems: 'Center',
+            justifyContent: 'Center'}}>
             <visualElement style={countStyle}>{count}</visualElement>
-            <visualElement style={{ flexDirection: 'row' }}>
+            <visualElement style={{ flexDirection: 'Row' }}>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onMouseUpEvent={() => setCounterComponent(0, { count: count + 1 })}>Increment</Button>
+                    onMouseUpEvent={() => setCount(count + 1)}>Increment</Button>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onMouseUpEvent={() => setCounterComponent(0, {count: count - 1 })}>Decrement</Button>
+                    onMouseUpEvent={() => setCount(count - 1)}>Decrement</Button>
             </visualElement>
         </visualElement>
     )
