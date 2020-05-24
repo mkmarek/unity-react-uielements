@@ -2,10 +2,13 @@
 using UnityEngine;
 using UnityReactUIElements;
 
-public class V2Test : PanelRenderer
+public class V2Test : MonoBehaviour
 {
     [SerializeField]
     private JSFileObject _root;
+
+    [SerializeField]
+    private PanelRenderer renderer;
 
     private JsModuleRuntime runtime;
 
@@ -14,7 +17,7 @@ public class V2Test : PanelRenderer
     {
         this.runtime = new JsModuleRuntime();
 
-        runtime.RunModule(_root, this);
+        runtime.RunModule(_root, renderer);
     }
 
     private void OnDestroy()

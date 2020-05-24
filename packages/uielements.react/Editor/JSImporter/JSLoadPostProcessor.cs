@@ -12,10 +12,11 @@ namespace UnityReactUIElements.Editor
             {
                 Debug.Log("Reloading JS files");
 
-                if (ReactRenderer.Current != null)
-                {
-                    ReactRenderer.Current.RunModule(importedAssets);
-                }
+                // TODO: Reload stuff
+                //if (ReactRenderer.Current != null)
+                //{
+                //    ReactRenderer.Current.RunModule(importedAssets);
+                //}
             }
         }
     }

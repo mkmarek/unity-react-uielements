@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { render } from 'unity-renderer';
 import TabPanel from './components/tab-panel';
-import Counter from './components/counter';
-import ComponentPreview from './components/component-preview';
-import Todo from './components/Todo';
+// import Counter from './components/counter';
+// import ComponentPreview from './components/component-preview';
+// import Todo from './components/Todo';
 import Popup from './components/popup';
 
 const margin = (margin) => ({
@@ -25,39 +25,39 @@ const tabPanelStyle = Object.assign(
 
 const Tab1Style = Object.assign(margin('auto'), {
   alignSelf: 'center',
-  unityTextAlign: 'middle-center'
+  unityTextAlign: 'MiddleCenter'
 });
 
 function App() {
   const [popupOpened, setPopupOpened] = useState(false);
 
   return (
-    <element pickingMode="ignore" style={rootStyle}>
+    <visualElement pickingMode="ignore" style={rootStyle}>
       <TabPanel style={tabPanelStyle}>
         <TabPanel.Panel name="Welcome">
-          <element style={Tab1Style}>
+          <visualElement style={Tab1Style}>
             A demo of React used inside Unity
-            <element style={{ flexDirection: 'row', marginTop: 25 }}>
-              <element style={{ width: 256, height: 86, marginRight: 10, backgroundImage: 'images/react-logo' }} />
-              <element style={{  width: 256, height: 93, backgroundImage: 'images/unity-logo' }} />
-            </element>
-          </element>
+            <visualElement style={{ flexDirection: 'row', marginTop: 25 }}>
+              <visualElement style={{ width: 256, height: 86, marginRight: 10, backgroundImage: 'images/react-logo' }} />
+              <visualElement style={{  width: 256, height: 93, backgroundImage: 'images/unity-logo' }} />
+            </visualElement>
+          </visualElement>
         </TabPanel.Panel>
         <TabPanel.Panel name="Counter">
-          <Counter />
+          {/* <Counter /> */}
         </TabPanel.Panel>
         <TabPanel.Panel name="Component test">
-          <ComponentPreview />
+          {/* <ComponentPreview /> */}
         </TabPanel.Panel>
         <TabPanel.Panel name="ECS TODO example">
-          <Todo />
+          {/* <Todo /> */}
         </TabPanel.Panel>
         <TabPanel.Panel name="Popup example">
-          <button onClick={() => setPopupOpened(true)} text="Open popup" />
+          <button onMouseUpEvent={() => setPopupOpened(true)} text="Open popup" />
         </TabPanel.Panel>
       </TabPanel>
       {popupOpened && <Popup onClose={() => setPopupOpened(false)} />}
-    </element>
+    </visualElement>
   );
 }
 

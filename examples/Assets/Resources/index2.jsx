@@ -19,7 +19,7 @@ const buttonStyle = {
   paddingLeft: 46
 };
 
-function MenuButton({ text, onClick }) {
+function MenuButton({ text, onMouseUpEvent }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const style = Object.assign(
@@ -36,7 +36,7 @@ function MenuButton({ text, onClick }) {
   return (
     <button
       text={text}
-      onClick={onClick}
+      onMouseUpEvent={onMouseUpEvent}
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
       style={style}
@@ -59,7 +59,7 @@ function MainMenu({ onSelectOption }) {
       </element>
       <MenuButton text="New game" />
       <MenuButton text="Load game" />
-      <MenuButton onClick={() => onSelectOption("options")} text="Options" />
+      <MenuButton onMouseUpEvent={() => onSelectOption("options")} text="Options" />
       <MenuButton text="Quit" />
     </element>
   );
@@ -76,7 +76,7 @@ function Options({ onSelectOption }) {
       }}
     >
       <element style={{ fontSize: 32, marginBottom: "20px" }}>TODO</element>
-      <MenuButton onClick={() => onSelectOption("main")} text="Back" />
+      <MenuButton onMouseUpEvent={() => onSelectOption("main")} text="Back" />
     </element>
   );
 }

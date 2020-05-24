@@ -85,7 +85,8 @@
                                 throw new JavaScriptFatalException(innerError);
                             }
 
-                            throw new JavaScriptScriptException(error, errorObject, "Script threw an exception.");
+                            errorObject.PrintJavaScriptError();
+                            throw new JavaScriptScriptException(error, errorObject, $"Script threw an exception.\n");
                         }
 
                     case JavaScriptErrorCode.ScriptCompile:
@@ -98,6 +99,7 @@
                                 throw new JavaScriptFatalException(innerError);
                             }
 
+                            errorObject.PrintJavaScriptError();
                             throw new JavaScriptScriptException(error, errorObject, "Compile error.");
                         }
 

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -36,7 +37,11 @@ namespace UnityReactUIElements.Bridge
         public static VisualElement CreateInstance(string type, IComponentProps props, VisualElement rootContainer)
         {
             Debug.Log($"CreateInstance {type}");
-            return new VisualElement();
+
+            var component = ComponentMapper.CreateComponent(type);
+            ComponentMapper.ApplyProps(type, component, props);
+
+            return component;
         }
 
         public static void AppendInitialChild(VisualElement parent, VisualElement child)
@@ -65,7 +70,7 @@ namespace UnityReactUIElements.Bridge
             HostContext hostContext)
         {
             Debug.Log($"PrepareUpdate");
-            return null;
+            return ComponentMapper.MakePropsDiff(type, oldProps, newProps);
         }
 
         public static bool ShouldSetTextContent(string type, IComponentProps props)

@@ -6,8 +6,8 @@ function TodoItem({ value, onRemove }) {
 
     return (
         <Button innerStyle={{ flexDirection: 'row', justifyContent: 'space-between' }} style={{ height: 70 }}>
-            <element style={{ marginLeft: 10 }}>{value}</element>
-            <Button onClick={onRemove} style={{ width: 70, height: 50, marginRight: 5 }}>Delete</Button>
+            <visualElement style={{ marginLeft: 10 }}>{value}</visualElement>
+            <Button onMouseUpEvent={onRemove} style={{ width: 70, height: 50, marginRight: 5 }}>Delete</Button>
         </Button>
     )
 }
@@ -47,14 +47,14 @@ export default function Todo() {
         : todoItems.map(e => mapArrayToString(e.data));
 
     return (
-        <element style={{ height: '100%' }}>
+        <visualElement style={{ height: '100%' }}>
             <scrollview style={{ height: '100%' }}>
                 {items.map((e, i) => <TodoItem key={i} value={e} onRemove={() => removeItem(i)} />)}
             </scrollview>
             <textfield text={value} onChange={e => setValue(e.value)} />
-            <Button style={{ height: 70, minHeight: 70, alignSelf: 'flex-end' }} onClick={addItem}>
+            <Button style={{ height: 70, minHeight: 70, alignSelf: 'flex-end' }} onMouseUpEvent={addItem}>
                 Add TODO item
             </Button>
-        </element>
+        </visualElement>
     );
 }

@@ -17,6 +17,7 @@ namespace UnityReactUIElements
         public JsModuleRuntime()
         {
             this.runtime = JavaScriptRuntime.Create();
+
             this.context = runtime.CreateContext();
 
             JavaScriptContext.Current = this.context;

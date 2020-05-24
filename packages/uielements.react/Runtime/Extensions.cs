@@ -16,13 +16,14 @@ namespace UnityReactUIElements
 #if REACT_UIELEMENTS_DEBUG
             Debug.Log($"Pinning {obj}");
 #endif
-
             return JavaScriptValue.CreateExternalObject(p, Finalizer);
         }
 
         public static T ObjectFromJavaScriptValue<T>(this JavaScriptValue value)
             where T: class
         {
+            if (!value.HasExternalData) return default(T);
+
             var ptr = value.ExternalData;
             var handle = GCHandle.FromIntPtr(ptr);
 

@@ -15,7 +15,6 @@ namespace UnityReactUIElements.Bridge
             Native.JsGetGlobalObject(out var globalObject);
             globalObject.SetProperty(JavaScriptPropertyId.FromString("global"), globalObject, true);
 
-            SetNativesObject(globalObject);
             SetConsoleLogObject(globalObject);
             SetTimeoutFunctions(globalObject);
             SetBase64Functions(globalObject);
@@ -124,15 +123,6 @@ namespace UnityReactUIElements.Bridge
             Native.JsRelease(callee, out refCount);
         }
 
-        private static void SetNativesObject(JavaScriptValue globalObject)
-        {
-            Native.JsCreateObject(out var nativesObject);
-            Native.JsCreateFunction(Bridge, IntPtr.Zero, out var functionValue);
-
-            nativesObject.SetProperty(JavaScriptPropertyId.FromString("jsToNativeBridge"), functionValue, true);
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("natives"), nativesObject, true);
-        }
-
         private static void SetConsoleLogObject(JavaScriptValue globalObject)
         {
             Native.JsCreateObject(out var consoleObject);
@@ -195,23 +185,6 @@ namespace UnityReactUIElements.Bridge
 
                 Debug.LogWarning(resultString);
             }
-
-            return undefinedValue;
-        }
-
-        private static JavaScriptValue Bridge(
-            JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
-        {
-            Native.JsGetUndefinedValue(out var undefinedValue);
-
-            if (argumentcount <= 0) return undefinedValue;
-
-            Native.JsConvertValueToString(arguments[1], out var stringValue);
-            Native.JsStringToPointer(stringValue, out var resultPtr, out _);
-
-            var resultString = Marshal.PtrToStringUni(resultPtr);
-
-            ReactRenderer.Current.AddMessageToBuffer(resultString);
 
             return undefinedValue;
         }

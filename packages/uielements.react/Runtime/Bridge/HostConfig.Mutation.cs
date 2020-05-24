@@ -24,7 +24,7 @@ namespace UnityReactUIElements.Bridge
             IComponentProps oldProps,
             IComponentProps newProps)
         {
-            // TODO
+            ComponentMapper.ApplyProps(type, instance, updatePayload);
 
             return true;
         }

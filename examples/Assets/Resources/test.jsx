@@ -2,15 +2,12 @@ import React from 'react';
 import { render } from 'unity-renderer'
 
 const App = () => (
-    <element>
-        <element></element>
-        <element></element>
-        <element></element>
-        <element>
-            <element></element>
-            <element></element>
-        </element>
-    </element>
+    <visualElement style={{ width: '100%', height: '100%', backgroundColor: '#ffffff', color: '#000000' }}>
+        <visualElement style={{ width: '50%', height: '50%', backgroundColor: '#ff0000', color: '#000000' }}>
+            fdsklfskfsd
+            <textElement style={{ width: '100%', height: '100%',color: '#000000', fontSize: 20 }} text="Some stuff" />
+        </visualElement>
+    </visualElement>
 )
 
 render(<App />);

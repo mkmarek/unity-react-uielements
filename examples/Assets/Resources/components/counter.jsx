@@ -29,21 +29,21 @@ const countStyle = Object.assign(margin('5px'), {
 export default function Counter() {
     const [initializing, counterComponents, setCounterComponent] = useQuery('Counter');
 
-    if (initializing) return <element />;
+    if (initializing) return <visualElement />;
 
     const count = counterComponents[0].count;
 
     return (
-        <element style={Object.assign(margin('auto'), { width: "100%", height: "100%", alignItems: "center" })}>
-            <element style={countStyle}>{count}</element>
-            <element style={{ flexDirection: 'row' }}>
+        <visualElement style={Object.assign(margin('auto'), { width: "100%", height: "100%", alignItems: "center" })}>
+            <visualElement style={countStyle}>{count}</visualElement>
+            <visualElement style={{ flexDirection: 'row' }}>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onClick={() => setCounterComponent(0, { count: count + 1 })}>Increment</Button>
+                    onMouseUpEvent={() => setCounterComponent(0, { count: count + 1 })}>Increment</Button>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onClick={() => setCounterComponent(0, {count: count - 1 })}>Decrement</Button>
-            </element>
-        </element>
+                    onMouseUpEvent={() => setCounterComponent(0, {count: count - 1 })}>Decrement</Button>
+            </visualElement>
+        </visualElement>
     )
 }
