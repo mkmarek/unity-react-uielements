@@ -11,7 +11,7 @@ namespace UnityReactUIElements.Examples
     {
         public int Test;
         //public FixedString128 Str;
-        //public Entity Entity;
+        public Entity Entity;
     }
 
     [JSBinding]

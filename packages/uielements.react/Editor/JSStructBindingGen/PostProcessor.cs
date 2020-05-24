@@ -7,7 +7,6 @@ using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Unity.CompilationPipeline.Common.Diagnostics;
 using Unity.CompilationPipeline.Common.ILPostProcessing;
-using UnityEngine;
 
 namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 {
@@ -20,7 +19,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
         public override bool WillProcess(ICompiledAssembly compiledAssembly)
         {
-            return compiledAssembly.References.Any(f => Path.GetFileName(f) == "Unity.com.mkmarek.uielements.react.dll");
+            return compiledAssembly.References.Any(f => Path.GetFileName(f) == "ReactUIElements.dll");
         }
 
         public override ILPostProcessResult Process(ICompiledAssembly compiledAssembly)

@@ -30,7 +30,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var objectTypeDefinition = mainModule.TypeSystem.Object;
             var iJSBindingFactoryDefinition = mainModule.ImportReference(typeof(IJSBindingFactory));
 
-            var definition = new TypeDefinition(mainModule.Name, $"{type.Name}_JsFactory", TypeAttributes.Class, objectTypeDefinition);
+            var definition = new TypeDefinition(type.Namespace, $"{type.Name}_JsFactory", TypeAttributes.Class, objectTypeDefinition);
             definition.Interfaces.Add(new InterfaceImplementation(iJSBindingFactoryDefinition));
 
             AddEmptyConstructor(definition, mainModule, mainModule.ImportReference(typeof(object).GetConstructor(Type.EmptyTypes)));
