@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using ChakraHost.Hosting;
+using Unity.UIElements.Runtime;
 using UnityEngine;
 
 namespace UnityReactUIElements.Bridge
 {
     public static class Globals
     {
-        public static void Set()
+        public static void Set(PanelRenderer renderer = null)
         {
             Native.JsGetGlobalObject(out var globalObject);
             globalObject.SetProperty(JavaScriptPropertyId.FromString("global"), globalObject, true);
@@ -23,6 +21,19 @@ namespace UnityReactUIElements.Bridge
             SetBase64Functions(globalObject);
 
             globalObject.SetProperty(JavaScriptPropertyId.FromString("getFactory"), JavaScriptValue.CreateFunction(Function), true);
+
+            if (renderer != null)
+            {
+                globalObject.SetProperty(
+                    JavaScriptPropertyId.FromString("__HOSTCONFIG__"), 
+                    HostConfig.Create(),
+                    true);
+
+                globalObject.SetProperty(
+                    JavaScriptPropertyId.FromString("__CONTAINER__"),
+                    renderer.visualTree.ToJavaScriptValue(),
+                    true);
+            }
         }
 
         private static JavaScriptValue Function(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)

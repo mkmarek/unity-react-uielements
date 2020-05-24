@@ -1,21 +1,38 @@
-const CounterComponent = getFactory('CounterComponent')
-var component = new CounterComponent();
+import React from 'react';
+import { render } from 'unity-renderer'
 
-console.log(CounterComponent);
-console.log(component);
+const App = () => (
+    <element>
+        <element></element>
+        <element></element>
+        <element></element>
+        <element>
+            <element></element>
+            <element></element>
+        </element>
+    </element>
+)
 
-component.setIntTest(1434);
-component.setShortTest(633);
-component.setFloatTest(0.55);
-component.setDoubleTest(0.321);
+render(<App />);
 
-console.log(component.getIntTest());
-console.log(component.getShortTest());
-console.log(component.getFloatTest());
-console.log(component.getDoubleTest());
+// const CounterComponent = getFactory('CounterComponent')
+// var component = new CounterComponent();
 
-const nested = component.getNested();
-nested.setTest(123);
-component.setNested(nested);
+// console.log(CounterComponent);
+// console.log(component);
 
-console.log(component.getNested().getTest());
+// component.setIntTest(1434);
+// component.setShortTest(633);
+// component.setFloatTest(0.55);
+// component.setDoubleTest(0.321);
+
+// console.log(component.getIntTest());
+// console.log(component.getShortTest());
+// console.log(component.getFloatTest());
+// console.log(component.getDoubleTest());
+
+// const nested = component.getNested();
+// nested.setTest(123);
+// component.setNested(nested);
+
+// console.log(component.getNested().getTest());

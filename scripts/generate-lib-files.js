@@ -23,4 +23,4 @@ const result = template
     .replace('##react##', replacer(escapeString(react)))
     .replace('##unity_renderer##', replacer(escapeString(unityRenderer)));
 
-fs.writeFileSync(path.join(__dirname, '../packages/com.mkmarek.uielements.react/Runtime/JsRuntime/JSLibraries.cs'), result);
+fs.writeFileSync(path.join(__dirname, '../packages/uielements.react/Runtime/JsRuntime/JSLibraries.cs'), result);

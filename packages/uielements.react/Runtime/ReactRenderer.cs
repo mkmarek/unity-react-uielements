@@ -64,7 +64,7 @@ namespace UnityReactUIElements
 
         public void RunModule(string[] modulesToReload)
         {
-            this.runtime.RunModule(_root, modulesToReload);
+            this.runtime.RunModule(_root, null, modulesToReload);
         }
 
         public void AddMessageToBuffer(NativeToJsBridgePayload.BridgeMessage message)

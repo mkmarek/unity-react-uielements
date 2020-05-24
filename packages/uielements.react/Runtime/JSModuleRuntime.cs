@@ -1,5 +1,6 @@
 ﻿using System;
 using ChakraHost.Hosting;
+using Unity.UIElements.Runtime;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityReactUIElements.Bridge;
@@ -53,7 +54,7 @@ namespace UnityReactUIElements
         }
 
         // Start is called before the first frame update
-        public void RunModule(JSFileObject root, string[] modulesToReload = null)
+        public void RunModule(JSFileObject root, PanelRenderer renderer = null, string[] modulesToReload = null)
         {
             Assert.IsNotNull(root, "Root can't be null'");
             Assert.IsFalse(string.IsNullOrWhiteSpace(root.Code), "Code inside root js file can't be null or empty'");
@@ -61,7 +62,7 @@ namespace UnityReactUIElements
 
             try
             {
-                Globals.Set();
+                Globals.Set(renderer);
 
                 loader.LoadModule(root, modulesToReload);
             }
@@ -81,7 +82,6 @@ namespace UnityReactUIElements
 
         public void Dispose()
         {
-            JavaScriptContext.Current = JavaScriptContext.Invalid;
             runtime.Dispose();
         }
     }

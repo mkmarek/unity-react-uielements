@@ -1,35 +1,11 @@
 import reconciler from 'react-reconciler/persistent';
-import Element from './components/element';
-import ContainerElement from './components/container-element';
 
-import * as base from './host-config/base'
-import * as mutation from './host-config/mutation'
-import * as persistence from './host-config/persistence'
-import Bridge from './native-to-js-bridge';
-
-const renderer = reconciler({
-    isPrimaryRenderer: true,
-
-    ...base,
-    ...mutation,
-    ...persistence
-});
-
-let containerElement = null;
-let container = null;
+const renderer = reconciler(__HOSTCONFIG__);
 
 export function render(element: React.ReactNode, callback: () => void = () => {}) {
 
-    if (!containerElement || !container) {
-        containerElement = new ContainerElement('element', {});
-        container = renderer.createContainer(containerElement, false, false);
-    }
+    const container = renderer.createContainer(__CONTAINER__, false, false);
 
-    global.bridge = new Bridge(containerElement);
-    global.natives.nativeToJsBridge = global.bridge.onMessage.bind(global.bridge);
-
+    console.log('Have container');
     renderer.updateContainer(element, container, null, callback);
 }
-
-export * from './hooks';
-export * from './actions';
