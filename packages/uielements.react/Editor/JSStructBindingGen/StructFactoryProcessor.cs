@@ -134,6 +134,9 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
                 var setterVariable = new VariableDefinition(javascriptValueTypeDefinition);
                 method.Body.Variables.Add(setterVariable);
 
+                var propertyDescriptor = new VariableDefinition(javascriptValueTypeDefinition);
+                method.Body.Variables.Add(propertyDescriptor);
+
                 // var get[field]Function = JavaScriptValue.CreateFunction(Get_[field]);
                 ilProcessor.Emit(OpCodes.Ldarg_0);
                 ilProcessor.Emit(OpCodes.Ldftn, fields[field].getter);
@@ -148,25 +151,36 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
                 ilProcessor.Emit(OpCodes.Call, createFunctionMethod);
                 ilProcessor.Emit(OpCodes.Stloc_S, setterVariable);
 
-                // prototype.SetProperty(JavaScriptPropertyId.FromString("get_count"), getCountFunction, false);
-                ilProcessor.Emit(OpCodes.Ldarg_0);
-                ilProcessor.Emit(OpCodes.Ldflda, prototype);
-                ilProcessor.Emit(OpCodes.Ldstr, $"get{field}");
-                ilProcessor.Emit(OpCodes.Call, javaScriptPropertyFromStringMethod);
-                ilProcessor.Emit(OpCodes.Ldloc_S, getterVariable);
-                ilProcessor.Emit(OpCodes.Ldc_I4_0);
+                //var [field]PropertyDescriptor = JavaScriptValue.CreateObject();
+                ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.CreateObject))));
+                ilProcessor.Emit(OpCodes.Stloc_S, propertyDescriptor);
+
+                // [field]PropertyDescriptor.SetProperty(JavaScriptPropertyId.FromString("get"), getter, true);
+                ilProcessor.Emit(OpCodes.Ldloca_S, propertyDescriptor);
+                ilProcessor.Emit(OpCodes.Ldstr, "get");
+                ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptPropertyId).GetMethod(nameof(JavaScriptPropertyId.FromString))));
+                ilProcessor.Emit(OpCodes.Ldloc, getterVariable);
+                ilProcessor.Emit(OpCodes.Ldc_I4_1);
                 ilProcessor.Emit(OpCodes.Call, setPropertyMethod);
                 ilProcessor.Emit(OpCodes.Nop);
 
-                // prototype.SetProperty(JavaScriptPropertyId.FromString("set_count"), setCountFunction, false);
-                ilProcessor.Emit(OpCodes.Ldarg_0);
-                ilProcessor.Emit(OpCodes.Ldflda, prototype);
-                ilProcessor.Emit(OpCodes.Ldstr, $"set{field}");
-                ilProcessor.Emit(OpCodes.Call, javaScriptPropertyFromStringMethod);
-                ilProcessor.Emit(OpCodes.Ldloc_S, setterVariable);
-                ilProcessor.Emit(OpCodes.Ldc_I4_0);
+                // [field]PropertyDescriptor.SetProperty(JavaScriptPropertyId.FromString("set"), setter, true);
+                ilProcessor.Emit(OpCodes.Ldloca_S, propertyDescriptor);
+                ilProcessor.Emit(OpCodes.Ldstr, "set");
+                ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptPropertyId).GetMethod(nameof(JavaScriptPropertyId.FromString))));
+                ilProcessor.Emit(OpCodes.Ldloc, setterVariable);
+                ilProcessor.Emit(OpCodes.Ldc_I4_1);
                 ilProcessor.Emit(OpCodes.Call, setPropertyMethod);
                 ilProcessor.Emit(OpCodes.Nop);
+
+                // value.DefineProperty(JavaScriptPropertyId.FromString("[field]"), [field]PropertyDescriptor);
+                ilProcessor.Emit(OpCodes.Ldarg_0);
+                ilProcessor.Emit(OpCodes.Ldflda, prototype);
+                ilProcessor.Emit(OpCodes.Ldstr, field);
+                ilProcessor.Emit(OpCodes.Call, javaScriptPropertyFromStringMethod);
+                ilProcessor.Emit(OpCodes.Ldloc_S, propertyDescriptor);
+                ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.DefineProperty))));
+                ilProcessor.Emit(OpCodes.Pop);
             }
 
             // var javaScriptValue = JavaScriptValue.CreateExternalObject((IntPtr)ptr, Finalizer);
