@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Mono.Cecil;
+using Mono.Cecil.Cil;
 using UnityReactUIElements;
+using MethodAttributes = Mono.Cecil.MethodAttributes;
 
 namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 {
@@ -23,6 +25,12 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
         public static bool IsAssemblyBindingAttribute(CustomAttribute attribute)
         {
             return attribute.AttributeType.Name == nameof(JSTypeBindingAttribute) &&
+                   attribute.AttributeType.Namespace == "UnityReactUIElements";
+        }
+
+        public static bool IsSystemBindingAttribute(CustomAttribute attribute)
+        {
+            return attribute.AttributeType.Name == nameof(JSBindingSystemAttribute) &&
                    attribute.AttributeType.Namespace == "UnityReactUIElements";
         }
 
@@ -66,6 +74,16 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
         public static bool IsSameType(TypeReference ref1, TypeReference ref2)
         {
             return ref1.Namespace == ref2.Namespace && ref1.Name == ref2.Name;
+        }
+
+        public static void AddEmptyConstructor(TypeDefinition type, ModuleDefinition module, MethodReference baseEmptyConstructor)
+        {
+            var methodAttributes = MethodAttributes.Public | MethodAttributes.HideBySig | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName;
+            var method = new MethodDefinition(".ctor", methodAttributes, module.TypeSystem.Void);
+            method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldarg_0));
+            method.Body.Instructions.Add(Instruction.Create(OpCodes.Call, baseEmptyConstructor));
+            method.Body.Instructions.Add(Instruction.Create(OpCodes.Ret));
+            type.Methods.Add(method);
         }
     }
 }

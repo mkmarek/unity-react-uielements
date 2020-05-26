@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using ChakraHost.Hosting;
+using Unity.Entities;
 using Unity.UIElements.Runtime;
 using UnityEngine;
 
@@ -19,7 +22,7 @@ namespace UnityReactUIElements.Bridge
             SetTimeoutFunctions(globalObject);
             SetBase64Functions(globalObject);
 
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("getFactory"), JavaScriptValue.CreateFunction(Function), true);
+            globalObject.SetProperty(JavaScriptPropertyId.FromString("getFactory"), JavaScriptValue.CreateFunction(GetFactory), true);
 
             if (renderer != null)
             {
@@ -32,10 +35,62 @@ namespace UnityReactUIElements.Bridge
                     JavaScriptPropertyId.FromString("__CONTAINER__"),
                     renderer.visualTree.ToJavaScriptValue(),
                     true);
+
+                var createQueryFunction = JavaScriptValue.CreateFunction(CreateQuery);
+
+                globalObject.SetProperty(
+                    JavaScriptPropertyId.FromString("__CREATEQUERY__"),
+                    createQueryFunction,
+                    true);
             }
         }
 
-        private static JavaScriptValue Function(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        private static JavaScriptValue CreateQuery(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        {
+            if (arguments.Length < 2 || arguments[1].ValueType != JavaScriptValueType.Array) return JavaScriptValue.Undefined;
+
+            var length = arguments[1].GetProperty(JavaScriptPropertyId.FromString("length")).ToInt32();
+
+            var components = new List<string>();
+            for (var i = 0; i < length; i++)
+            {
+                if (arguments[1].HasIndexedProperty(JavaScriptValue.FromInt32(i)))
+                {
+                    var prop = arguments[1].GetIndexedProperty(JavaScriptValue.FromInt32(i));
+
+                    if (prop.ValueType != JavaScriptValueType.String) continue;
+
+                    components.Add(prop.ToString());
+                }
+            }
+
+            var querySystemType = typeof(ReactComponentQuerySystem);
+
+            var systems = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(e => e.GetTypes())
+                .Where(e => querySystemType.IsAssignableFrom(e) && e != querySystemType)
+                .ToList();
+
+            if (systems.Count > 1)
+            {
+                Debug.LogError("There can be only one definition of JSBindingSystem");
+                return JavaScriptValue.Undefined;
+            }
+
+            if (systems.Count == 0)
+            {
+                Debug.LogWarning("There is no definition JSBindingSystem. Queries towards ECS won't work'");
+                return JavaScriptValue.Undefined;
+            }
+
+            var system = systems.Single();
+
+            var querySystem = (ReactComponentQuerySystem)World.DefaultGameObjectInjectionWorld.GetOrCreateSystem(system);
+
+            return querySystem.CreateQuery(components.ToArray());
+        }
+
+        private static JavaScriptValue GetFactory(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             var name = arguments[1].ToString();
             var factory = JSTypeFactories.GetFactory(name);
@@ -43,15 +98,6 @@ namespace UnityReactUIElements.Bridge
             if (factory == null) return JavaScriptValue.Null;
 
             return factory.CreateConstructor();
-        }
-
-        public static JavaScriptValue GetNativeToJsBridgeFunction()
-        {
-            Native.JsGetGlobalObject(out var globalObject);
-            Native.JsGetProperty(globalObject, JavaScriptPropertyId.FromString("natives"), out var natives);
-            Native.JsGetProperty(natives, JavaScriptPropertyId.FromString("nativeToJsBridge"), out var invokeCallback);
-
-            return invokeCallback;
         }
 
         private static void SetBase64Functions(JavaScriptValue globalObject)

@@ -15,4 +15,9 @@ namespace UnityReactUIElements
 
         }
     }
+
+    [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true, Inherited = false)]
+    public class JSBindingSystemAttribute : Attribute
+    {
+    }
 }

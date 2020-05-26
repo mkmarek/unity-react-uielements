@@ -22,6 +22,7 @@ namespace UnityReactUIElements.Examples
                 world.EntityManager.AddComponent<CounterComponent>(counterEntity);
                 world.EntityManager.SetComponentData(counterEntity, new CounterComponent()
                 {
+                    IntTest = 42
                     //count = 0
                 });
             }

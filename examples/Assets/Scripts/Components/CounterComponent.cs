@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using Unity.Entities;
 using UnityReactUIElements;
 
+[assembly: JSBindingSystem]
 [assembly: JSTypeBinding(typeof(Entity))]
 
 namespace UnityReactUIElements.Examples
@@ -23,5 +24,12 @@ namespace UnityReactUIElements.Examples
         public float FloatTest;
         public double DoubleTest;
         public SomeNestedStruct Nested;
+    }
+
+    [JSBinding]
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SomeOtherCddomponent : IComponentData
+    {
+        public int Bla;
     }
 }

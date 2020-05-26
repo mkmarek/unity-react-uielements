@@ -49,6 +49,15 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
                 StructFactoryProcessor.Process(type, assemblyDefinition, typesToTransform);
             }
 
+            var jobAssemblyBindingAttribute = assemblyDefinition.CustomAttributes
+                .Where(TypeUtils.IsSystemBindingAttribute)
+                .FirstOrDefault();
+
+            if (jobAssemblyBindingAttribute != null)
+            {
+                ReactComponentQuerySystemProcessor.Process(jobAssemblyBindingAttribute.AttributeType.Namespace, assemblyDefinition, typesToTransform);
+            }
+
             var pe = new MemoryStream();
             var pdb = new MemoryStream();
             var writerParameters = new WriterParameters
