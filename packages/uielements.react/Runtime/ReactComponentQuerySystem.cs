@@ -1,6 +1,9 @@
 using ChakraHost.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
@@ -8,8 +11,72 @@ using Unity.Jobs;
 
 namespace UnityReactUIElements
 {
+    [BurstCompile]
+    public unsafe struct CopyComponentDataToSlots<T> : IJobChunk
+        where T : struct, IComponentData
+    {
+        [NativeDisableUnsafePtrRestriction]
+        public void* DataPtr;
+
+        public int StepSize;
+
+        public int SlotOffset;
+
+        [ReadOnly]
+        public ArchetypeChunkComponentType<T> ComponentType;
+
+        public void Execute(ArchetypeChunk chunk, int chunkIndex, int entityOffset)
+        {
+            var arrayPtr = chunk.GetNativeArray(ComponentType).GetUnsafeReadOnlyPtr();
+            var ptr = (byte*) DataPtr;
+
+            for (var i = 0; i < chunk.Count; i++)
+            {
+                var copySizeInBytes = UnsafeUtility.SizeOf<T>();
+                var destinationPtr = ptr + (StepSize * (i + entityOffset)) + SlotOffset + ReactComponentQuerySystem.HeaderDataOffset;
+                var srcPtr = (byte*)arrayPtr + copySizeInBytes * i;
+
+                UnsafeUtility.MemCpy(destinationPtr, srcPtr, copySizeInBytes);
+            }
+        }
+    }
+
+    [BurstCompile]
+    public unsafe struct CopyEntitiesToSlotsAndIncrementVersion : IJobChunk
+    {
+        [NativeDisableUnsafePtrRestriction]
+        public void* DataPtr;
+
+        public int StepSize;
+
+        public int SlotOffset;
+
+        [ReadOnly]
+        public ArchetypeChunkEntityType EntityType;
+
+        public void Execute(ArchetypeChunk chunk, int chunkIndex, int entityOffset)
+        {
+            var arrayPtr = chunk.GetNativeArray(EntityType).GetUnsafeReadOnlyPtr();
+            var versionPointer = (int*) DataPtr;
+            var ptr = (byte*) DataPtr;
+
+            (*versionPointer)++;
+
+            for (var i = 0; i < chunk.Count; i++)
+            {
+                var copySizeInBytes = UnsafeUtility.SizeOf<Entity>();
+                var destinationPtr = ptr + (StepSize * (i + entityOffset)) + SlotOffset + ReactComponentQuerySystem.HeaderDataOffset;
+                var srcPtr = (byte*)arrayPtr + copySizeInBytes * i;
+
+                UnsafeUtility.MemCpy(destinationPtr, srcPtr, copySizeInBytes);
+            }
+        }
+    }
+
     public abstract class ReactComponentQuerySystem : JobComponentSystem
     {
+        public const int HeaderDataOffset = sizeof(int);
+
         public unsafe class QueryData : IDisposable
         {
             public bool HasData;
@@ -19,19 +86,31 @@ namespace UnityReactUIElements
             public Dictionary<string, int> OffsetMap;
             public EntityQuery Query;
             public string[] Components;
+            public int PreviousVersion;
+            public JavaScriptValue OnChangeCallback;
+            public ComponentType[] ComponentTypes;
+
+            public bool IsDisposed { get; private set; }
 
             public void Dispose()
             {
-                if (HasData) UnsafeUtility.Free(DataPtr, Allocator.Persistent);
+                if (!IsDisposed)
+                {
+                    OnChangeCallback.Release();
 
-                HasData = false;
-                Size = 0;
+                    UnsafeUtility.Free(DataPtr, Allocator.Persistent);
+
+                    HasData = false;
+                    Size = 0;
+                }
+
+                IsDisposed = true;
             }
         }
 
         private Dictionary<string, QueryData> queryRefs = new Dictionary<string, QueryData>();
 
-        public JavaScriptValue CreateQuery(string[] components)
+        public JavaScriptValue CreateQuery(string[] components, JavaScriptValue callback)
         {
             Array.Sort(components, StringComparer.InvariantCulture);
             var key = string.Join("_", components);
@@ -42,8 +121,8 @@ namespace UnityReactUIElements
                 var offsetMap = new Dictionary<string, int>();
 
                 //First slot is designated for entity reference
-                var offset = UnsafeUtility.SizeOf<Entity>();
                 offsetMap.Add("Entity", 0);
+                var offset = UnsafeUtility.SizeOf<Entity>();
 
                 for (var i = 0; i < components.Length; i++)
                 {
@@ -56,7 +135,9 @@ namespace UnityReactUIElements
                 }
 
                 var q = GetEntityQuery(componentTypes);
-                //q.SetChangedVersionFilter(componentTypes);
+                q.ResetFilter();
+
+                callback.AddRef();
 
                 queryRefs.Add(key, new QueryData
                 {
@@ -64,33 +145,48 @@ namespace UnityReactUIElements
                     Query = q,
                     Components = components,
                     OffsetMap = offsetMap,
-                    SlotSize = offset
+                    SlotSize = offset,
+                    OnChangeCallback = callback,
+                    ComponentTypes = componentTypes
                 });
             }
 
-            var queryData = queryRefs[key];
-
-            var getSizeFunction = JavaScriptValue.CreateFunction((callee, call, arguments, count, data) =>
+            var getSizeFunction = JavaScriptValue.CreateFunction("getSize", (callee, call, arguments, count, data) =>
             {
                 var currentQueryData = arguments[0].ObjectFromJavaScriptValue<QueryData>();
 
                 return JavaScriptValue.FromInt32(currentQueryData.Size);
             });
 
-            var getHasDataFunction = JavaScriptValue.CreateFunction((callee, call, arguments, count, data) =>
+            var getVersionFunction = JavaScriptValue.CreateFunction("getVersion", (callee, call, arguments, count, data) =>
+            {
+                var currentQueryData = arguments[0].ObjectFromJavaScriptValue<QueryData>();
+
+                unsafe
+                {
+                    var ptr = (int*)currentQueryData.DataPtr;
+
+                    return JavaScriptValue.FromInt32(*ptr);
+                }
+            });
+
+            var getHasDataFunction = JavaScriptValue.CreateFunction("getHasData", (callee, call, arguments, count, data) =>
             {
                 var currentQueryData = arguments[0].ObjectFromJavaScriptValue<QueryData>();
 
                 return JavaScriptValue.FromBoolean(currentQueryData.HasData);
             });
 
-            var getElementAtFunction = JavaScriptValue.CreateFunction((callee, call, arguments, count, data) =>
+            var getElementAtFunction = JavaScriptValue.CreateFunction("getElementAt", (callee, call, arguments, count, data) =>
             {
                 var currentQueryData = arguments[0].ObjectFromJavaScriptValue<QueryData>();
 
                 if (arguments.Length < 3 ||
                     arguments[1].ValueType != JavaScriptValueType.String ||
-                    arguments[2].ValueType != JavaScriptValueType.Number)
+                    arguments[2].ValueType != JavaScriptValueType.Number ||
+                    currentQueryData == null ||
+                    currentQueryData.IsDisposed ||
+                    !currentQueryData.HasData)
                 {
                     return JavaScriptValue.Null;
                 }
@@ -99,25 +195,64 @@ namespace UnityReactUIElements
 
                 if (!currentQueryData.OffsetMap.ContainsKey(slot)) return JavaScriptValue.Null;
 
-                var indexInArray = currentQueryData.Size * arguments[2].ToInt32();
+                if (arguments[2].ToInt32() >= currentQueryData.Size)
+                {
+                    return JavaScriptValue.Null;
+                }
+
+                var indexInArray = currentQueryData.SlotSize * arguments[2].ToInt32();
                 var slotIndex = currentQueryData.OffsetMap[slot];
                 var factory = JSTypeFactories.GetFactory(slot);
 
+                if (!JavaScriptContext.Current.IsValid)
+                {
+                    return JavaScriptValue.Null;
+                }
+
                 unsafe
                 {
-                    var ptr = (byte*)currentQueryData.DataPtr;
-                    ptr += indexInArray + slotIndex;
+                    var ptr = (byte*)currentQueryData.DataPtr + HeaderDataOffset + indexInArray + slotIndex;
 
-                    return factory.CreateJsObjectForNative(ptr, false);
+                    var output = UnsafeUtility.Malloc(factory.ComponentSize, 4, Allocator.Persistent);
+                    UnsafeUtility.MemCpy(output, ptr, factory.ComponentSize);
+
+                    return factory.CreateJsObjectForNative(output, true);
                 }
             });
 
-            var ret = queryData.ToJavaScriptValue();
+            var disposeFunction = JavaScriptValue.CreateFunction("dispose", (callee, call, arguments, count, data) =>
+            {
+                var currentQueryData = arguments[0].ObjectFromJavaScriptValue<QueryData>();
+
+                currentQueryData.Dispose();
+
+                return JavaScriptValue.Undefined;
+            });
+
+            var queryData = queryRefs[key];
+            var handle = GCHandle.Alloc(queryData);
+            var p = GCHandle.ToIntPtr(handle);
+
+            var ret = JavaScriptValue.CreateExternalObject(p, Finalizer);
             ret.SetProperty(JavaScriptPropertyId.FromString("getSize"), getSizeFunction, true);
             ret.SetProperty(JavaScriptPropertyId.FromString("hasData"), getHasDataFunction, true);
             ret.SetProperty(JavaScriptPropertyId.FromString("getElementAt"), getElementAtFunction, true);
+            ret.SetProperty(JavaScriptPropertyId.FromString("dispose"), disposeFunction, true);
+            ret.SetProperty(JavaScriptPropertyId.FromString("getVersion"), getVersionFunction, true);
 
             return ret;
+        }
+
+        private static void Finalizer(IntPtr data)
+        {
+            if (data != IntPtr.Zero)
+            {
+                var handle = GCHandle.FromIntPtr(data);
+                var queryData = (QueryData) handle.Target;
+
+                queryData.Dispose();
+                handle.Free();
+            }
         }
 
         protected override void OnCreate()
@@ -126,17 +261,6 @@ namespace UnityReactUIElements
 
             base.OnCreate();
         }
-
-        protected override unsafe void OnDestroy()
-        {
-            foreach (var queryRef in queryRefs)
-            {
-                queryRef.Value?.Dispose();
-            }
-
-            base.OnDestroy();
-        }
-
         // This method will be overriden by the code generator
         protected abstract JobHandle ScheduleJobForComponent(
             QueryData queryRef,
@@ -146,29 +270,80 @@ namespace UnityReactUIElements
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
             var combined = inputDeps;
-            foreach (var queryRef in queryRefs.Values)
-            {
-                foreach (var component in queryRef.Components)
-                {
-                    var size = queryRef.Query.CalculateEntityCount();
+            var valuesCopy = queryRefs.ToList();
 
-                    if (!queryRef.HasData || queryRef.Size != size)
+            foreach (var queryRef in valuesCopy)
+            {
+                bool wasReset = false;
+
+                if (queryRef.Value == null || queryRef.Value.IsDisposed)
+                {
+                    queryRefs.Remove(queryRef.Key);
+                    continue;
+                }
+
+                unsafe
+                {
+                    // Check if version changed
+                    if (queryRef.Value.HasData)
                     {
-                        unsafe
+                        var versionPtr = (int*) queryRef.Value.DataPtr;
+                        var currentVersion = *versionPtr;
+
+                        if (currentVersion != queryRef.Value.PreviousVersion)
                         {
-                            if (queryRef.HasData)
+                            if (queryRef.Value.OnChangeCallback.IsValid && queryRef.Value.OnChangeCallback.ValueType ==
+                                JavaScriptValueType.Function)
                             {
-                                UnsafeUtility.Free(queryRef.DataPtr, Allocator.Persistent);
+                                queryRef.Value.OnChangeCallback.CallFunction(JavaScriptValue.Null);
                             }
 
-                            queryRef.DataPtr = UnsafeUtility.Malloc(size * queryRef.SlotSize, 4, Allocator.Persistent);
-                            queryRef.HasData = true;
-                            queryRef.Size = size;
+                            queryRef.Value.PreviousVersion = currentVersion;
                         }
                     }
-
-                    combined = JobHandle.CombineDependencies(combined, ScheduleJobForComponent(queryRef, component, inputDeps));
                 }
+
+                var size = queryRef.Value.Query.CalculateEntityCountWithoutFiltering();
+
+                if (!queryRef.Value.HasData || queryRef.Value.Size != size)
+                {
+                    wasReset = true;
+
+                    unsafe
+                    {
+                        if (queryRef.Value.HasData)
+                        {
+                            UnsafeUtility.Free(queryRef.Value.DataPtr, Allocator.Persistent);
+                        }
+
+                        queryRef.Value.DataPtr =
+                            UnsafeUtility.Malloc(HeaderDataOffset + size * queryRef.Value.SlotSize, 4, Allocator.Persistent);
+
+                        queryRef.Value.HasData = true;
+                        queryRef.Value.Size = size;
+                    }
+                }
+
+                unsafe
+                {
+                    var copyEntities = new CopyEntitiesToSlotsAndIncrementVersion
+                    {
+                        DataPtr = queryRef.Value.DataPtr,
+                        StepSize = queryRef.Value.SlotSize,
+                        EntityType = GetArchetypeChunkEntityType(),
+                        SlotOffset = queryRef.Value.OffsetMap["Entity"]
+                    };
+
+                    combined = copyEntities.Schedule(queryRef.Value.Query, combined);
+                }
+
+                foreach (var component in queryRef.Value.Components)
+                {
+                    combined = JobHandle.CombineDependencies(combined,
+                        ScheduleJobForComponent(queryRef.Value, component, inputDeps));
+                }
+
+                if (wasReset) queryRef.Value.Query.SetChangedVersionFilter(queryRef.Value.ComponentTypes);
             }
 
             return combined;

@@ -6,7 +6,6 @@ using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
 using Unity.Entities;
 using Unity.Jobs;
-using UnityEngine;
 using UnityReactUIElements;
 
 namespace Unity.ReactUIElements.JsStructBinding.CodeGen
@@ -27,13 +26,16 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             IEnumerable<TypeReference> supportedTypes)
         {
             var baseType = mainModule.ImportReference(typeof(ReactComponentQuerySystem));
-            var baseTypeCtor = mainModule.ImportReference(typeof(object).GetConstructor(Type.EmptyTypes));
+            var baseTypeCtor = mainModule.ImportReference(baseType.Resolve().GetConstructors().FirstOrDefault());
 
             var job = new TypeDefinition(
                 namespaceName,
                 "GeneratedReactComponentQuerySystem",
-                TypeAttributes.Class,
+                TypeAttributes.Class | TypeAttributes.Public,
                 baseType);
+
+            var executeAlwaysCtor = mainModule.ImportReference(typeof(AlwaysUpdateSystemAttribute).GetConstructor(Type.EmptyTypes));
+            job.CustomAttributes.Add(new CustomAttribute(executeAlwaysCtor));
 
             job.Methods.Add(CreateScheduleJobForComponentMethod(supportedTypes, mainModule));
 

@@ -48,7 +48,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
                 .ImportReference(typeof(UnsafeUtility).GetMethod(nameof(UnsafeUtility.CopyStructureToPtr)))
                 .SetGenericParameter(componentType);
 
-            var method = new MethodDefinition($"Set_{field.Name}", MethodAttributes.Private, javascriptValueTypeDefinition);
+            var method = new MethodDefinition($"Set_{field.Name}", MethodAttributes.Private | MethodAttributes.Static, javascriptValueTypeDefinition);
 
             method.Parameters.Add(new ParameterDefinition(javascriptValueTypeDefinition));
             method.Parameters.Add(new ParameterDefinition(mainModule.TypeSystem.Boolean));
@@ -65,7 +65,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
             method.Body.Variables.Add(str);
 
             // var data = (void*)arguments[0].ExternalData;
-            ilProcessor.Emit(OpCodes.Ldarg_3);
+            ilProcessor.Emit(OpCodes.Ldarg_2);
             ilProcessor.Emit(OpCodes.Ldc_I4_0);
             ilProcessor.Emit(OpCodes.Ldelema, javascriptValueTypeDefinition);
             ilProcessor.Emit(OpCodes.Call, getExternalDataMethod);
@@ -135,7 +135,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
                 .ImportReference(typeof(UnsafeUtility).GetMethod(nameof(UnsafeUtility.CopyPtrToStructure)))
                 .SetGenericParameter(componentType);
 
-            var method = new MethodDefinition($"Get_{field.Name}", MethodAttributes.Private, javascriptValueTypeDefinition);
+            var method = new MethodDefinition($"Get_{field.Name}", MethodAttributes.Private | MethodAttributes.Static, javascriptValueTypeDefinition);
 
             method.Parameters.Add(new ParameterDefinition(javascriptValueTypeDefinition));
             method.Parameters.Add(new ParameterDefinition(mainModule.TypeSystem.Boolean));
@@ -152,7 +152,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
             method.Body.Variables.Add(str);
 
             // var data = (void*)arguments[0].ExternalData;
-            ilProcessor.Emit(OpCodes.Ldarg_3);
+            ilProcessor.Emit(OpCodes.Ldarg_2);
             ilProcessor.Emit(OpCodes.Ldc_I4_0);
             ilProcessor.Emit(OpCodes.Ldelema, javascriptValueTypeDefinition);
             ilProcessor.Emit(OpCodes.Call, getExternalDataMethod);

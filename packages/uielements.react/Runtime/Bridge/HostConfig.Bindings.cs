@@ -22,132 +22,132 @@ namespace UnityReactUIElements.Bridge
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getPublicInstance"),
-                JavaScriptValue.CreateFunction(GetPublicInstance),
+                JavaScriptValue.CreateFunction("getPublicInstance", GetPublicInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getRootHostContext"),
-                JavaScriptValue.CreateFunction(GetRootHostContext),
+                JavaScriptValue.CreateFunction("getRootHostContext", GetRootHostContext),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getChildHostContext"),
-                JavaScriptValue.CreateFunction(GetChildHostContext),
+                JavaScriptValue.CreateFunction("getChildHostContext", GetChildHostContext),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("createInstance"),
-                JavaScriptValue.CreateFunction(CreateInstance),
+                JavaScriptValue.CreateFunction("createInstance", CreateInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("prepareForCommit"),
-                JavaScriptValue.CreateFunction(PrepareForCommit),
+                JavaScriptValue.CreateFunction("prepareForCommit", PrepareForCommit),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("resetAfterCommit"),
-                JavaScriptValue.CreateFunction(ResetAfterCommit),
+                JavaScriptValue.CreateFunction("resetAfterCommit", ResetAfterCommit),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendInitialChild"),
-                JavaScriptValue.CreateFunction(AppendInitialChild),
+                JavaScriptValue.CreateFunction("appendInitialChild", AppendInitialChild),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("finalizeInitialChildren"),
-                JavaScriptValue.CreateFunction(FinalizeInitialChildren),
+                JavaScriptValue.CreateFunction("finalizeInitialChildren", FinalizeInitialChildren),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("prepareUpdate"),
-                JavaScriptValue.CreateFunction(PrepareUpdate),
+                JavaScriptValue.CreateFunction("prepareUpdate", PrepareUpdate),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("shouldSetTextContent"),
-                JavaScriptValue.CreateFunction(ShouldSetTextContent),
+                JavaScriptValue.CreateFunction("shouldSetTextContent", ShouldSetTextContent),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("shouldDeprioritizeSubtree"),
-                JavaScriptValue.CreateFunction(ShouldDeprioritizeSubtree),
+                JavaScriptValue.CreateFunction("shouldDeprioritizeSubtree", ShouldDeprioritizeSubtree),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("createTextInstance"),
-                JavaScriptValue.CreateFunction(CreateTextInstance),
+                JavaScriptValue.CreateFunction("createTextInstance", CreateTextInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendChild"),
-                JavaScriptValue.CreateFunction(AppendChild),
+                JavaScriptValue.CreateFunction("appendChild", AppendChild),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendChildToContainer"),
-                JavaScriptValue.CreateFunction(AppendChildToContainer),
+                JavaScriptValue.CreateFunction("appendChildToContainer", AppendChildToContainer),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitTextUpdate"),
-                JavaScriptValue.CreateFunction(CommitTextUpdate),
+                JavaScriptValue.CreateFunction("commitTextUpdate", CommitTextUpdate),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitMount"),
-                JavaScriptValue.CreateFunction(CommitMount),
+                JavaScriptValue.CreateFunction("commitMount", CommitMount),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitUpdate"),
-                JavaScriptValue.CreateFunction(CommitUpdate),
+                JavaScriptValue.CreateFunction("commitUpdate", CommitUpdate),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("insertBefore"),
-                JavaScriptValue.CreateFunction(InsertBefore),
+                JavaScriptValue.CreateFunction("insertBefore", InsertBefore),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("insertInContainerBefore"),
-                JavaScriptValue.CreateFunction(InsertInContainerBefore),
+                JavaScriptValue.CreateFunction("insertInContainerBefore", InsertInContainerBefore),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("removeChild"),
-                JavaScriptValue.CreateFunction(RemoveChild),
+                JavaScriptValue.CreateFunction("removeChild", RemoveChild),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("removeChildFromContainer"),
-                JavaScriptValue.CreateFunction(RemoveChildFromContainer),
+                JavaScriptValue.CreateFunction("removeChildFromContainer", RemoveChildFromContainer),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("resetTextContent"),
-                JavaScriptValue.CreateFunction(ResetTextContent),
+                JavaScriptValue.CreateFunction("resetTextContent", ResetTextContent),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("hideInstance"),
-                JavaScriptValue.CreateFunction(HideInstance),
+                JavaScriptValue.CreateFunction("hideInstance", HideInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("hideTextInstance"),
-                JavaScriptValue.CreateFunction(HideTextInstance),
+                JavaScriptValue.CreateFunction("hideTextInstance", HideTextInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("unhideInstance"),
-                JavaScriptValue.CreateFunction(UnhideInstance),
+                JavaScriptValue.CreateFunction("unhideInstance", UnhideInstance),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("unhideTextInstance"),
-                JavaScriptValue.CreateFunction(UnhideTextInstance),
+                JavaScriptValue.CreateFunction("unhideTextInstance", UnhideTextInstance),
                 true);
 
             return prototype;

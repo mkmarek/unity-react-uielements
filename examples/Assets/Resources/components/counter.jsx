@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useQuery } from 'unity-renderer';
 import Button from './button';
 
 const margin = (margin) => ({
@@ -26,7 +27,10 @@ const countStyle = Object.assign(margin('5px'), {
 });
 
 export default function Counter() {
+    const query = useQuery(['CounterComponent']);
     const [count, setCount] = useState(0);
+
+    const counterComponent = query && query.getElementAt('CounterComponent', 0);
 
     return (
         <visualElement style={{
@@ -34,7 +38,7 @@ export default function Counter() {
             height: "100%",
             alignItems: 'Center',
             justifyContent: 'Center'}}>
-            <visualElement style={countStyle}>{count}</visualElement>
+            <visualElement style={countStyle}>{counterComponent && counterComponent.IntTest}</visualElement>
             <visualElement style={{ flexDirection: 'Row' }}>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}

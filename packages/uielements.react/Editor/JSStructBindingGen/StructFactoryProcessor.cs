@@ -27,7 +27,6 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             ModuleDefinition mainModule,
             IEnumerable<TypeReference> supportedTypes)
         {
-            var javascriptValueTypeDefinition = mainModule.ImportReference(typeof(JavaScriptValue));
             var objectTypeDefinition = mainModule.TypeSystem.Object;
             var iJSBindingFactoryDefinition = mainModule.ImportReference(typeof(IJSBindingFactory));
 
@@ -36,7 +35,6 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
             TypeUtils.AddEmptyConstructor(definition, mainModule, mainModule.ImportReference(typeof(object).GetConstructor(Type.EmptyTypes)));
 
-            var prototypeField = new FieldDefinition("prototype", FieldAttributes.Private, javascriptValueTypeDefinition);
             var propertyAccessors = new Dictionary<string, (MethodDefinition getter, MethodDefinition setter)>();
 
             foreach (var field in type.Resolve().Fields)
@@ -59,7 +57,6 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
             var createJsObjectForNativeMethod = CreateJsObjectForNative(
                 mainModule,
-                prototypeField,
                 finalizerMethod,
                 noopFinalizerMethod,
                 propertyAccessors);
@@ -69,7 +66,6 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var getComponentSizeMethod = CreateComponentSizePropertyGetMethod(type, mainModule);
             var getReadComponentTypeMethod = CreateReadComponentTypePropertyGetMethod(type, mainModule);
 
-            definition.Fields.Add(prototypeField);
             definition.Methods.Add(createJsObjectForNativeMethod);
             definition.Methods.Add(getNameMethod);
             definition.Methods.Add(getComponentSizeMethod);
@@ -97,13 +93,11 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
         private static MethodDefinition CreateJsObjectForNative(
             ModuleDefinition mainModule,
-            FieldDefinition prototype,
             MethodDefinition finalizerMethod,
             MethodDefinition noopFinalizerMethod,
             Dictionary<string, (MethodDefinition getter, MethodDefinition setter)> fields)
         {
             var javascriptValueTypeDefinition = mainModule.ImportReference(typeof(JavaScriptValue));
-            var isValid = mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("get_IsValid"));
 
             var method = new MethodDefinition("CreateJsObjectForNative", MethodAttributes.Public | MethodAttributes.Virtual, javascriptValueTypeDefinition);
 
@@ -112,9 +106,11 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
             var isValidResultVariable = new VariableDefinition(mainModule.TypeSystem.Boolean);
             var javascriptValue = new VariableDefinition(mainModule.ImportReference(typeof(JavaScriptValue)));
+            var prototypeVariable = new VariableDefinition(mainModule.ImportReference(typeof(JavaScriptValue)));
 
             method.Body.Variables.Add(isValidResultVariable);
             method.Body.Variables.Add(javascriptValue);
+            method.Body.Variables.Add(prototypeVariable);
 
             var javaScriptNativeFunctionCtor =
                 mainModule.ImportReference(typeof(JavaScriptNativeFunction).GetConstructor(new[] { typeof(object), typeof(IntPtr) }));
@@ -125,28 +121,16 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var setPropertyMethod =
                 mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.SetProperty)));
 
-            var createFunctionMethod = mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("CreateFunction", new[] { typeof(JavaScriptNativeFunction) }));
+            var createFunctionMethod = mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("CreateFunction", new[] { typeof(string), typeof(JavaScriptNativeFunction) }));
 
 
             var ilProcessor = method.Body.GetILProcessor();
 
             var firstInstructionAfterCondition = Instruction.Create(OpCodes.Ldarg_2);
 
-            // if (!prototype.IsValid)
-            //ilProcessor.Emit(OpCodes.Ldarg_0);
-            //ilProcessor.Emit(OpCodes.Ldflda, prototype);
-            //ilProcessor.Emit(OpCodes.Call, isValid);
-            //ilProcessor.Emit(OpCodes.Ldc_I4_0);
-            //ilProcessor.Emit(OpCodes.Ceq);
-            //ilProcessor.Emit(OpCodes.Stloc_S, isValidResultVariable);
-            //ilProcessor.Emit(OpCodes.Ldloc_S, isValidResultVariable);
-            //ilProcessor.Emit(OpCodes.Brfalse, firstInstructionAfterCondition);
-            //ilProcessor.Emit(OpCodes.Nop);
-
             // var prototype = JavaScriptValue.CreateObject();
-            ilProcessor.Emit(OpCodes.Ldarg_0);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.CreateObject))));
-            ilProcessor.Emit(OpCodes.Stfld, prototype);
+            ilProcessor.Emit(OpCodes.Stloc_S, prototypeVariable);
 
             foreach (var field in fields.Keys)
             {
@@ -160,14 +144,16 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
                 method.Body.Variables.Add(propertyDescriptor);
 
                 // var get[field]Function = JavaScriptValue.CreateFunction(Get_[field]);
-                ilProcessor.Emit(OpCodes.Ldarg_0);
+                ilProcessor.Emit(OpCodes.Ldstr, "Get_Field");
+                ilProcessor.Emit(OpCodes.Ldnull);
                 ilProcessor.Emit(OpCodes.Ldftn, fields[field].getter);
                 ilProcessor.Emit(OpCodes.Newobj, javaScriptNativeFunctionCtor);
                 ilProcessor.Emit(OpCodes.Call, createFunctionMethod);
                 ilProcessor.Emit(OpCodes.Stloc_S, getterVariable);
 
                 // var set[field]Function = JavaScriptValue.CreateFunction(Set_[field]);
-                ilProcessor.Emit(OpCodes.Ldarg_0);
+                ilProcessor.Emit(OpCodes.Ldstr, "Set_Field");
+                ilProcessor.Emit(OpCodes.Ldnull);
                 ilProcessor.Emit(OpCodes.Ldftn, fields[field].setter);
                 ilProcessor.Emit(OpCodes.Newobj, javaScriptNativeFunctionCtor);
                 ilProcessor.Emit(OpCodes.Call, createFunctionMethod);
@@ -196,8 +182,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
                 ilProcessor.Emit(OpCodes.Nop);
 
                 // value.DefineProperty(JavaScriptPropertyId.FromString("[field]"), [field]PropertyDescriptor);
-                ilProcessor.Emit(OpCodes.Ldarg_0);
-                ilProcessor.Emit(OpCodes.Ldflda, prototype);
+                ilProcessor.Emit(OpCodes.Ldloca_S, prototypeVariable);
                 ilProcessor.Emit(OpCodes.Ldstr, field);
                 ilProcessor.Emit(OpCodes.Call, javaScriptPropertyFromStringMethod);
                 ilProcessor.Emit(OpCodes.Ldloc_S, propertyDescriptor);
@@ -215,7 +200,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             // var javaScriptValue = JavaScriptValue.CreateExternalObject((IntPtr)ptr, Finalizer);
             ilProcessor.Emit(OpCodes.Ldarg_1);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(IntPtr).GetMethod("op_Explicit", new[] { typeof(void*) })));
-            ilProcessor.Emit(OpCodes.Ldarg_0);
+            ilProcessor.Emit(OpCodes.Ldnull);
             ilProcessor.Emit(OpCodes.Ldftn, finalizerMethod);
             ilProcessor.Emit(OpCodes.Newobj, mainModule.ImportReference(typeof(Action<IntPtr>).GetConstructor(new[] { typeof(object), typeof(IntPtr) })));
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.CreateExternalObject))));
@@ -225,7 +210,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             // var javaScriptValue = JavaScriptValue.CreateExternalObject((IntPtr)ptr, NoopFinalizer);
             ilProcessor.Append(firstInstructionAfterFinalizerCondition);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(IntPtr).GetMethod("op_Explicit", new[] { typeof(void*) })));
-            ilProcessor.Emit(OpCodes.Ldarg_0);
+            ilProcessor.Emit(OpCodes.Ldnull);
             ilProcessor.Emit(OpCodes.Ldftn, noopFinalizerMethod);
             ilProcessor.Emit(OpCodes.Newobj, mainModule.ImportReference(typeof(Action<IntPtr>).GetConstructor(new[] { typeof(object), typeof(IntPtr) })));
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod(nameof(JavaScriptValue.CreateExternalObject))));
@@ -233,8 +218,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 
             // javaScriptValue.Prototype = prototype;
             ilProcessor.Append(endAssignment);
-            ilProcessor.Emit(OpCodes.Ldarg_0);
-            ilProcessor.Emit(OpCodes.Ldfld, prototype);
+            ilProcessor.Emit(OpCodes.Ldloc_S, prototypeVariable);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("set_Prototype")));
             ilProcessor.Emit(OpCodes.Nop);
 
@@ -313,9 +297,14 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var javaScriptNativeFunctionCtor =
                 mainModule.ImportReference(typeof(JavaScriptNativeFunction).GetConstructor(new [] { typeof(object), typeof(IntPtr) }));
 
-            var createFunctionMethod = mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("CreateFunction", new[] { typeof(JavaScriptNativeFunction) }));
+            var createFunctionMethod = mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("CreateFunction", new[]
+            {
+                typeof(string),
+                typeof(JavaScriptNativeFunction)
+            }));
 
             // return JavaScriptValue.CreateFunction(Constructor);
+            ilProcessor.Emit(OpCodes.Ldstr, "ctor");
             ilProcessor.Emit(OpCodes.Ldarg_0);
             ilProcessor.Emit(OpCodes.Ldftn, constructorMethod);
             ilProcessor.Emit(OpCodes.Newobj, javaScriptNativeFunctionCtor);
@@ -407,14 +396,14 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
         {
             var voidTypeDefinition = mainModule.TypeSystem.Void;
 
-            var method = new MethodDefinition("Finalizer", MethodAttributes.Private, voidTypeDefinition);
+            var method = new MethodDefinition("Finalizer", MethodAttributes.Private | MethodAttributes.Static, voidTypeDefinition);
 
             method.Parameters.Add(new ParameterDefinition(mainModule.TypeSystem.IntPtr));
 
             var ilProcessor = method.Body.GetILProcessor();
 
             // UnsafeUtility.Free((void*)data, Allocator.Persistent);
-            ilProcessor.Emit(OpCodes.Ldarg_1);
+            ilProcessor.Emit(OpCodes.Ldarg_0);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(IntPtr).GetMethod("op_Explicit", new[] { typeof(void*) })));
             ilProcessor.Emit(OpCodes.Ldc_I4_4);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(UnsafeUtility).GetMethod(nameof(UnsafeUtility.Free), new[] { typeof(void*), typeof(Allocator) })));
@@ -428,7 +417,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
         {
             var voidTypeDefinition = mainModule.TypeSystem.Void;
 
-            var method = new MethodDefinition("NoopFinalizer", MethodAttributes.Private, voidTypeDefinition);
+            var method = new MethodDefinition("NoopFinalizer", MethodAttributes.Private | MethodAttributes.Static, voidTypeDefinition);
 
             method.Parameters.Add(new ParameterDefinition(mainModule.TypeSystem.IntPtr));
 

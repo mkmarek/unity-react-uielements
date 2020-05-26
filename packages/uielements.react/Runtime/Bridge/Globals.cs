@@ -22,7 +22,9 @@ namespace UnityReactUIElements.Bridge
             SetTimeoutFunctions(globalObject);
             SetBase64Functions(globalObject);
 
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("getFactory"), JavaScriptValue.CreateFunction(GetFactory), true);
+            globalObject.SetProperty(
+                JavaScriptPropertyId.FromString("getFactory"),
+                JavaScriptValue.CreateFunction("getFactory", GetFactory), true);
 
             if (renderer != null)
             {
@@ -36,7 +38,7 @@ namespace UnityReactUIElements.Bridge
                     renderer.visualTree.ToJavaScriptValue(),
                     true);
 
-                var createQueryFunction = JavaScriptValue.CreateFunction(CreateQuery);
+                var createQueryFunction = JavaScriptValue.CreateFunction("createQuery", CreateQuery);
 
                 globalObject.SetProperty(
                     JavaScriptPropertyId.FromString("__CREATEQUERY__"),
@@ -47,7 +49,9 @@ namespace UnityReactUIElements.Bridge
 
         private static JavaScriptValue CreateQuery(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
-            if (arguments.Length < 2 || arguments[1].ValueType != JavaScriptValueType.Array) return JavaScriptValue.Undefined;
+            if (arguments.Length < 3 ||
+                arguments[1].ValueType != JavaScriptValueType.Array ||
+                arguments[2].ValueType != JavaScriptValueType.Function) return JavaScriptValue.Undefined;
 
             var length = arguments[1].GetProperty(JavaScriptPropertyId.FromString("length")).ToInt32();
 
@@ -87,7 +91,7 @@ namespace UnityReactUIElements.Bridge
 
             var querySystem = (ReactComponentQuerySystem)World.DefaultGameObjectInjectionWorld.GetOrCreateSystem(system);
 
-            return querySystem.CreateQuery(components.ToArray());
+            return querySystem.CreateQuery(components.ToArray(), arguments[2]);
         }
 
         private static JavaScriptValue GetFactory(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
@@ -153,20 +157,10 @@ namespace UnityReactUIElements.Bridge
             var afterValue = arguments[2].ConvertToNumber();
             var after = Math.Max(afterValue.ToDouble(), 1);
 
-            Native.JsAddRef(callbackValue, out var refCount);
-            Native.JsAddRef(callee, out refCount);
-
-            ExecuteAsync((int)after, callbackValue, callee);
+            var system = World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<JsScheduledTasksSystem>();
+            system.AddTask(callbackValue, callee, (float)after / 1000);
 
             return JavaScriptValue.True;
-        }
-
-        static async void ExecuteAsync(int delay, JavaScriptValue callbackValue, JavaScriptValue callee)
-        {
-            await Task.Delay(delay);
-            callbackValue.CallFunction(callee);
-            Native.JsRelease(callbackValue, out var refCount);
-            Native.JsRelease(callee, out refCount);
         }
 
         private static void SetConsoleLogObject(JavaScriptValue globalObject)

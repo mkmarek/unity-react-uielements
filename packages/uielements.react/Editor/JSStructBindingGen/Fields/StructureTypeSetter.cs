@@ -40,7 +40,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
             variables.Add(fieldValue);
 
             // var data1 = (void*)arguments[1].ExternalData;
-            ilProcessor.Emit(OpCodes.Ldarg_3);
+            ilProcessor.Emit(OpCodes.Ldarg_2);
             ilProcessor.Emit(OpCodes.Ldc_I4_1);
             ilProcessor.Emit(OpCodes.Ldelema, javascriptValueTypeDefinition);
             ilProcessor.Emit(OpCodes.Call, mainModule.ImportReference(typeof(JavaScriptValue).GetMethod("get_ExternalData")));

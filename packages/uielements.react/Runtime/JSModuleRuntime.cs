@@ -10,17 +10,17 @@ namespace UnityReactUIElements
 {
     public class JsModuleRuntime: IDisposable
     {
-        private JavaScriptRuntime runtime;
-        private JavaScriptContext context;
         private ModuleLoader loader;
 
         public JsModuleRuntime()
         {
-            this.runtime = JavaScriptRuntime.Create();
+            if (!JavaScriptContext.Current.IsValid)
+            {
+                var runtime = JavaScriptRuntime.Create();
+                var context = runtime.CreateContext();
 
-            this.context = runtime.CreateContext();
-
-            JavaScriptContext.Current = this.context;
+                JavaScriptContext.Current = context;
+            }
 
             this.loader = new ModuleLoader();
 
@@ -83,7 +83,12 @@ namespace UnityReactUIElements
 
         public void Dispose()
         {
-            runtime.Dispose();
+            var context = JavaScriptContext.Current;
+            context.Release();
+
+            JavaScriptContext.Current = JavaScriptContext.Invalid;
+
+            context.Runtime.Dispose();
         }
     }
 }

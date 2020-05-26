@@ -28,7 +28,7 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
 
             // str.count = arguments[1].ToDouble();
             ilProcessor.Emit(OpCodes.Ldloca_S, structure);
-            ilProcessor.Emit(OpCodes.Ldarg_3);
+            ilProcessor.Emit(OpCodes.Ldarg_2);
             ilProcessor.Emit(OpCodes.Ldc_I4_1);
             ilProcessor.Emit(OpCodes.Ldelema, javascriptValueTypeDefinition);
             ilProcessor.Emit(OpCodes.Call, toDoubleMethod);

@@ -332,10 +332,10 @@ namespace ChakraHost.Hosting
         /// </remarks>
         /// <param name="function">The method to call when the function is invoked.</param>
         /// <returns>The new function object.</returns>
-        public static JavaScriptValue CreateFunction(JavaScriptNativeFunction function)
+        public static JavaScriptValue CreateFunction(string name, JavaScriptNativeFunction function)
         {
             JavaScriptValue reference;
-            Native.ThrowIfError(Native.JsCreateFunction(function, IntPtr.Zero, out reference));
+            Native.ThrowIfError(Native.JsCreateNamedFunction(FromString(name), function, IntPtr.Zero, out reference));
             return reference;
         }
 
