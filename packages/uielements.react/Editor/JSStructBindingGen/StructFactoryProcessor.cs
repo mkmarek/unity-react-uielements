@@ -64,8 +64,10 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var constructorMethod = ConstructorCallbackMethod(type, createJsObjectForNativeMethod, mainModule);
             var getNameMethod = CreateNamePropertyGetMethod(type, mainModule);
             var getComponentSizeMethod = CreateComponentSizePropertyGetMethod(type, mainModule);
+            var entityCommandBufferSetComponentMethod = CreateEntityCommandBufferSetComponentMethod(type, mainModule);
             var getReadComponentTypeMethod = CreateReadComponentTypePropertyGetMethod(type, mainModule);
 
+            definition.Methods.Add(entityCommandBufferSetComponentMethod);
             definition.Methods.Add(createJsObjectForNativeMethod);
             definition.Methods.Add(getNameMethod);
             definition.Methods.Add(getComponentSizeMethod);
@@ -89,6 +91,41 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             definition.Properties.Add(readComponentProperty);
 
             return definition;
+        }
+
+        private static MethodDefinition CreateEntityCommandBufferSetComponentMethod(TypeReference type, ModuleDefinition mainModule)
+        {
+            //EntityCommandBuffer buffer, Entity e, void* componentPtr
+            var entityCommandBufferType = mainModule.ImportReference(typeof(EntityCommandBuffer));
+            var entityType = mainModule.ImportReference(typeof(Entity));
+            var voidPtrType = mainModule.TypeSystem.Void.MakePointerType();
+            var setComponentMethod = mainModule.ImportReference(typeof(EntityCommandBuffer)
+                .GetMethod("SetComponent")).SetGenericParameter(type);
+            var copyPtrToStructureMethod = mainModule
+                .ImportReference(typeof(UnsafeUtility).GetMethod(nameof(UnsafeUtility.CopyPtrToStructure)))
+                .SetGenericParameter(type);
+
+            var method = new MethodDefinition("EntityCommandBufferSetComponent", MethodAttributes.Public | MethodAttributes.Virtual, mainModule.TypeSystem.Void);
+            method.Parameters.Add(new ParameterDefinition(entityCommandBufferType));
+            method.Parameters.Add(new ParameterDefinition(entityType));
+            method.Parameters.Add(new ParameterDefinition(voidPtrType));
+
+            var structVariable = new VariableDefinition(type);
+            method.Body.Variables.Add(structVariable);
+
+            var ilProcessor = method.Body.GetILProcessor();
+
+            ilProcessor.Emit(OpCodes.Ldarg_S, method.Parameters[2]);
+            ilProcessor.Emit(OpCodes.Ldloca_S, structVariable);
+            ilProcessor.Emit(OpCodes.Call, copyPtrToStructureMethod);
+
+            ilProcessor.Emit(OpCodes.Ldarga_S, method.Parameters[0]);
+            ilProcessor.Emit(OpCodes.Ldarg_S, method.Parameters[1]);
+            ilProcessor.Emit(OpCodes.Ldloc_S, structVariable);
+            ilProcessor.Emit(OpCodes.Call, setComponentMethod);
+            ilProcessor.Emit(OpCodes.Ret);
+
+            return method;
         }
 
         private static MethodDefinition CreateJsObjectForNative(

@@ -25,7 +25,11 @@ namespace UnityReactUIElements
                 foreach (var type in types)
                 {
                     var instance = (IJSBindingFactory)Activator.CreateInstance(type);
-                    factoryCache.Add(instance.Name, instance);
+
+                    if (!factoryCache.ContainsKey(instance.Name))
+                    {
+                        factoryCache.Add(instance.Name, instance);
+                    }
                 }
             }
         }

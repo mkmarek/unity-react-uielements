@@ -11,5 +11,6 @@ namespace UnityReactUIElements
 
         JavaScriptValue CreateConstructor();
         unsafe JavaScriptValue CreateJsObjectForNative(void* ptr, bool finalize);
+        unsafe void EntityCommandBufferSetComponent(EntityCommandBuffer buffer, Entity entity, void* componentPtr);
     }
 }

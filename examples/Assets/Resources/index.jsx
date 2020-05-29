@@ -3,15 +3,8 @@ import { render } from 'unity-renderer';
 import TabPanel from './components/tab-panel';
 import Counter from './components/counter';
 import ComponentPreview from './components/component-preview';
-// import Todo from './components/Todo';
+import Todo from './components/Todo';
 import Popup from './components/popup';
-
-const margin = (margin) => ({
-  marginTop: margin,
-  marginBottom: margin,
-  marginLeft: margin,
-  marginRight: margin
-});
 
 const rootStyle = {
   width: "100%",
@@ -53,7 +46,7 @@ function App() {
           <ComponentPreview />
         </TabPanel.Panel>
         <TabPanel.Panel name="ECS TODO example">
-          {/* <Todo /> */}
+          <Todo />
         </TabPanel.Panel>
         <TabPanel.Panel name="Popup example">
           <button onMouseUpEvent={() => setPopupOpened(true)} text="Open popup" />

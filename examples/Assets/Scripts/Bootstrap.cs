@@ -13,6 +13,13 @@ namespace UnityReactUIElements.Examples
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         public static void InitializeWithScene()
         {
+            var todo = new TodoItemComponent();
+
+            todo.Content = "test";
+
+            string x = todo.Content.ToString();
+
+
             var world = World.DefaultGameObjectInjectionWorld;
 
             for (var i = 0; i < 1; i++)
@@ -22,8 +29,7 @@ namespace UnityReactUIElements.Examples
                 world.EntityManager.AddComponent<CounterComponent>(counterEntity);
                 world.EntityManager.SetComponentData(counterEntity, new CounterComponent()
                 {
-                    IntTest = 42
-                    //count = 0
+                    Count = 0
                 });
             }
         }

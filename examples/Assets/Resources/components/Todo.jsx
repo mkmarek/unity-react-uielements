@@ -1,58 +1,57 @@
 import React, { useState } from 'react';
+import { useQuery } from 'unity-renderer';
 import Button from './button';
-import { useQuery, createEntity, removeEntity } from 'unity-renderer'; 
 
 function TodoItem({ value, onRemove }) {
 
     return (
-        <Button innerStyle={{ flexDirection: 'row', justifyContent: 'space-between' }} style={{ height: 70 }}>
+        <Button innerStyle={{ flexDirection: 'Row', justifyContent: 'SpaceBetween' }} style={{ height: 70 }}>
             <visualElement style={{ marginLeft: 10 }}>{value}</visualElement>
             <Button onMouseUpEvent={onRemove} style={{ width: 70, height: 50, marginRight: 5 }}>Delete</Button>
         </Button>
     )
 }
 
+const todoItemComponentName = 'TodoItemComponent';
+const TodoItemComponent = getFactory(todoItemComponentName);
+
 export default function Todo() {
-    const [isInitializing, todoItems] = useQuery('TodoItems');
     const [value, setValue] = useState('');
+    const query = useQuery([todoItemComponentName]);
+
+    const items = [];
+    for (let i = 0; i < query.getSize(); i++) {
+        items.push({
+            entity: query.getElementAt('Entity', i),
+            value: query.getElementAt(todoItemComponentName, i).Content
+        });
+    }
 
     const addItem = () => {
-        const utf8 = unescape(encodeURIComponent(value));
+        const newValue = new TodoItemComponent();
+        newValue.Content = value;
 
-        const arr = [];
-        for (let i = 0; i < utf8.length; i++) {
-            arr.push(utf8.charCodeAt(i));
-        }
-
-        createEntity([['TodoItemComponent', {
-            data: arr
-        }]])
+        executeBuffer((buffer) => {
+            const entity = buffer.createEntity();
+            buffer.setComponent(todoItemComponentName, entity, newValue);
+        })
 
         setValue('');
     }
 
-    const mapArrayToString = (arr) => {
-        if (!arr) return '';
-
-        const utf8 = String.fromCharCode(...arr);
-        return decodeURIComponent(escape(utf8));
+    const removeItem = (entity) => {
+        executeBuffer((buffer) => {
+            buffer.destroyEntity(entity);
+        });
     }
-
-    const removeItem = (index) => {
-        removeEntity(index, [ 'TodoItemComponent' ]);
-    }
-
-    const items = isInitializing
-        ? []
-        : todoItems.map(e => mapArrayToString(e.data));
 
     return (
         <visualElement style={{ height: '100%' }}>
-            <scrollview style={{ height: '100%' }}>
-                {items.map((e, i) => <TodoItem key={i} value={e} onRemove={() => removeItem(i)} />)}
-            </scrollview>
-            <textfield text={value} onChange={e => setValue(e.value)} />
-            <Button style={{ height: 70, minHeight: 70, alignSelf: 'flex-end' }} onMouseUpEvent={addItem}>
+            <scrollView style={{ height: '100%' }}>
+                {items.map((e, i) => <TodoItem key={i} value={e.value} onRemove={() => removeItem(e.entity)} />)}
+            </scrollView>
+            <textField value={value} onChange={newValue => setValue(newValue)} />
+            <Button style={{ height: 70, minHeight: 70, alignSelf: 'FlexEnd' }} onMouseUpEvent={addItem}>
                 Add TODO item
             </Button>
         </visualElement>

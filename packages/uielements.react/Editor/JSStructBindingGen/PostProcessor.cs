@@ -7,6 +7,7 @@ using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Unity.CompilationPipeline.Common.Diagnostics;
 using Unity.CompilationPipeline.Common.ILPostProcessing;
+using Unity.Entities;
 
 namespace Unity.ReactUIElements.JsStructBinding.CodeGen
 {
@@ -33,6 +34,9 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen
             var assemblyDefinition = AssemblyDefinitionFor(compiledAssembly);
 
             var typesToTransform = new List<TypeReference>();
+
+            // Built in types
+            typesToTransform.Add(assemblyDefinition.MainModule.ImportReference(typeof(Entity)));
 
             typesToTransform.AddRange(assemblyDefinition.MainModule.GetTypes()
                 .Where(e => e.IsValueType && e.HasCustomAttributes)

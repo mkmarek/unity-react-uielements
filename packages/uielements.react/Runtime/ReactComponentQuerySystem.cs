@@ -8,6 +8,7 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using Unity.Jobs;
+using UnityEngine;
 
 namespace UnityReactUIElements
 {
@@ -29,6 +30,12 @@ namespace UnityReactUIElements
         {
             var arrayPtr = chunk.GetNativeArray(ComponentType).GetUnsafeReadOnlyPtr();
             var ptr = (byte*) DataPtr;
+            var versionPointer = (uint*)DataPtr;
+
+            var version = chunk.GetComponentVersion(ComponentType);
+
+            // TODO: Might be a problem with multithreading
+            *versionPointer += version;
 
             for (var i = 0; i < chunk.Count; i++)
             {
@@ -57,10 +64,10 @@ namespace UnityReactUIElements
         public void Execute(ArchetypeChunk chunk, int chunkIndex, int entityOffset)
         {
             var arrayPtr = chunk.GetNativeArray(EntityType).GetUnsafeReadOnlyPtr();
-            var versionPointer = (int*) DataPtr;
+            var versionPointer = (uint*) DataPtr;
             var ptr = (byte*) DataPtr;
 
-            (*versionPointer)++;
+            (*versionPointer) = 0;
 
             for (var i = 0; i < chunk.Count; i++)
             {
@@ -86,7 +93,7 @@ namespace UnityReactUIElements
             public Dictionary<string, int> OffsetMap;
             public EntityQuery Query;
             public string[] Components;
-            public int PreviousVersion;
+            public uint PreviousVersion;
             public JavaScriptValue OnChangeCallback;
             public ComponentType[] ComponentTypes;
 
@@ -109,6 +116,7 @@ namespace UnityReactUIElements
         }
 
         private Dictionary<string, QueryData> queryRefs = new Dictionary<string, QueryData>();
+        private double previousExecution = 0;
 
         public JavaScriptValue CreateQuery(string[] components, JavaScriptValue callback)
         {
@@ -135,7 +143,6 @@ namespace UnityReactUIElements
                 }
 
                 var q = GetEntityQuery(componentTypes);
-                q.ResetFilter();
 
                 callback.AddRef();
 
@@ -269,13 +276,19 @@ namespace UnityReactUIElements
 
         protected override JobHandle OnUpdate(JobHandle inputDeps)
         {
+            // We'll run this at 30FPS. Should be good enough for UI
+            if (previousExecution + 0.033 > Time.ElapsedTime)
+            {
+                return inputDeps;
+            }
+
+            previousExecution = Time.ElapsedTime;
+
             var combined = inputDeps;
             var valuesCopy = queryRefs.ToList();
 
             foreach (var queryRef in valuesCopy)
             {
-                bool wasReset = false;
-
                 if (queryRef.Value == null || queryRef.Value.IsDisposed)
                 {
                     queryRefs.Remove(queryRef.Key);
@@ -287,7 +300,7 @@ namespace UnityReactUIElements
                     // Check if version changed
                     if (queryRef.Value.HasData)
                     {
-                        var versionPtr = (int*) queryRef.Value.DataPtr;
+                        var versionPtr = (uint*) queryRef.Value.DataPtr;
                         var currentVersion = *versionPtr;
 
                         if (currentVersion != queryRef.Value.PreviousVersion)
@@ -307,7 +320,7 @@ namespace UnityReactUIElements
 
                 if (!queryRef.Value.HasData || queryRef.Value.Size != size)
                 {
-                    wasReset = true;
+                    queryRef.Value.PreviousVersion = 0;
 
                     unsafe
                     {
@@ -335,6 +348,8 @@ namespace UnityReactUIElements
                     };
 
                     combined = copyEntities.Schedule(queryRef.Value.Query, combined);
+
+                    inputDeps = combined;
                 }
 
                 foreach (var component in queryRef.Value.Components)
@@ -342,8 +357,6 @@ namespace UnityReactUIElements
                     combined = JobHandle.CombineDependencies(combined,
                         ScheduleJobForComponent(queryRef.Value, component, inputDeps));
                 }
-
-                if (wasReset) queryRef.Value.Query.SetChangedVersionFilter(queryRef.Value.ComponentTypes);
             }
 
             return combined;

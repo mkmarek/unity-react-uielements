@@ -14,11 +14,12 @@ const registeredQueryCallbacks = [];
 
 export function useQuery(componentTypes: string[]) {
     const [queryIndex, setQueryIndex] = useState(-1);
-    const [_, setVersion] = useState(0);
+    const [_, setVersion] = useState(null);
 
     if (queryIndex >= 0) {
         registeredQueryCallbacks[queryIndex] = () => {
-            setVersion(registeredQueries[queryIndex].getVersion());
+            const v = `${registeredQueries[queryIndex].getVersion()}_${registeredQueries[queryIndex].getSize()}`;
+            setVersion(v);
         }
     }
 

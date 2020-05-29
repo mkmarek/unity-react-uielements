@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using ChakraHost.Hosting;
 using Unity.Entities;
 using Unity.UIElements.Runtime;
@@ -24,7 +23,9 @@ namespace UnityReactUIElements.Bridge
 
             globalObject.SetProperty(
                 JavaScriptPropertyId.FromString("getFactory"),
-                JavaScriptValue.CreateFunction("getFactory", GetFactory), true);
+                JavaScriptValue.CreateFunction("getFactory", new JavaScriptNativeFunction(GetFactory)), true);
+
+            JsEntityCommandBuffer.CreateOnGlobal(globalObject);
 
             if (renderer != null)
             {
@@ -38,7 +39,7 @@ namespace UnityReactUIElements.Bridge
                     renderer.visualTree.ToJavaScriptValue(),
                     true);
 
-                var createQueryFunction = JavaScriptValue.CreateFunction("createQuery", CreateQuery);
+                var createQueryFunction = JavaScriptValue.CreateFunction("createQuery", new JavaScriptNativeFunction(CreateQuery));
 
                 globalObject.SetProperty(
                     JavaScriptPropertyId.FromString("__CREATEQUERY__"),

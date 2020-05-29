@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from 'unity-renderer';
 import Button from './button';
 
@@ -26,11 +26,26 @@ const countStyle = Object.assign(margin('5px'), {
     height: '40%'
 });
 
-export default function Counter() {
-    const query = useQuery(['CounterComponent']);
-    const [count, setCount] = useState(0);
+const counterComponentName = 'CounterComponent';
+const CounterComponent = getFactory(counterComponentName);
 
-    const counterComponent = query && query.getElementAt('CounterComponent', 0);
+export default function Counter() {
+    const query = useQuery([counterComponentName]);
+
+    if (query.getSize() == 0) return <></>;
+    
+    const { Count } = query.getElementAt(counterComponentName, 0);
+
+    const setCount = (value) => {
+        const counterComponentEntity = query.getElementAt('Entity', 0);
+
+        const newValue = new CounterComponent();
+        newValue.Count = value;
+
+        executeBuffer((buffer) => {
+            buffer.setComponent(counterComponentName, counterComponentEntity, newValue);
+        })
+    }
 
     return (
         <visualElement style={{
@@ -38,14 +53,14 @@ export default function Counter() {
             height: "100%",
             alignItems: 'Center',
             justifyContent: 'Center'}}>
-            <visualElement style={countStyle}>{counterComponent && counterComponent.IntTest}</visualElement>
+            <visualElement style={countStyle}>{Count}</visualElement>
             <visualElement style={{ flexDirection: 'Row' }}>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onMouseUpEvent={() => setCount(count + 1)}>Increment</Button>
+                    onMouseUpEvent={() => setCount(Count + 1)}>Increment</Button>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onMouseUpEvent={() => setCount(count - 1)}>Decrement</Button>
+                    onMouseUpEvent={() => setCount(Count - 1)}>Decrement</Button>
             </visualElement>
         </visualElement>
     )

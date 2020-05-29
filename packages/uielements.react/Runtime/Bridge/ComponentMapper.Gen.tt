@@ -165,21 +165,25 @@ namespace UnityReactUIElements.Bridge
 #>
         public class React<#=type.Name#> : <#=CSharpName(type, true)#>
         {
-            private Dictionary<string, Delegate> previousCallbacks = new Dictionary<string, Delegate>();
+            private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
 
-            public void SetCallback<TEventType>(UnityEngine.UIElements.EventCallback<TEventType> callback) where TEventType : EventBase<TEventType>, new()
+            public void SetCallback<TEventType>(UnityEngine.UIElements.EventCallback<TEventType> callback, JavaScriptValue function) where TEventType : EventBase<TEventType>, new()
             {
                 var t = typeof(TEventType);
 
                 if (previousCallbacks.ContainsKey(t.Name))
                 {
-                    this.UnregisterCallback<TEventType>((UnityEngine.UIElements.EventCallback<TEventType>)previousCallbacks[t.Name]);
+                    this.UnregisterCallback<TEventType>((UnityEngine.UIElements.EventCallback<TEventType>)previousCallbacks[t.Name].Item1);
+                    
+                    if (previousCallbacks[t.Name].Item2.IsValid)
+                        previousCallbacks[t.Name].Item2.Release();
+
                     previousCallbacks.Remove(t.Name);
                 }
 
                 this.RegisterCallback(callback);
 
-                previousCallbacks.Add(t.Name, callback);
+                previousCallbacks.Add(t.Name, (callback, function));
             }
         }   
 <#
@@ -209,9 +213,11 @@ namespace UnityReactUIElements.Bridge
         foreach (var eventType in allEventTypes) {
 #>
             public UnityEngine.UIElements.EventCallback<<#=eventType.Name#>> on<#=eventType.Name#>;
+            public JavaScriptValue on<#=eventType.Name#>Function;
 <#         
         }
-#>    
+#>          public UnityEngine.UIElements.EventCallback<ChangeEvent<string>> onChange;
+            public JavaScriptValue onChangeFunction;
         }
 <#
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -254,14 +260,36 @@ namespace UnityReactUIElements.Bridge
                 var function =  props.GetProperty(JavaScriptPropertyId.FromString("on<#=eventType.Name#>"));
                 if (function.ValueType == JavaScriptValueType.Function)
                 {
+                    function.AddRef();
+                    result.on<#=eventType.Name#>Function = function;
                     result.on<#=eventType.Name#> = (<#=CSharpName(eventType, false)#> evt) => {
-                        function.CallFunction(JavaScriptValue.Undefined);
+                        if (function.IsValid)
+                        {
+                            function.CallFunction(JavaScriptValue.Undefined);
+                        }
                     };
                 }
             }
 <#         
         }
 #>  
+            // TODO: generate this in a better manner
+            if (props.HasProperty(JavaScriptPropertyId.FromString("onChange")))
+            {
+                var function =  props.GetProperty(JavaScriptPropertyId.FromString("onChange"));
+                if (function.ValueType == JavaScriptValueType.Function)
+                {
+                    function.AddRef();
+                    result.onChangeFunction = function;
+                    result.onChange = (ChangeEvent<string> evt) => {
+                        if (function.IsValid)
+                        {
+                            function.CallFunction(JavaScriptValue.Undefined, JavaScriptValue.FromString(evt.newValue));
+                        }
+                    };
+                }
+            }
+
             if (props.HasProperty(JavaScriptPropertyId.FromString("style")))
             {
                 result.style = MapStyle(props.GetProperty(JavaScriptPropertyId.FromString("style")));
@@ -306,11 +334,16 @@ namespace UnityReactUIElements.Bridge
 #>
             if (props.on<#=eventType.Name#> != null)
             {
-                component.SetCallback(props.on<#=eventType.Name#>);
+                component.SetCallback(props.on<#=eventType.Name#>, props.on<#=eventType.Name#>Function);
             }
 <#         
         }
 #>  
+
+            if (props.onChange != null)
+            {
+                component.SetCallback(props.onChange, props.onChangeFunction);
+            }
 
             if (props.style != null)
             {
@@ -347,6 +380,10 @@ namespace UnityReactUIElements.Bridge
 <#         
         }
 #>  
+            if (oldProps.onChange != newProps.onChange)
+            {
+                result.onChange = newProps.onChange;
+            }
 
             if (oldProps.style != newProps.style)
             {

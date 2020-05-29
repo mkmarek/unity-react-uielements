@@ -16,13 +16,15 @@ namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
         private static readonly ITypeSetter[] Setters = {
             new FloatTypeSetter(),
             new IntegerTypeSetter(),
-            new StructureTypeSetter()
+            new StructureTypeSetter(),
+            new StringTypeSetter()
         };
 
         private static readonly ITypeGetter[] Getters = {
             new FloatTypeGetter(),
             new IntegerTypeGetter(),
-            new StructureTypeGetter()
+            new StructureTypeGetter(),
+            new StringTypeGetter()
         };
 
         public static MethodDefinition CreateSetter(

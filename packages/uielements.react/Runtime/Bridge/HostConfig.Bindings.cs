@@ -1,5 +1,6 @@
 using System;
 using ChakraHost.Hosting;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace UnityReactUIElements.Bridge
@@ -22,132 +23,132 @@ namespace UnityReactUIElements.Bridge
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getPublicInstance"),
-                JavaScriptValue.CreateFunction("getPublicInstance", GetPublicInstance),
+                JavaScriptValue.CreateFunction("getPublicInstance", new JavaScriptNativeFunction(GetPublicInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getRootHostContext"),
-                JavaScriptValue.CreateFunction("getRootHostContext", GetRootHostContext),
+                JavaScriptValue.CreateFunction("getRootHostContext", new JavaScriptNativeFunction(GetRootHostContext)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("getChildHostContext"),
-                JavaScriptValue.CreateFunction("getChildHostContext", GetChildHostContext),
+                JavaScriptValue.CreateFunction("getChildHostContext", new JavaScriptNativeFunction(GetChildHostContext)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("createInstance"),
-                JavaScriptValue.CreateFunction("createInstance", CreateInstance),
+                JavaScriptValue.CreateFunction("createInstance", new JavaScriptNativeFunction(CreateInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("prepareForCommit"),
-                JavaScriptValue.CreateFunction("prepareForCommit", PrepareForCommit),
+                JavaScriptValue.CreateFunction("prepareForCommit", new JavaScriptNativeFunction(PrepareForCommit)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("resetAfterCommit"),
-                JavaScriptValue.CreateFunction("resetAfterCommit", ResetAfterCommit),
+                JavaScriptValue.CreateFunction("resetAfterCommit", new JavaScriptNativeFunction(ResetAfterCommit)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendInitialChild"),
-                JavaScriptValue.CreateFunction("appendInitialChild", AppendInitialChild),
+                JavaScriptValue.CreateFunction("appendInitialChild", new JavaScriptNativeFunction(AppendInitialChild)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("finalizeInitialChildren"),
-                JavaScriptValue.CreateFunction("finalizeInitialChildren", FinalizeInitialChildren),
+                JavaScriptValue.CreateFunction("finalizeInitialChildren", new JavaScriptNativeFunction(FinalizeInitialChildren)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("prepareUpdate"),
-                JavaScriptValue.CreateFunction("prepareUpdate", PrepareUpdate),
+                JavaScriptValue.CreateFunction("prepareUpdate", new JavaScriptNativeFunction(PrepareUpdate)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("shouldSetTextContent"),
-                JavaScriptValue.CreateFunction("shouldSetTextContent", ShouldSetTextContent),
+                JavaScriptValue.CreateFunction("shouldSetTextContent", new JavaScriptNativeFunction(ShouldSetTextContent)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("shouldDeprioritizeSubtree"),
-                JavaScriptValue.CreateFunction("shouldDeprioritizeSubtree", ShouldDeprioritizeSubtree),
+                JavaScriptValue.CreateFunction("shouldDeprioritizeSubtree", new JavaScriptNativeFunction(ShouldDeprioritizeSubtree)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("createTextInstance"),
-                JavaScriptValue.CreateFunction("createTextInstance", CreateTextInstance),
+                JavaScriptValue.CreateFunction("createTextInstance", new JavaScriptNativeFunction(CreateTextInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendChild"),
-                JavaScriptValue.CreateFunction("appendChild", AppendChild),
+                JavaScriptValue.CreateFunction("appendChild", new JavaScriptNativeFunction(AppendChild)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("appendChildToContainer"),
-                JavaScriptValue.CreateFunction("appendChildToContainer", AppendChildToContainer),
+                JavaScriptValue.CreateFunction("appendChildToContainer", new JavaScriptNativeFunction(AppendChildToContainer)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitTextUpdate"),
-                JavaScriptValue.CreateFunction("commitTextUpdate", CommitTextUpdate),
+                JavaScriptValue.CreateFunction("commitTextUpdate", new JavaScriptNativeFunction(CommitTextUpdate)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitMount"),
-                JavaScriptValue.CreateFunction("commitMount", CommitMount),
+                JavaScriptValue.CreateFunction("commitMount", new JavaScriptNativeFunction(CommitMount)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("commitUpdate"),
-                JavaScriptValue.CreateFunction("commitUpdate", CommitUpdate),
+                JavaScriptValue.CreateFunction("commitUpdate", new JavaScriptNativeFunction(CommitUpdate)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("insertBefore"),
-                JavaScriptValue.CreateFunction("insertBefore", InsertBefore),
+                JavaScriptValue.CreateFunction("insertBefore", new JavaScriptNativeFunction(InsertBefore)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("insertInContainerBefore"),
-                JavaScriptValue.CreateFunction("insertInContainerBefore", InsertInContainerBefore),
+                JavaScriptValue.CreateFunction("insertInContainerBefore", new JavaScriptNativeFunction(InsertInContainerBefore)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("removeChild"),
-                JavaScriptValue.CreateFunction("removeChild", RemoveChild),
+                JavaScriptValue.CreateFunction("removeChild", new JavaScriptNativeFunction(RemoveChild)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("removeChildFromContainer"),
-                JavaScriptValue.CreateFunction("removeChildFromContainer", RemoveChildFromContainer),
+                JavaScriptValue.CreateFunction("removeChildFromContainer", new JavaScriptNativeFunction(RemoveChildFromContainer)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("resetTextContent"),
-                JavaScriptValue.CreateFunction("resetTextContent", ResetTextContent),
+                JavaScriptValue.CreateFunction("resetTextContent", new JavaScriptNativeFunction(ResetTextContent)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("hideInstance"),
-                JavaScriptValue.CreateFunction("hideInstance", HideInstance),
+                JavaScriptValue.CreateFunction("hideInstance", new JavaScriptNativeFunction(HideInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("hideTextInstance"),
-                JavaScriptValue.CreateFunction("hideTextInstance", HideTextInstance),
+                JavaScriptValue.CreateFunction("hideTextInstance", new JavaScriptNativeFunction(HideTextInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("unhideInstance"),
-                JavaScriptValue.CreateFunction("unhideInstance", UnhideInstance),
+                JavaScriptValue.CreateFunction("unhideInstance", new JavaScriptNativeFunction(UnhideInstance)),
                 true);
 
             prototype.SetProperty(
                 JavaScriptPropertyId.FromString("unhideTextInstance"),
-                JavaScriptValue.CreateFunction("unhideTextInstance", UnhideTextInstance),
+                JavaScriptValue.CreateFunction("unhideTextInstance", new JavaScriptNativeFunction(UnhideTextInstance)),
                 true);
 
             return prototype;
@@ -160,13 +161,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("GetPublicInstance method expects at least one argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(GetPublicInstance)))
+                return JavaScriptValue.Undefined;
 
-            var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            var result = GetPublicInstance(instance);
+                var result = GetPublicInstance(instance);
 
-            return result.ToJavaScriptValue();
+                return result.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue GetRootHostContext(
@@ -176,13 +186,21 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("GetRootHostContext method expects at least one argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(GetRootHostContext)))
+                return JavaScriptValue.Undefined;
+            try
+            {
+                var rootContainer = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            var rootContainer = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var result = GetRootHostContext(rootContainer);
 
-            var result = GetRootHostContext(rootContainer);
-
-            return result.ToJavaScriptValue();
+                return result.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue GetChildHostContext(
@@ -192,15 +210,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 4) throw new InvalidOperationException("GetChildHostContext method expects at least 3 arguments");
+            if (!arguments.ValidateWithExternalData<HostContext>(1, nameof(GetChildHostContext)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(GetChildHostContext), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(3, nameof(GetChildHostContext)))
+                return JavaScriptValue.Undefined;
 
-            var parentHostContext = arguments[1].ObjectFromJavaScriptValue<HostContext>();
-            var type = arguments[2].ToString();
-            var rootContainer = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parentHostContext = arguments[1].ObjectFromJavaScriptValue<HostContext>();
+                var type = arguments[2].ToString();
+                var rootContainer = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
 
-            var result = GetChildHostContext(parentHostContext, type, rootContainer);
+                var result = GetChildHostContext(parentHostContext, type, rootContainer);
 
-            return result.ToJavaScriptValue();
+                return result.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue CreateInstance(
@@ -210,15 +241,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("CreateInstance method expects at least 3 arguments");
+            if (!arguments.ValidateWithType(1, nameof(CreateInstance), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(CreateInstance), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(3, nameof(CreateInstance)))
+                return JavaScriptValue.Undefined;
 
-            var type = arguments[1].ToString();
-            var props = ComponentMapper.CreateProps(type, arguments[2]);
-            var rootContainer = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var type = arguments[1].ToString();
+                var props = ComponentMapper.CreateProps(type, arguments[2]);
+                var rootContainer = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
 
-            var result = CreateInstance(type, props, rootContainer);
+                var result = CreateInstance(type, props, rootContainer);
 
-            return result.ToJavaScriptValue();
+                return result.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue PrepareForCommit(
@@ -228,13 +272,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("PrepareForCommit method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(PrepareForCommit)))
+                return JavaScriptValue.Undefined;
 
-            var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            PrepareForCommit(container);
+                PrepareForCommit(container);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue ResetAfterCommit(
@@ -244,13 +297,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("ResetAfterCommit method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(ResetAfterCommit)))
+                return JavaScriptValue.Undefined;
 
-            var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            ResetAfterCommit(container);
+                ResetAfterCommit(container);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue AppendInitialChild(
@@ -260,14 +322,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("AppendInitialChild method expects at least 2 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(AppendInitialChild)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(AppendInitialChild)))
+                return JavaScriptValue.Undefined;
 
-            var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
 
-            AppendInitialChild(parent, child);
+                AppendInitialChild(parent, child);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue AppendChild(
@@ -277,14 +350,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("AppendInitialChild method expects at least 2 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(AppendChild)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(AppendChild)))
+                return JavaScriptValue.Undefined;
 
-            var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
 
-            AppendChild(parent, child);
+                AppendChild(parent, child);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue AppendChildToContainer(
@@ -294,14 +378,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("AppendInitialChild method expects at least 2 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(AppendChild)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(AppendChild)))
+                return JavaScriptValue.Undefined;
 
-            var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
 
-            AppendChildToContainer(parent, child);
+                AppendChildToContainer(parent, child);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue FinalizeInitialChildren(
@@ -311,17 +406,34 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 6) throw new InvalidOperationException("FinalizeInitialChildren method expects at least 5 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(FinalizeInitialChildren)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(FinalizeInitialChildren), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(3, nameof(FinalizeInitialChildren), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(4, nameof(FinalizeInitialChildren)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<HostContext>(5, nameof(FinalizeInitialChildren)))
+                return JavaScriptValue.Undefined;
 
-            var parentInstance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var type = arguments[2].ToString();
-            var props = ComponentMapper.CreateProps(type, arguments[3]);
-            var rootContainer = arguments[4].ObjectFromJavaScriptValue<VisualElement>();
-            var hostContext = arguments[5].ObjectFromJavaScriptValue<HostContext>();
+            try
+            {
+                var parentInstance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var type = arguments[2].ToString();
+                var props = ComponentMapper.CreateProps(type, arguments[3]);
+                var rootContainer = arguments[4].ObjectFromJavaScriptValue<VisualElement>();
+                var hostContext = arguments[5].ObjectFromJavaScriptValue<HostContext>();
 
-            FinalizeInitialChildren(parentInstance, type, props, rootContainer, hostContext);
+                FinalizeInitialChildren(parentInstance, type, props, rootContainer, hostContext);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue PrepareUpdate(
@@ -331,18 +443,37 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 7) throw new InvalidOperationException("PrepareUpdate method expects at least 6 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(PrepareUpdate)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(PrepareUpdate), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(3, nameof(PrepareUpdate), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(4, nameof(PrepareUpdate), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(5, nameof(PrepareUpdate)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<HostContext>(6, nameof(PrepareUpdate)))
+                return JavaScriptValue.Undefined;
 
-            var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var type = arguments[2].ToString();
-            var oldProps = ComponentMapper.CreateProps(type, arguments[3]);
-            var newProps = ComponentMapper.CreateProps(type, arguments[4]);
-            var rootContainer = arguments[5].ObjectFromJavaScriptValue<VisualElement>();
-            var hostContext = arguments[6].ObjectFromJavaScriptValue<HostContext>();
+            try
+            {
+                var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var type = arguments[2].ToString();
+                var oldProps = ComponentMapper.CreateProps(type, arguments[3]);
+                var newProps = ComponentMapper.CreateProps(type, arguments[4]);
+                var rootContainer = arguments[5].ObjectFromJavaScriptValue<VisualElement>();
+                var hostContext = arguments[6].ObjectFromJavaScriptValue<HostContext>();
 
-            var props = PrepareUpdate(instance, type, oldProps, newProps, rootContainer, hostContext);
+                var props = PrepareUpdate(instance, type, oldProps, newProps, rootContainer, hostContext);
 
-            return props.ToJavaScriptValue();
+                return props.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue ShouldSetTextContent(
@@ -352,14 +483,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("ShouldSetTextContent method expects at least 2 arguments");
+            if (!arguments.ValidateWithType(1, nameof(ShouldSetTextContent), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(ShouldSetTextContent), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
 
-            var type = arguments[1].ToString();
-            var props = ComponentMapper.CreateProps(type, arguments[2]);
+            try
+            {
+                var type = arguments[1].ToString();
+                var props = ComponentMapper.CreateProps(type, arguments[2]);
 
-            var result = ShouldSetTextContent(type, props);
+                var result = ShouldSetTextContent(type, props);
 
-            return JavaScriptValue.FromBoolean(result);
+                return JavaScriptValue.FromBoolean(result);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue ShouldDeprioritizeSubtree(
@@ -369,14 +511,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("ShouldDeprioritizeSubtree method expects at least 2 arguments");
+            if (!arguments.ValidateWithType(1, nameof(ShouldDeprioritizeSubtree), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(ShouldDeprioritizeSubtree), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
 
-            var type = arguments[1].ToString();
-            var props = ComponentMapper.CreateProps(type, arguments[2]);
+            try
+            {
+                var type = arguments[1].ToString();
+                var props = ComponentMapper.CreateProps(type, arguments[2]);
 
-            var result = ShouldDeprioritizeSubtree(type, props);
+                var result = ShouldDeprioritizeSubtree(type, props);
 
-            return JavaScriptValue.FromBoolean(result);
+                return JavaScriptValue.FromBoolean(result);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue CreateTextInstance(
@@ -386,15 +539,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("CreateTextInstance method expects at least 2 arguments");
+            if (!arguments.ValidateWithType(1, nameof(CreateTextInstance), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(CreateTextInstance)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<HostContext>(3, nameof(CreateTextInstance)))
+                return JavaScriptValue.Undefined;
 
-            var text = arguments[1].ToString();
-            var rootContainer = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
-            var hostContext = arguments[3].ObjectFromJavaScriptValue<HostContext>();
+            try
+            {
+                var text = arguments[1].ToString();
+                var rootContainer = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+                var hostContext = arguments[3].ObjectFromJavaScriptValue<HostContext>();
 
-            var result = CreateTextInstance(text, rootContainer, hostContext);
+                var result = CreateTextInstance(text, rootContainer, hostContext);
 
-            return result.ToJavaScriptValue();
+                return result.ToJavaScriptValue();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue CommitTextUpdate(
@@ -404,15 +570,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 4) throw new InvalidOperationException("CommitTextUpdate method expects at least 3 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(CommitTextUpdate)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(CommitTextUpdate), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(3, nameof(CommitTextUpdate), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
 
-            var visualElement = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var oldText = arguments[2].ToString();
-            var newText = arguments[3].ToString();
+            try
+            {
+                var visualElement = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var oldText = arguments[2].ToString();
+                var newText = arguments[3].ToString();
 
-            CommitTextUpdate(visualElement, oldText, newText);
+                CommitTextUpdate(visualElement, oldText, newText);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue CommitMount(
@@ -422,15 +601,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 4) throw new InvalidOperationException("CommitMount method expects at least 3 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(CommitMount)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(2, nameof(CommitMount), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(3, nameof(CommitMount), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
 
-            var visualElement = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var type = arguments[2].ToString();
-            var props = ComponentMapper.CreateProps(type, arguments[3]);
+            try
+            {
+                var visualElement = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var type = arguments[2].ToString();
+                var props = ComponentMapper.CreateProps(type, arguments[3]);
 
-            CommitMount(visualElement, type, props);
+                CommitMount(visualElement, type, props);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue CommitUpdate(
@@ -440,17 +632,34 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 6) throw new InvalidOperationException("CommitUpdate method expects at least 5 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(CommitUpdate)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<IComponentProps>(2, nameof(CommitUpdate)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(3, nameof(CommitUpdate), JavaScriptValueType.String))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(4, nameof(CommitUpdate), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithType(5, nameof(CommitUpdate), JavaScriptValueType.Object))
+                return JavaScriptValue.Undefined;
 
-            var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var type = arguments[3].ToString();
-            var updatePayload = arguments[2].ObjectFromJavaScriptValue<IComponentProps>();
-            var oldProps = ComponentMapper.CreateProps(type, arguments[4]);
-            var newProps = ComponentMapper.CreateProps(type, arguments[5]);
+            try
+            {
+                var instance = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var type = arguments[3].ToString();
+                var updatePayload = arguments[2].ObjectFromJavaScriptValue<IComponentProps>();
+                var oldProps = ComponentMapper.CreateProps(type, arguments[4]);
+                var newProps = ComponentMapper.CreateProps(type, arguments[5]);
 
-            var result = CommitUpdate(instance, updatePayload, type, oldProps, newProps);
+                var result = CommitUpdate(instance, updatePayload, type, oldProps, newProps);
 
-            return JavaScriptValue.FromBoolean(result);
+                return JavaScriptValue.FromBoolean(result);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue InsertBefore(
@@ -460,15 +669,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 4) throw new InvalidOperationException("InsertBefore method expects at least 3 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(InsertBefore)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(InsertBefore)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(3, nameof(InsertBefore)))
+                return JavaScriptValue.Undefined;
 
-            var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
-            var beforeChild = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+                var beforeChild = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
 
-            InsertBefore(parent, child, beforeChild);
+                InsertBefore(parent, child, beforeChild);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue InsertInContainerBefore(
@@ -478,15 +700,28 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 4) throw new InvalidOperationException("InsertInContainerBefore method expects at least 3 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(InsertInContainerBefore)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(InsertInContainerBefore)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(3, nameof(InsertInContainerBefore)))
+                return JavaScriptValue.Undefined;
 
-            var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
-            var beforeChild = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+                var beforeChild = arguments[3].ObjectFromJavaScriptValue<VisualElement>();
 
-            InsertInContainerBefore(container, child, beforeChild);
+                InsertInContainerBefore(container, child, beforeChild);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue RemoveChild(
@@ -496,14 +731,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("RemoveChild method expects at least 2 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(RemoveChild)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(RemoveChild)))
+                return JavaScriptValue.Undefined;
 
-            var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var parent = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
 
-            RemoveChild(parent, child);
+                RemoveChild(parent, child);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue RemoveChildFromContainer(
@@ -513,14 +759,25 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 3) throw new InvalidOperationException("RemoveChildFromContainer method expects at least 2 arguments");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(RemoveChildFromContainer)))
+                return JavaScriptValue.Undefined;
+            if (!arguments.ValidateWithExternalData<VisualElement>(2, nameof(RemoveChildFromContainer)))
+                return JavaScriptValue.Undefined;
 
-            var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
-            var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var container = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+                var child = arguments[2].ObjectFromJavaScriptValue<VisualElement>();
 
-            RemoveChildFromContainer(container, child);
+                RemoveChildFromContainer(container, child);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue ResetTextContent(
@@ -530,13 +787,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("ResetTextContent method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(ResetTextContent)))
+                return JavaScriptValue.Undefined;
 
-            var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            ResetTextContent(element);
+                ResetTextContent(element);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue HideInstance(
@@ -546,13 +812,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("HideInstance method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(HideInstance)))
+                return JavaScriptValue.Undefined;
 
-            var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            HideInstance(element);
+                HideInstance(element);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue HideTextInstance(
@@ -562,13 +837,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("HideTextInstance method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(HideTextInstance)))
+                return JavaScriptValue.Undefined;
 
-            var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            HideTextInstance(element);
+                HideTextInstance(element);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue UnhideInstance(
@@ -578,13 +862,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("UnhideInstance method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(UnhideInstance)))
+                return JavaScriptValue.Undefined;
 
-            var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            UnhideInstance(element);
+                UnhideInstance(element);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
 
         private static JavaScriptValue UnhideTextInstance(
@@ -594,13 +887,22 @@ namespace UnityReactUIElements.Bridge
             ushort argumentcount,
             IntPtr callbackdata)
         {
-            if (arguments.Length < 2) throw new InvalidOperationException("UnhideTextInstance method expects at least 1 argument");
+            if (!arguments.ValidateWithExternalData<VisualElement>(1, nameof(UnhideTextInstance)))
+                return JavaScriptValue.Undefined;
 
-            var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
+            try
+            {
+                var element = arguments[1].ObjectFromJavaScriptValue<VisualElement>();
 
-            UnhideTextInstance(element);
+                UnhideTextInstance(element);
 
-            return JavaScriptValue.Undefined;
+                return JavaScriptValue.Undefined;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+                return JavaScriptValue.Undefined;
+            }
         }
     }
 }
