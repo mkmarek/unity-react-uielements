@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Button from './button';
+import React from 'react';
 import { useQuery } from 'unity-renderer';
+import Button from './button';
 
 const margin = (margin) => ({
     marginTop: margin,
@@ -26,24 +26,42 @@ const countStyle = Object.assign(margin('5px'), {
     height: '40%'
 });
 
+const counterComponentName = 'CounterComponent';
+const CounterComponent = getFactory(counterComponentName);
+
 export default function Counter() {
-    const [initializing, counterComponents, setCounterComponent] = useQuery('Counter');
+    const query = useQuery([counterComponentName]);
 
-    if (initializing) return <element />;
+    if (query.getSize() == 0) return <></>;
+    
+    const { Count } = query.getElementAt(counterComponentName, 0);
 
-    const count = counterComponents[0].count;
+    const setCount = (value) => {
+        const counterComponentEntity = query.getElementAt('Entity', 0);
+
+        const newValue = new CounterComponent();
+        newValue.Count = value;
+
+        executeBuffer((buffer) => {
+            buffer.setComponent(counterComponentName, counterComponentEntity, newValue);
+        })
+    }
 
     return (
-        <element style={Object.assign(margin('auto'), { width: "100%", height: "100%", alignItems: "center" })}>
-            <element style={countStyle}>{count}</element>
-            <element style={{ flexDirection: 'row' }}>
+        <visualElement style={{
+            width: "100%",
+            height: "100%",
+            alignItems: 'Center',
+            justifyContent: 'Center'}}>
+            <visualElement style={countStyle}>{Count}</visualElement>
+            <visualElement style={{ flexDirection: 'Row' }}>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onClick={() => setCounterComponent(0, { count: count + 1 })}>Increment</Button>
+                    onMouseUpEvent={() => setCount(Count + 1)}>Increment</Button>
                 <Button
                     style={Object.assign(itemStyle, { fontSize: '18'})}
-                    onClick={() => setCounterComponent(0, {count: count - 1 })}>Decrement</Button>
-            </element>
-        </element>
+                    onMouseUpEvent={() => setCount(Count - 1)}>Decrement</Button>
+            </visualElement>
+        </visualElement>
     )
 }

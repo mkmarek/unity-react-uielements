@@ -5,7 +5,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "generate:lib": "npm run build && node ./scripts/generate-lib-files.js"
+    "generate:lib": "npm run build && node ./scripts/generate-lib-files.js",
+    "generate:lib-debug": "node ./scripts/generate-lib-files.js"
   },
   "author": "",
   "license": "MIT",

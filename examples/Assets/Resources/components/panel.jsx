@@ -33,12 +33,12 @@ export default function Panel({ innerStyle, outerStyle, children }) {
     }, innerStyle);
 
     return (
-        <element style={outerStyle}>
-            <element style={midBorderStyle}>
-                <element style={innerBorderStyle}>
+        <visualElement style={outerStyle}>
+            <visualElement style={midBorderStyle}>
+                <visualElement style={innerBorderStyle}>
                     {children}
-                </element>
-            </element>
-        </element>
+                </visualElement>
+            </visualElement>
+        </visualElement>
     );
 }

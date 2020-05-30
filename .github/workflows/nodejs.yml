@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Remove everything except the package
       run: |
-        mv packages/com.mkmarek.uielements.react ../
-        ls | grep -v com.mkmarek.uielements.react | xargs rm -rf
+        mv packages/uielements.react ../
+        ls | grep -v uielements.react | xargs rm -rf
     - name: Push to package branch
       env:
         PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
         rm -rf ./*
         rm -rf .github
         mv ../.git .git
-        cp -r ../com.mkmarek.uielements.react/* .
+        cp -r ../uielements.react/* .
         git add -A
         git commit -m "Create package"
         git remote set-url origin https://$PUSH_TOKEN:x-oauth-basic@github.com/mkmarek/unity-react-uielements.git

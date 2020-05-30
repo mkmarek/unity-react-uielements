@@ -11,10 +11,12 @@ Add a dependency into your `manifest.json`.
 ```json
 {
   "dependencies": {
-    "com.mkmarek.uielements.react": "https://github.com/mkmarek/unity-react-uielements.git#releases/v0.0.1",
+    "com.mkmarek.uielements.react": "https://github.com/mkmarek/unity-react-uielements.git#releases/vX.X.X",
   }
 }
 ```
+
+For released version numbers check the releases tab.
 
 ## How to start
 
@@ -31,23 +33,22 @@ const style = {
   height: "80%",
   backgroundColor: "#ffffff",
   fontSize: 21,
-  alignSelf: 'center',
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignSelf: 'Center',
+  alignItems: 'Center',
+  justifyContent: 'Center'
 }
 
 function App() {
-  return <element style={style}>
+  return <visualElement style={style}>
     Hello Unity!
-  </element>
+  </visualElement>
 }
 
 render(<App />)
 ```
 
-4. In your Unity scene create a new empty object and add `ReactRenderer` and `EventSystem` monobehaviours to it with the following settings.
-
-![](./media/settings.jpg)
+4. In your Unity scene create a new empty object and add `PanelRenderer` and `EventSystem` monobehaviours to it as you would normaly do for runtime UIElements.
+5. Attach `ReactRuntime` monobehaviour to the object and drag your `index.jsx` into the `Root` field.
 
 Set the root property to your `index.jsx`. Just drag it from your `Resources` folder into the field.
 

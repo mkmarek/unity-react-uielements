@@ -33,7 +33,7 @@ module.exports = {
       }),
       json(),  
       minify({
-        comments: false
+        comments: false,
       }),
     ]
   };

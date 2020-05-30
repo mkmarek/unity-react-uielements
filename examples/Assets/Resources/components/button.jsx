@@ -14,7 +14,7 @@ const borderColor = (color) => ({
     borderRightColor: color
 });
 
-export default function Button({ style, innerStyle={}, onClick, children }) {
+export default function Button({ style, innerStyle={}, onMouseUpEvent, children }) {
     const outerStyle = Object.assign(borderColor('#0b2431'), borderWidth('1'),{
         width: '100%',
         height: '100%',
@@ -24,18 +24,18 @@ export default function Button({ style, innerStyle={}, onClick, children }) {
         width: '100%',
         height: '100%',
         backgroundColor: '#173e54',
-        alignItems: "center",
-        alignContent: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        unityTextAlign: 'middle-center',
+        alignItems: "Center",
+        alignContent: "Center",
+        justifyContent: "Center",
+        flexDirection: "Column",
+        unityTextAlign: 'MiddleCenter',
     }, innerStyle);
 
     return (
-        <element style={outerStyle}>
-           <element onClick={onClick} style={innerBorderStyle}>
+        <visualElement style={outerStyle}>
+           <visualElement onMouseUpEvent={onMouseUpEvent} style={innerBorderStyle}>
                 {children}
-            </element>
-        </element>
+            </visualElement>
+        </visualElement>
     );
 }

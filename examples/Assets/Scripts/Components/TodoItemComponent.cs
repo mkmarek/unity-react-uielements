@@ -1,10 +1,13 @@
-using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.InteropServices;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace UnityReactUIElements.Examples
 {
-    public unsafe struct TodoItemComponent : IComponentData
+    [JSBinding]
+    [StructLayout(LayoutKind.Sequential)]
+    public struct TodoItemComponent : IComponentData
     {
-        public fixed byte data[128];
+        public FixedString128 Content;
     }
 }

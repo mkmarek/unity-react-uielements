@@ -1,35 +1,44 @@
-import reconciler from 'react-reconciler/persistent';
-import Element from './components/element';
-import ContainerElement from './components/container-element';
+import { useState, useEffect } from 'react';
+import reconciler from 'react-reconciler';
 
-import * as base from './host-config/base'
-import * as mutation from './host-config/mutation'
-import * as persistence from './host-config/persistence'
-import Bridge from './native-to-js-bridge';
-
-const renderer = reconciler({
-    isPrimaryRenderer: true,
-
-    ...base,
-    ...mutation,
-    ...persistence
-});
-
-let containerElement = null;
-let container = null;
+const renderer = reconciler(__HOSTCONFIG__);
 
 export function render(element: React.ReactNode, callback: () => void = () => {}) {
 
-    if (!containerElement || !container) {
-        containerElement = new ContainerElement('element', {});
-        container = renderer.createContainer(containerElement, false, false);
-    }
-
-    global.bridge = new Bridge(containerElement);
-    global.natives.nativeToJsBridge = global.bridge.onMessage.bind(global.bridge);
-
+    const container = renderer.createContainer(__CONTAINER__, false, false);
     renderer.updateContainer(element, container, null, callback);
 }
 
-export * from './hooks';
-export * from './actions';
+const registeredQueries = [];
+const registeredQueryCallbacks = [];
+
+export function useQuery(componentTypes: string[]) {
+    const [queryIndex, setQueryIndex] = useState(-1);
+    const [_, setVersion] = useState(null);
+
+    if (queryIndex >= 0) {
+        registeredQueryCallbacks[queryIndex] = () => {
+            const v = `${registeredQueries[queryIndex].getVersion()}_${registeredQueries[queryIndex].getSize()}`;
+            setVersion(v);
+        }
+    }
+
+    useEffect(() => {
+        return () => {
+            registeredQueries[queryIndex].dispose();
+        }
+    }, componentTypes)
+
+    if (queryIndex < 0) {
+        const nextQueryIndex = registeredQueries.length;
+        setQueryIndex(nextQueryIndex);
+        const createdQuery = __CREATEQUERY__(componentTypes, () => {
+            registeredQueryCallbacks[nextQueryIndex]()
+        });
+        registeredQueries.push(createdQuery);
+
+        return createdQuery;
+    } else {
+        return registeredQueries[queryIndex];
+    }
+}

@@ -1,5 +1,8 @@
+using System;
+using ChakraHost.Hosting;
 using Unity.Entities;
 using UnityEngine;
+using UnityReactUIElements.Bridge;
 
 namespace UnityReactUIElements.Examples
 {
@@ -13,6 +16,13 @@ namespace UnityReactUIElements.Examples
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         public static void InitializeWithScene()
         {
+            var todo = new TodoItemComponent();
+
+            todo.Content = "test";
+
+            string x = todo.Content.ToString();
+
+
             var world = World.DefaultGameObjectInjectionWorld;
 
             for (var i = 0; i < 1; i++)
@@ -22,59 +32,22 @@ namespace UnityReactUIElements.Examples
                 world.EntityManager.AddComponent<CounterComponent>(counterEntity);
                 world.EntityManager.SetComponentData(counterEntity, new CounterComponent()
                 {
-                    count = 0
+                    Count = 0
                 });
             }
-
-            EntityFactory.RegisterComponent<CounterComponent>(nameof(CounterComponent));
-            EntityFactory.RegisterComponent(nameof(TodoItemComponent), (data) =>
-            {
-                var model = JsonUtility.FromJson<TodoItemModel>(data);
-                var component = new TodoItemComponent();
-
-                if (model.data != null)
-                {
-                    unsafe
-                    {
-                        var dataPtr = component.data;
-
-                        for (var i = 0; i < model.data.Length && i < 128; i++)
-                        {
-                            *(dataPtr++) = model.data[i];
-                        }
-                    }
-                }
-
-                return component;
-            }, component =>
-            {
-                var model = new TodoItemModel {data = new byte[128]};
-
-                if (model.data != null)
-                {
-                    unsafe
-                    {
-                        var dataPtr = component.data;
-
-                        for (var i = 0; i < model.data.Length && i < 128; i++)
-                        {
-                            model.data[i] = *(dataPtr++);
-                        }
-                    }
-                }
-
-                return JsonUtility.ToJson(model);
-            });
         }
-    }
 
-    public class CounterQuerySystem : ReactUIElementsQuery<CounterComponent>
-    {
-        public override string Name => "Counter";
-    }
+        [GlobalFunction("someTestStuff")]
+        public static JavaScriptValue DoCustomStuff(
+            JavaScriptValue callee,
+            bool isconstructcall,
+            JavaScriptValue[] arguments,
+            ushort argumentcount,
+            IntPtr callbackdata)
+        {
+            Debug.Log("Calling custom function");
 
-    public class TodoItemsSystem : ReactUIElementsQuery<TodoItemComponent>
-    {
-        public override string Name => "TodoItems";
+            return JavaScriptValue.FromInt32(42);
+        }
     }
 }
