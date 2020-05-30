@@ -6,7 +6,7 @@ using Unity.Entities;
 
 namespace UnityReactUIElements
 {
-    public class JsScheduledTasksSystem : ComponentSystem
+    internal class JsScheduledTasksSystem : ComponentSystem
     {
         private struct HeapKey : IComparable<HeapKey>
         {

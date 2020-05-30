@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 namespace UnityReactUIElements.Bridge
 {
-    public static class StyleMapper
+    internal static class StyleMapper
     {
         public static Color ParseColor(string hexColor)
         {

@@ -11,7 +11,7 @@ using OpCodes = Mono.Cecil.Cil.OpCodes;
 
 namespace Unity.ReactUIElements.JsStructBinding.CodeGen.Fields
 {
-    public static class FieldProcessor
+    internal static class FieldProcessor
     {
         private static readonly ITypeSetter[] Setters = {
             new FloatTypeSetter(),

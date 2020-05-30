@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UnityReactUIElements.Editor
 {
-    public class JSLoadPostProcessor : AssetPostprocessor
+    internal class JSLoadPostProcessor : AssetPostprocessor
     {
         static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
         {

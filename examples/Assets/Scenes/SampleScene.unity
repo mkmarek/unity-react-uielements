@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 117464534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f142fe9841efc4f8a151c6fb46ea9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 165c2c42b3d766140916705654094c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: -6750239444755058063, guid: fb7a34ebf6310fc468db4e32a57d1d40, type: 3}
@@ -207,8 +207,8 @@ MonoBehaviour:
   scaleWithScreenSizeScaler:
     referenceResolution: {x: 1200, y: 800}
     screenMatchMode: 0
-    match: 0
-  scaleMode: 0
+    match: 0.5
+  scaleMode: 2
 --- !u!114 &117464539
 MonoBehaviour:
   m_ObjectHideFlags: 0

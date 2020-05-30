@@ -8,7 +8,7 @@ using UnityReactUIElements.JsRuntime;
 
 namespace UnityReactUIElements
 {
-    public class JsModuleRuntime: IDisposable
+    internal class JsModuleRuntime: IDisposable
     {
         private ModuleLoader loader;
 

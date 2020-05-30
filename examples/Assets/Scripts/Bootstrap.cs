@@ -1,5 +1,8 @@
+using System;
+using ChakraHost.Hosting;
 using Unity.Entities;
 using UnityEngine;
+using UnityReactUIElements.Bridge;
 
 namespace UnityReactUIElements.Examples
 {
@@ -32,6 +35,19 @@ namespace UnityReactUIElements.Examples
                     Count = 0
                 });
             }
+        }
+
+        [GlobalFunction("someTestStuff")]
+        public static JavaScriptValue DoCustomStuff(
+            JavaScriptValue callee,
+            bool isconstructcall,
+            JavaScriptValue[] arguments,
+            ushort argumentcount,
+            IntPtr callbackdata)
+        {
+            Debug.Log("Calling custom function");
+
+            return JavaScriptValue.FromInt32(42);
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityReactUIElements.Bridge;
 
 namespace Assets.JsRuntime
 {
-    public class ScriptRunner : IDisposable
+    internal class ScriptRunner : IDisposable
     {
         public static object locker = new object();
 

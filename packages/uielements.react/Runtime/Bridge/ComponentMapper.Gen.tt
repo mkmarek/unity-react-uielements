@@ -163,7 +163,7 @@ namespace UnityReactUIElements.Bridge
         // Generation of Component types
         ////////////////////////////////////////////////////////////////////////////////////////////
 #>
-        public class React<#=type.Name#> : <#=CSharpName(type, true)#>
+        internal class React<#=type.Name#> : <#=CSharpName(type, true)#>
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
 
@@ -406,7 +406,7 @@ namespace UnityReactUIElements.Bridge
     var styleType = typeof(IStyle);
     var styleProperties = styleType.GetProperties();
 #>
-        public class StyleProps
+        internal class StyleProps
         {
 <#
         foreach (var property in styleProperties) {

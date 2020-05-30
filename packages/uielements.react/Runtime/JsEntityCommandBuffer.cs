@@ -5,18 +5,14 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using UnityEngine;
+using UnityReactUIElements.Bridge;
 
 namespace UnityReactUIElements
 {
-    public static class JsEntityCommandBuffer
+    internal static class JsEntityCommandBuffer
     {
-        public static void CreateOnGlobal(JavaScriptValue global)
-        {
-            var createAndExecute = JavaScriptValue.CreateFunction("createAndExecute", CreateAndExecute);
-            global.SetProperty(JavaScriptPropertyId.FromString("executeBuffer"), createAndExecute, true);
-        }
-
-        private static JavaScriptValue CreateAndExecute(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        [GlobalFunction("executeBuffer")]
+        public static JavaScriptValue CreateAndExecute(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             var callback = arguments[1];
             var system =

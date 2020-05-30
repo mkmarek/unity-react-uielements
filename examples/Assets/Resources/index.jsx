@@ -49,7 +49,7 @@ function App() {
           <Todo />
         </TabPanel.Panel>
         <TabPanel.Panel name="Popup example">
-          <button onMouseUpEvent={() => setPopupOpened(true)} text="Open popup" />
+          <button onMouseUpEvent={() => { setPopupOpened(true); someTestStuff(); }} text="Open popup" />
         </TabPanel.Panel>
       </TabPanel>
       {popupOpened && <Popup onClose={() => setPopupOpened(false)} />}

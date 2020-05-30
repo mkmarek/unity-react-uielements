@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace UnityReactUIElements.Editor
 {
-    public static class BabelTransformer
+    internal static class BabelTransformer
     {
         public static string Transform(string code)
         {

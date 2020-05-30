@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using ChakraHost.Hosting;
@@ -8,9 +10,23 @@ using Unity.Entities;
 using Unity.UIElements.Runtime;
 using UnityEngine;
 
+[assembly: InternalsVisibleTo("ReactUIElements.JsImporter")]
+[assembly: InternalsVisibleTo("Unity.ReactUIElements.CodeGen")]
+
 namespace UnityReactUIElements.Bridge
 {
-    public static class Globals
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class GlobalFunctionAttribute : Attribute
+    {
+        public GlobalFunctionAttribute(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; set; }
+    }
+
+    internal static class Globals
     {
         public static void Set(PanelRenderer renderer = null)
         {
@@ -18,14 +34,6 @@ namespace UnityReactUIElements.Bridge
             globalObject.SetProperty(JavaScriptPropertyId.FromString("global"), globalObject, true);
 
             SetConsoleLogObject(globalObject);
-            SetTimeoutFunctions(globalObject);
-            SetBase64Functions(globalObject);
-
-            globalObject.SetProperty(
-                JavaScriptPropertyId.FromString("getFactory"),
-                JavaScriptValue.CreateFunction("getFactory", new JavaScriptNativeFunction(GetFactory)), true);
-
-            JsEntityCommandBuffer.CreateOnGlobal(globalObject);
 
             if (renderer != null)
             {
@@ -38,17 +46,52 @@ namespace UnityReactUIElements.Bridge
                     JavaScriptPropertyId.FromString("__CONTAINER__"),
                     renderer.visualTree.ToJavaScriptValue(),
                     true);
+            }
 
-                var createQueryFunction = JavaScriptValue.CreateFunction("createQuery", new JavaScriptNativeFunction(CreateQuery));
+            var customFunctions = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(e => e.GetName().Name == "ReactUIElements" ||
+                            e.GetReferencedAssemblies().Any(a => a.Name == "ReactUIElements"))
+                .SelectMany(e => e.DefinedTypes)
+                .SelectMany(e => e.GetMethods())
+                .Where(e => e.GetCustomAttribute<GlobalFunctionAttribute>() != null)
+                .Select(e => new
+                {
+                    attribute = e.GetCustomAttribute<GlobalFunctionAttribute>(),
+                    method = e
+                })
+                .ToList();
+
+            foreach (var customFunction in customFunctions)
+            {
+                if (!ValidateFunctionMethod(customFunction.method))
+                {
+                    Debug.Log("Custom global method must have the following signature static JavaScriptValue Function(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)");
+                    continue;
+                }
+
+                var function = JavaScriptValue.CreateFunction(customFunction.attribute.Name, (JavaScriptNativeFunction)customFunction.method.CreateDelegate(typeof(JavaScriptNativeFunction)));
 
                 globalObject.SetProperty(
-                    JavaScriptPropertyId.FromString("__CREATEQUERY__"),
-                    createQueryFunction,
+                    JavaScriptPropertyId.FromString(customFunction.attribute.Name),
+                    function,
                     true);
             }
         }
 
-        private static JavaScriptValue CreateQuery(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        private static bool ValidateFunctionMethod(MethodInfo method)
+        {
+            if (method.ReturnParameter.ParameterType != typeof(JavaScriptValue)) return false;
+            if (method.GetParameters().ElementAt(0).ParameterType != typeof(JavaScriptValue)) return false;
+            if (method.GetParameters().ElementAt(1).ParameterType != typeof(bool)) return false;
+            if (method.GetParameters().ElementAt(2).ParameterType != typeof(JavaScriptValue[])) return false;
+            if (method.GetParameters().ElementAt(3).ParameterType != typeof(ushort)) return false;
+            if (method.GetParameters().ElementAt(4).ParameterType != typeof(IntPtr)) return false;
+
+            return true;
+        }
+
+        [GlobalFunction("__CREATEQUERY__")]
+        public static JavaScriptValue CreateQuery(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             if (arguments.Length < 3 ||
                 arguments[1].ValueType != JavaScriptValueType.Array ||
@@ -95,7 +138,8 @@ namespace UnityReactUIElements.Bridge
             return querySystem.CreateQuery(components.ToArray(), arguments[2]);
         }
 
-        private static JavaScriptValue GetFactory(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        [GlobalFunction("getFactory")]
+        public static JavaScriptValue GetFactory(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             var name = arguments[1].ToString();
             var factory = JSTypeFactories.GetFactory(name);
@@ -105,16 +149,8 @@ namespace UnityReactUIElements.Bridge
             return factory.CreateConstructor();
         }
 
-        private static void SetBase64Functions(JavaScriptValue globalObject)
-        {
-            Native.JsCreateFunction(FromBase64, IntPtr.Zero, out var fromBase64Function);
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("fromBase64"), fromBase64Function, true);
-
-            Native.JsCreateFunction(ToBase64, IntPtr.Zero, out var toBase64Function);
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("toBase64"), toBase64Function, true);
-        }
-
-        private static JavaScriptValue FromBase64(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        [GlobalFunction("fromBase64")]
+        public static JavaScriptValue FromBase64(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             if (argumentcount < 2)
                 return JavaScriptValue.FromString("");
@@ -124,7 +160,8 @@ namespace UnityReactUIElements.Bridge
             return JavaScriptValue.FromString(Encoding.UTF8.GetString(Convert.FromBase64String(base64String)));
         }
 
-        private static JavaScriptValue ToBase64(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        [GlobalFunction("toBase64")]
+        public static JavaScriptValue ToBase64(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             if (argumentcount < 2)
                 return JavaScriptValue.FromString("");
@@ -134,16 +171,8 @@ namespace UnityReactUIElements.Bridge
             return JavaScriptValue.FromString(Convert.ToBase64String(Encoding.UTF8.GetBytes(stringToEncode)));
         }
 
-        private static void SetTimeoutFunctions(JavaScriptValue globalObject)
-        {
-            Native.JsCreateFunction(SetTimeout, IntPtr.Zero, out var setTimeoutFunction);
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("setTimeout"), setTimeoutFunction, true);
-
-            Native.JsCreateFunction(ClearTimeout, IntPtr.Zero, out var clearTimeoutFunction);
-            globalObject.SetProperty(JavaScriptPropertyId.FromString("clearTimeout"), clearTimeoutFunction, true);
-        }
-
-        private static JavaScriptValue ClearTimeout(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
+        [GlobalFunction("clearTimeout")]
+        public static JavaScriptValue ClearTimeout(JavaScriptValue callee, bool isconstructcall, JavaScriptValue[] arguments, ushort argumentcount, IntPtr callbackdata)
         {
             Native.JsGetUndefinedValue(out var undefinedValue);
 
@@ -152,6 +181,7 @@ namespace UnityReactUIElements.Bridge
             return undefinedValue;
         }
 
+        [GlobalFunction("setTimeout")]
         public static JavaScriptValue SetTimeout(JavaScriptValue callee, bool isConstructCall, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] JavaScriptValue[] arguments, ushort argumentCount, IntPtr callbackData)
         {
             var callbackValue = arguments[1];

@@ -7,7 +7,7 @@ namespace UnityReactUIElements.Editor
     using System.IO;
 
     [ScriptedImporter(1, "jsx")]
-    public class JsxFileImporter : ScriptedImporter
+    internal class JsxFileImporter : ScriptedImporter
     {
         public override void OnImportAsset(AssetImportContext ctx)
         {
@@ -22,12 +22,12 @@ namespace UnityReactUIElements.Editor
     }
 
     [ScriptedImporter(1, "mjs")]
-    public class MjsFileImporter : JsxFileImporter
+    internal class MjsFileImporter : JsxFileImporter
     {
     }
 
     [CustomEditor(typeof(JSFileObject))]
-    public class JSFileObjectInspector : UnityEditor.Editor
+    internal class JSFileObjectInspector : UnityEditor.Editor
     {
 
         public override void OnInspectorGUI()
