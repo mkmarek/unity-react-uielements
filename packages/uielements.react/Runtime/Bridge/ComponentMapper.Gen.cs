@@ -122,6 +122,8 @@ namespace UnityReactUIElements.Bridge
             else if (componentType == "toggle") ApplyToggleProps((ReactToggle)element, (ToggleProps)props);
             else throw new InvalidOperationException($"Unknown native component type {componentType}");
         }
+        ///<Component>
+        ///Name:bindableElement
         internal class ReactBindableElement : UnityEngine.UIElements.BindableElement
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -1517,6 +1519,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:box
         internal class ReactBox : UnityEngine.UIElements.Box
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -2884,6 +2888,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:button
         internal class ReactButton : UnityEngine.UIElements.Button
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -4307,6 +4313,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:foldout
         internal class ReactFoldout : UnityEngine.UIElements.Foldout
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -5730,6 +5738,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:image
         internal class ReactImage : UnityEngine.UIElements.Image
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -7181,6 +7191,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:iMGUIContainer
         internal class ReactIMGUIContainer : UnityEngine.UIElements.IMGUIContainer
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -8576,6 +8588,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:label
         internal class ReactLabel : UnityEngine.UIElements.Label
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -9985,6 +9999,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:listView
         internal class ReactListView : UnityEngine.UIElements.ListView
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -11436,6 +11452,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:minMaxSlider
         internal class ReactMinMaxSlider : UnityEngine.UIElements.MinMaxSlider
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -12915,6 +12933,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:popupWindow
         internal class ReactPopupWindow : UnityEngine.UIElements.PopupWindow
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -14324,6 +14344,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:repeatButton
         internal class ReactRepeatButton : UnityEngine.UIElements.RepeatButton
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -15733,6 +15755,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:scroller
         internal class ReactScroller : UnityEngine.UIElements.Scroller
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -17156,6 +17180,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:scrollView
         internal class ReactScrollView : UnityEngine.UIElements.ScrollView
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -18593,6 +18619,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:slider
         internal class ReactSlider : UnityEngine.UIElements.Slider
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -20072,6 +20100,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:sliderInt
         internal class ReactSliderInt : UnityEngine.UIElements.SliderInt
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -21551,6 +21581,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:templateContainer
         internal class ReactTemplateContainer : UnityEngine.UIElements.TemplateContainer
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -22946,6 +22978,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:textElement
         internal class ReactTextElement : UnityEngine.UIElements.TextElement
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -24355,6 +24389,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:visualElement
         internal class ReactVisualElement : UnityEngine.UIElements.VisualElement
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -25722,6 +25758,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:textField
         internal class ReactTextField : UnityEngine.UIElements.TextField
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
@@ -27257,6 +27295,8 @@ namespace UnityReactUIElements.Bridge
 
             return result;
         }
+        ///<Component>
+        ///Name:toggle
         internal class ReactToggle : UnityEngine.UIElements.Toggle
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();

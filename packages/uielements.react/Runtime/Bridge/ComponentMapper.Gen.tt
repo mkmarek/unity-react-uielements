@@ -163,6 +163,8 @@ namespace UnityReactUIElements.Bridge
         // Generation of Component types
         ////////////////////////////////////////////////////////////////////////////////////////////
 #>
+        ///<Component>
+        ///Name:<#=GetReactFriendlyName(type)#>
         internal class React<#=type.Name#> : <#=CSharpName(type, true)#>
         {
             private Dictionary<string, (Delegate, JavaScriptValue)> previousCallbacks = new Dictionary<string, (Delegate, JavaScriptValue)>();
